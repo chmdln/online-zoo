@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+    padding: 0 260px; 
+    background-color: #f58021;
+}
+
+.logo-image {
+    width: 96px; 
+    height: 50px; 
+}
+
+.container-right {
+    display: flex; 
+    align-items: center;
+}
+
+.nav-menu {
+    width: 556px; 
+    height: 27px; 
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+.nav-menu a {
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none; 
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0;
+}
+
+.nav-menu a:hover {
+    color: #00A092;
+    transition: .3s ease-in-out;
+}
+
+.nav-menu a.active {
+    color: #00A092;
+}
+
+.social-media {
+    display: flex; 
+    column-gap: 30px;  
+}
+
+.social-media img {
+    width: 40px; 
+    height: 40px;
+    cursor: pointer;
+}
+
+.social-media img:hover {
+    opacity: 60%; 
+    transition: .4s ease-in-out; 
+}
+
+
+.main-intro {
+    width: 100%;
+    height: 900px;
+    background-image: url("../../assets/images/main-background.png");
+    background-size: cover;       
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 239px; 
+    padding-left: 260px;
+    display: flex; 
+    flex-direction: column;
+    row-gap: 30px; 
+}
+
+.main-header {
+    width: 890px; 
+    font-weight: 800;
+    font-size: 82px;
+    color: #00A092;
+    line-height: 100%;
+    letter-spacing: 1;
+    text-transform: uppercase;
+}
+
+.main-subheader {
+    width: 430px; 
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0;
+}
+
+.main-intro button {
+    width: 240px;
+    height: 74px;
+    display: flex; 
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    padding: 26px 20px;
+    background-color: #F58021;
+    color: #FFFFFF; 
+    border: none; 
+    font-weight: 600; 
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    cursor: pointer; 
+}
+
+.main-intro button .btn-text {
+    display: flex;
+    align-items: center;
+
+}
+
+.main-page button img {
+    width: 24.28px; 
+    height: 22px; 
+}
+
+.main-page button:hover {
+    background: #D26004;
+    box-shadow: 0px 4px 30px 0px #F580214D;
+    transition: .3s ease-in-out;
+
+}
+
+
