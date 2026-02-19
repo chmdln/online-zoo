@@ -1,0 +1,102 @@
+
+  const donateBtn = document.querySelector('.btn-primary');
+  const popup = document.getElementById('donationPopup');
+  const closeBtn = document.getElementById('closePopup');
+  const overlay = document.getElementById('popupOverlay');
+
+  donateBtn.addEventListener('click', () => {
+    popup.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  });
+
+  function closePopup() {
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  closeBtn.addEventListener('click', closePopup);
+  overlay.addEventListener('click', closePopup);
+
+
+
+const select = document.querySelector('.special-pet-select');
+const trigger = select.querySelector('.select-trigger .trigger-placeholder');
+const arrow = select.querySelector('.arrow-wrapper');
+const options = select.querySelector('.select-options');
+const optionsList = select.querySelectorAll('.select-options li');
+const dropdown = select.querySelector('.select-dropdown');
+const upArrow = document.querySelector('.up-arrow');
+const downArrow = document.querySelector('.down-arrow')
+
+arrow.addEventListener('click', () => {
+  options.style.display =
+    options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+});
+
+
+let currentIndex = 0;
+function updateActiveOption(index) {
+    optionsList.forEach(option => option.classList.remove('active'));
+    optionsList[index].classList.add('active');
+    optionsList[index].scrollIntoView({
+        block: 'nearest'
+    });
+}
+
+updateActiveOption(currentIndex);
+
+downArrow.addEventListener('click', () => {
+    if (currentIndex < optionsList.length - 1) {
+        currentIndex++;
+        updateActiveOption(currentIndex);
+    }
+});
+
+upArrow.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateActiveOption(currentIndex);
+    }
+});
+
+optionsList.forEach((option, index) => {
+    option.addEventListener('click', () => {
+        currentIndex = index;
+        updateActiveOption(currentIndex);
+        trigger.textContent = option.textContent;
+        trigger.style.color = '#000000';
+        options.style.display = 'none';
+        dropdown.style.display = 'none';
+    });
+});
+
+const popupSteps = document.querySelectorAll('.popup-step');
+const nextBtns = document.querySelectorAll('.next-btn');
+const backBtns = document.querySelectorAll('.back-btn');
+const completeDonationBtn = document.querySelector('.complete-donation-btn');
+
+let currPopupStep = 0;
+nextBtns.forEach((nextBtn, index) => {
+    nextBtn.addEventListener('click', () => {
+        popupSteps[currPopupStep].classList.remove('active');
+        currPopupStep++;
+        if (currPopupStep < popupSteps.length) {
+            popupSteps[currPopupStep].classList.add('active');
+        }
+    });
+});
+
+backBtns.forEach((backBtn, index) => {
+    backBtn.addEventListener('click', () => {
+        popupSteps[currPopupStep].classList.remove('active');
+        currPopupStep--;
+        if (currPopupStep >= 0) {
+            popupSteps[currPopupStep].classList.add('active');
+        }
+    });
+});
+
+completeDonationBtn.addEventListener('click', () => {
+    closePopup();
+}); 
