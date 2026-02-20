@@ -12,6 +12,10 @@
   function closePopup() {
     popup.style.display = 'none';
     document.body.style.overflow = 'auto';
+
+    popupSteps[currPopupStep].classList.remove('active');
+    currPopupStep = 0;
+    popupSteps[currPopupStep].classList.add('active');
   }
 
   closeBtn.addEventListener('click', closePopup);
@@ -98,5 +102,8 @@ backBtns.forEach((backBtn, index) => {
 });
 
 completeDonationBtn.addEventListener('click', () => {
+    popupSteps[currPopupStep].classList.remove('active');
+    currPopupStep = 0;
+    popupSteps[currPopupStep].classList.add('active');
     closePopup();
 }); 
