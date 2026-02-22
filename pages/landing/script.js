@@ -108,7 +108,7 @@ completeDonationBtn.addEventListener('click', () => {
     closePopup();
 }); 
 
-// slider
+// meet pets slider
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.meet-pets-container');
   const leftBtn = document.querySelector('.slider.left');
@@ -118,6 +118,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getColumnWidth() {
     const columnWidth = container.clientWidth / 2.5; // 3 visible columns
+    return columnWidth + gap;
+  }
+
+  rightBtn.addEventListener('click', () => {
+    container.scrollBy({
+      left: getColumnWidth(),
+      behavior: 'smooth'
+    });
+  });
+
+  leftBtn.addEventListener('click', () => {
+    container.scrollBy({
+      left: -getColumnWidth(),
+      behavior: 'smooth'
+    });
+  });
+});
+
+// what users think slider
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.what-users-think-cards-container');
+  const leftBtn = document.querySelector('.what-users-think-cards-content .slider.left');
+  const rightBtn = document.querySelector('.what-users-think-cards-content .slider.right');
+  const gap = parseInt(getComputedStyle(container).gap) || 0;
+
+  function getColumnWidth() {
+    const columnWidth = container.clientWidth; // 1 visible column
     return columnWidth + gap;
   }
 

@@ -990,8 +990,165 @@ input[type="number"]::-webkit-inner-spin-button {
     border-bottom-color: var(--white);
 }
 
+.what-users-think {
+    width: 100%;
+    height: 1830px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px; 
+    padding-left: 260px;
+    padding-bottom: 90px; 
+    border-color: var(--navy);
+    margin-top: -1px; 
 
+    background:
+        linear-gradient(144.77deg, var(--navy) 18.53%, rgba(32, 17, 61, 0) 46.43%),
+        linear-gradient(177.34deg, #20113D 7.26%, rgba(32, 17, 61, 0) 14.89%),
+        url("../../assets/images/panda-behind-tree.png");
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
+.what-users-think-container {
+    display: flex; 
+    column-gap: 40px; 
+}
+
+.what-users-think-header-container {
+    display: flex; 
+    flex-direction: column; 
+    max-width: 560px;
+    color: var(--white);
+}
+
+.what-users-think-header-container .h2-heading {
+    color: var(--white);
+}
+
+.what-users-think-header-text {
+    margin-top: 40px; 
+}
+
+.what-users-think-cards-content {
+    width: 1054px; 
+    overflow: hidden; 
+}
+
+.what-users-think-cards-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    /* width: 1054px;  */
+    overflow-x: hidden;  
+}
+
+.users-think-card {
+    width: 515px; 
+    height: 463px; 
+    border-radius: 5px; 
+    display: flex; 
+    flex-direction: column;
+    padding: 40px; 
+    background-color: var(--white);
+    color: var(--black); 
+}
+
+.users-think-card .quotation-marks {
+    width: 50px !important; 
+    height: 56px !important; 
+}
+
+.users-think-card-date {
+    margin-top: 20px; 
+    /* font-weight: 600;  */
+}
+
+.users-think-card-text {
+    margin-top: 40px; 
+}
+
+.users-think-card-author {
+    margin-top: auto;
+}
+
+.what-users-think-cards-content .slider.left, 
+.what-users-think-cards-content .slider.right {
+    background: transparent;
+    border-color: var(--white); 
+}
+
+.what-users-think-cards-content .slider.left:hover, 
+.what-users-think-cards-content .slider.right:hover {
+    background: var(--white);
+    border: none; 
+}
+
+.what-users-think-cards-content 
+.arrow-line {
+    background-color: var(--white); 
+}
+
+.what-users-think-cards-content 
+.slider.left:hover .arrow-line {
+    background-color: var(--navy); 
+}
+
+.what-users-think-cards-content 
+.slider.left:hover .arrow-right {
+    border-bottom-color: var(--navy);
+    border-right-color: var(--navy); 
+}
+
+.what-users-think-cards-content .arrow-right {
+    border-bottom-color: var(--white);
+    border-right-color: var(--white); 
+}
+
+.what-users-think-cards-content 
+.slider.right:hover .arrow-line {
+    background-color: var(--navy); 
+}
+
+.what-users-think-cards-content 
+.slider.right:hover .arrow-right {
+    border-bottom-color: var(--navy);
+    border-right-color: var(--navy); 
+}
+
+.what-users-think button {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    width: 359px;
+    height: 74px;
+    border-radius: 5px;
+    border: 1px solid var(--white);
+    color: var(--white);
+    padding: 26px 45px;
+    margin-top: auto; 
+    align-self: flex-start; 
+    cursor: pointer;
+}
+
+.what-users-think button:hover {
+    background-color: var(--turq);
+    transition: .3s ease-in-out;
+}
+
+.what-users-think .arrow-line {
+    background-color: var(--white);
+}
+
+.what-users-think .arrow-right {
+    border-bottom-color: var(--white);
+    border-right-color: var(--white); 
+}
 
 
 
