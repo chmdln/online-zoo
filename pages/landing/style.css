@@ -320,6 +320,7 @@ header {
 .popup-section-title {
     font-weight: 600;
     font-size: 18px;
+    color: var(--black);
     border: 1px solid #A4A8AE;
     padding: 25px 80px 10px 80px; 
 }
@@ -331,10 +332,10 @@ header {
 .required-label {
     font-size: 18px;
     font-weight: 400;
-    font-size: 18px;
     line-height: 150%;
     letter-spacing: 0;
     margin-bottom: 10px;
+    color: var(--black);
 }
 
 .amount-buttons {
@@ -535,6 +536,7 @@ header {
     margin-bottom: 30px;
     font-weight: 400;
     font-size: 18px;
+    color: var(--black);
     line-height: 150%;
     letter-spacing: 0%;
 }
@@ -704,6 +706,204 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
+
+.meet-pets {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding-left: 260px; 
+    padding-right: 260px;
+    margin-top: 136px; 
+}
+
+.h2-heading {
+    color: var(--turq); 
+}
+
+.subheader-text {
+    width: 920px; 
+    height: 102px;
+    margin-top: 50px;  
+}
+
+.slider-container {
+    max-width: 188px; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px; 
+    margin: 100px 0px 40px 0px; 
+}
+
+.slider {
+    width: 64px; 
+    height: 60px;
+    background-color: var(--white);
+    border-radius: 5px;  
+    border: 1px solid var(--navy);
+    cursor: pointer;
+}
+
+.slider:hover {
+    background-color: var(--navy);
+    border: 1px solid var(--navy);
+    transition: .3s ease-in-out;
+}
+
+.slider.left {
+    transform: rotate(-180deg);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.slider.right {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.slider.left:hover .arrow-line,
+.slider.right:hover .arrow-line {
+    background-color: var(--white); 
+}
+
+.slider.left:hover .arrow-right,
+.slider.right:hover .arrow-right {
+    border-right-color: var(--white); 
+    border-bottom-color: var(--white); 
+}
+
+.arrow-line {
+    background-color: var(--navy); 
+}
+
+.arrow-right {
+    border-right-color: var(--navy); 
+    border-bottom-color: var(--navy); 
+}
+
+.meet-pets-content {
+  width: 1420px; /* or a fixed width for the carousel */
+  overflow: hidden; /* hide extra columns */
+}
+
+.meet-pets-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  /* Each column = container width / 3 */
+  grid-auto-columns: calc((100% - 32px) / 2.9); /* 3 columns visible, subtract 2 gaps */
+  overflow-x: hidden; /* enable horizontal scrolling */
+  overflow-y: hidden; 
+  scroll-behavior: smooth; /* optional */
+}
+
+.meet-pet-card {
+  width: calc((100% - 32px) / 2.9); /* 3 columns visible, subtract total gaps */
+  /* height adjusts automatically */
+  height: 730px; 
+  cursor: pointer;
+}
+
+.meet-pet-card:hover {
+    opacity: 80%; 
+    transform: scale(1.05);
+    transition: .3s ease-in-out;
+}
+
+.meet-pet-card .meet-pet-image {
+    display: block;
+    width: 440px; 
+    height: 436px;
+}
+
+.meet-pet-info {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    width: 440px; 
+    height: 270.8px;
+    row-gap: 10px;
+    color: var(--white);
+    background-color: var(--navy); 
+    padding: 30px; 
+}
+
+.meet-pet-name {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.meet-pet-info .btn-text {
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    width: 240px; 
+    height: 73px; 
+    margin-top: 10px; 
+    background: none; 
+    border: none; 
+    color: var(--orange); 
+    font-size: 20.27px; 
+    cursor: pointer;
+}
+
+.meet-pet-info .btn-text:hover {
+    color: var(--orange-dark);
+    transition: .3s ease-in-out;
+}
+
+.meet-pet-info .text {
+    text-align: center; 
+    height: 80px;
+}
+
+.choose-favorite {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    width: 359px;
+    height: 74px;
+    margin-top: 50px;
+    margin-bottom: 136px; 
+    border-radius: 5px;
+    border: 1px solid var(--navy);
+    background: none; 
+    color: var(--navy);
+    padding: 26px 45px;
+    cursor: pointer;
+}
+
+.choose-favorite:hover {
+    background-color: var(--navy);
+    color: var(--white);
+    transition: .3s ease-in-out;
+}
+
+.choose-favorite:hover .arrow-line {
+    background-color: var(--white);
+}
+
+.choose-favorite:hover .arrow-right {
+    border-right-color: var(--white);
+    border-bottom-color: var(--white);
+}
+
+
+
+
+
+
+
+
 
 
 

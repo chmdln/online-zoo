@@ -107,3 +107,33 @@ completeDonationBtn.addEventListener('click', () => {
     popupSteps[currPopupStep].classList.add('active');
     closePopup();
 }); 
+
+// slider
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.meet-pets-container');
+  const leftBtn = document.querySelector('.slider.left');
+  const rightBtn = document.querySelector('.slider.right');
+
+  const gap = parseInt(getComputedStyle(container).gap) || 0;
+
+  function getColumnWidth() {
+    const columnWidth = container.clientWidth / 2.5; // 3 visible columns
+    return columnWidth + gap;
+  }
+
+  rightBtn.addEventListener('click', () => {
+    container.scrollBy({
+      left: getColumnWidth(),
+      behavior: 'smooth'
+    });
+  });
+
+  leftBtn.addEventListener('click', () => {
+    container.scrollBy({
+      left: -getColumnWidth(),
+      behavior: 'smooth'
+    });
+  });
+});
+
+
