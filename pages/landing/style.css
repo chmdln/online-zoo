@@ -721,7 +721,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: var(--turq); 
 }
 
-.subheader-text {
+.meet-pets .subheader-text {
     width: 920px; 
     height: 102px;
     margin-top: 50px;  
@@ -896,6 +896,101 @@ input[type="number"]::-webkit-inner-spin-button {
     border-right-color: var(--white);
     border-bottom-color: var(--white);
 }
+
+.pay-and-feed {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding-left: 260px; 
+    padding-right: 260px;
+    padding-bottom: 90px; 
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+.pay-and-feed .h2-heading {
+    color: var(--white);
+    margin-top: 90px; 
+    margin-left: 0; 
+    align-self: flex-start;
+}
+
+.pay-and-feed-line-wrapper {
+    width: 100%; 
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 60px;
+    margin-top: 80px; 
+}
+
+.line {
+    border: 1px solid #FFFFFF; 
+    width: 100%;
+}
+
+.pay-and-feed-card {
+    display: flex; 
+    align-items: start;
+    column-gap: 130px;
+    /* flex-wrap: wrap; */
+    width: 100%;  
+    margin-top: 100px;
+}
+
+.pay-and-feed-card-info {
+    display: flex; 
+    flex-direction: column;
+    /* flex: 1 1 0;        */
+    width: 400px; 
+    min-width: 300px;  /* don’t shrink smaller than 300px */
+}
+
+.pay-and-feed-card-logo {
+    width: 106px; 
+    height: 80px; 
+    margin-bottom: 20px;
+}
+
+.pay-and-feed-card-title {
+    margin-bottom: 30px; 
+}
+
+.pay-and-feed-card-text {
+    max-width: 560px; 
+}
+
+.pay-and-feed-btn {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 250px;
+    height: 74px;
+    padding: 26px 45px;
+    margin-top: 40px; 
+    border: none; 
+    border-radius: 5px;
+    background-color: var(--orange);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.pay-and-feed-btn:hover {
+    background-color: var(--orange-dark);
+    transition: .3s ease-in-out;
+}
+
+.pay-and-feed-btn .arrow-line {
+    background-color: var(--white);
+}
+
+.pay-and-feed-btn .arrow-right {
+    border-right-color: var(--white);
+    border-bottom-color: var(--white);
+}
+
+
 
 
 
