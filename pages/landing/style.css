@@ -751,6 +751,19 @@ input[type="number"]::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
+.slider.is-disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.slider.is-disabled .arrow-line {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.slider.is-disabled .arrow-right {
+  border-color: rgba(0,0,0,0.2);
+}
+
 .slider:hover {
     background-color: var(--navy);
     border: 1px solid var(--navy);

@@ -134,6 +134,29 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth'
     });
   });
+
+  function updateButtons() {
+    const scrollLeft = container.scrollLeft;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    // Start
+    if (scrollLeft <= 0) {
+      leftBtn.classList.add('is-disabled');
+    } else {
+      leftBtn.classList.remove('is-disabled');
+    }
+
+    // End
+    if (scrollLeft >= maxScroll - 1) {
+      rightBtn.classList.add('is-disabled');
+    } else {
+      rightBtn.classList.remove('is-disabled');
+    }
+  }
+
+  container.addEventListener('scroll', updateButtons);
+  updateButtons();
+  
 });
 
 // what users think slider
