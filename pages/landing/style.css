@@ -1411,6 +1411,86 @@ footer {
     margin-bottom: 40px; 
 }
 
+.we-care-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+.we-care-popup-overlay {
+    inset: 0; 
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute; 
+}
+
+.we-care-popup-content {
+    position: relative;
+    width: 1160px;
+    z-index: 1001;
+    margin: 80px auto; 
+    border-radius: 5px;
+    overflow: hidden; 
+}
+
+.we-care-popup-content > img {
+    display: block; 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.we-care-popup-body {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
+    padding: 40px; 
+    background-color: var(--white);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.we-care-popup-body .h2-heading {
+    width: 678px;
+    text-align: center;
+    color: var(--orange); 
+}
+
+.we-care-popup-body .we-care-subheader {
+    width: 570px; 
+    text-align: center;
+    color: var(--black); 
+}
+
+.we-care-popup-body .amount-buttons {
+    width: 1000px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    color: var(--black); 
+}
+
+.we-care-popup-body .amount-buttons .amount-btn {
+    background-color: var(--turq);
+}
+
+.we-care-popup-body .amount-buttons .amount-btn:hover {
+    background-color: var(--turq-dark);
+}
+
+.we-care-popup-body .amount-buttons .other-amount {
+    width: 210px; 
+    padding: 26px 30px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.we-care-popup-body .amount-buttons .other-amount:hover {
+    background-color: var(--turq-dark);
+}
+
 
 
 

@@ -6,12 +6,12 @@
 
   donateBtn.addEventListener('click', () => {
     popup.style.display = 'block';
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('no-scroll');
   });
 
   function closePopup() {
     popup.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.classList.remove('no-scroll');
     trigger.textContent = 'Choose your favourite';
     trigger.style.color = '#A4A8AE';
     popupSteps[currPopupStep].classList.remove('active');
@@ -204,5 +204,26 @@ document.addEventListener('DOMContentLoaded', () => {
   updateButtons();
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const weCareBtn = document.querySelector('.footer-btn.btn-text');
+  const weCarePopup = document.getElementById('weCarePopup');
+  const weCareCloseBtn = document.querySelector('.we-care-popup-content .close-btn');
+  const weCareOverlay = document.querySelector('.we-care-popup-overlay');
+
+  weCareBtn.addEventListener('click', () => {
+    weCarePopup.style.display = 'block';
+    document.body.classList.add('no-scroll');
+  });
+
+  function closePopup() {
+    weCarePopup.style.display = 'none';
+    document.body.classList.remove('no-scroll');
+  }
+
+  weCareCloseBtn.addEventListener('click', closePopup);
+  weCareOverlay.addEventListener('click', closePopup);
+}); 
+  
 
 
