@@ -223,7 +223,7 @@ header {
     letter-spacing: 0;
 }
 
-.btn-primary {
+.donate-right .btn-primary {
     display: flex; 
     width: 320px; 
     height: 74px; 
@@ -232,6 +232,11 @@ header {
     border: 1px solid ; 
     border-radius: 5px; 
     cursor: pointer;
+}
+
+.donate-right .btn-primary:hover {
+    opacity: 60%; 
+    transition: .3s ease-in-out;
 }
 
 .btn-primary:hover .donate-right-btn-img {
@@ -298,7 +303,8 @@ header {
     line-height: 100%;
     letter-spacing: 0;
     text-align: center;
-    text-transform: uppercase;position: relative;
+    text-transform: uppercase;
+    position: relative;
 }
 
 .close-btn {
@@ -443,7 +449,7 @@ header {
     background: #00A09280;
 }
 
-.arrow {
+.special-pet-select .arrow {
   width: 8px;
   height: 8px;
   border-right: 2px solid #000000;
@@ -510,6 +516,7 @@ header {
     font-weight: 400;
     cursor: pointer;
     transition: 0.2s ease; 
+    color: var(--black);
 }
 
 .select-options li.active {
@@ -707,7 +714,6 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-
 .meet-pets {
     display: flex; 
     flex-direction: column;
@@ -721,7 +727,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: var(--turq); 
 }
 
-.meet-pets .subheader-text {
+.meet-pets > .subheader-text {
     width: 920px; 
     height: 102px;
     margin-top: 50px;  
@@ -806,6 +812,7 @@ input[type="number"]::-webkit-inner-spin-button {
   /* height adjusts automatically */
   height: 730px; 
   cursor: pointer;
+  position: relative; 
 }
 
 .meet-pet-card:hover {
@@ -814,10 +821,28 @@ input[type="number"]::-webkit-inner-spin-button {
     transition: .3s ease-in-out;
 }
 
+.meet-pet-tag {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 134px; 
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 12.39px 19.15px;
+    position: absolute; 
+    top: 0px; 
+    left: 0px;
+    background-color: var(--navy);
+    color: var(--white);
+
+}
+
 .meet-pet-card .meet-pet-image {
     display: block;
     width: 440px; 
     height: 436px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .meet-pet-info {
@@ -830,6 +855,8 @@ input[type="number"]::-webkit-inner-spin-button {
     color: var(--white);
     background-color: var(--navy); 
     padding: 30px; 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .meet-pet-name {
@@ -1042,7 +1069,6 @@ input[type="number"]::-webkit-inner-spin-button {
     grid-auto-flow: column;
     grid-template-rows: repeat(2, 1fr);
     gap: 12px;
-    /* width: 1054px;  */
     overflow-x: hidden;  
 }
 
@@ -1064,7 +1090,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .users-think-card-date {
     margin-top: 20px; 
-    /* font-weight: 600;  */
 }
 
 .users-think-card-text {

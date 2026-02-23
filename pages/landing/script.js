@@ -1,5 +1,5 @@
 
-  const donateBtn = document.querySelector('.btn-primary');
+  const donateBtn = document.querySelector('.donate-right .btn-primary');
   const popup = document.getElementById('donationPopup');
   const closeBtn = document.getElementById('closePopup');
   const overlay = document.getElementById('popupOverlay');
@@ -12,7 +12,8 @@
   function closePopup() {
     popup.style.display = 'none';
     document.body.style.overflow = 'auto';
-
+    trigger.textContent = 'Choose your favourite';
+    trigger.style.color = '#A4A8AE';
     popupSteps[currPopupStep].classList.remove('active');
     currPopupStep = 0;
     popupSteps[currPopupStep].classList.add('active');
@@ -113,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.meet-pets-container');
   const leftBtn = document.querySelector('.slider.left');
   const rightBtn = document.querySelector('.slider.right');
-
   const gap = parseInt(getComputedStyle(container).gap) || 0;
 
   function getColumnWidth() {

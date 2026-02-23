@@ -149,9 +149,22 @@
                             <div class="popup-section-title">Billing information:</div>
                             <div class="popup-section-main">
                                 <div class="required-label">* Your Name:</div>
-                                <input class="input-primary name-input" placeholder="First and last name">
+                                <input 
+                                    type="text" 
+                                    name="name"
+                                    placeholder="First and last name"
+                                    class="input-primary name-input"
+                                    required
+                                />
                                 <div class="required-label email-label">* Your Email Address:</div>
-                                <input class="input-primary email-input" placeholder="Enter your email address">
+                                <input 
+                                    type="email"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                    class="input-primary email-input"
+                                    autocomplete="email"
+                                    required
+                                />
                                 <div class="popup-disclaimer">
                                     You will receive emails from the Online Zoo, including updates and news on the latest discoveries and translations. You can unsubscribe at any time.
                                 </div>
@@ -178,18 +191,42 @@
                                 <div class="payment-info-container">
                                     <div class="credit-card-container">
                                         <div class="required-label">* Credit Card Number:</div>
-                                        <input type='number' class="input-primary">
+                                        <input 
+                                            type='number'
+                                            name="cc-number"
+                                            placeholder='1234 1234 1234 1234'  
+                                            class="input-primary"
+                                            autocomplete="cc-number"
+                                            required
+                                        />
                                     </div>
                                     <div class="cvv-number-container">
                                         <div class="required-label">* CVV Number:</div>
-                                        <input type='number' class="input-primary">
+                                        <input 
+                                            type="text"
+                                            name="cvv"
+                                            placeholder="123"
+                                            class="input-primary"
+                                            inputmode="numeric"
+                                            pattern="[0-9]{3,4}"
+                                            autocomplete="cc-csc"
+                                            maxlength="4"
+                                            required
+                                        />
                                     </div>
                                 </div>
                                 <div class="card-expiry-container">
                                     <!-- input month -->
                                     <div class="special-pet-select">
                                         <div class="select-trigger">
-                                            <input class="input-primary" placeholder="Month">
+                                            <input 
+                                                type="text"
+                                                name="cc-exp-month"
+                                                placeholder="Month"
+                                                class="input-primary"
+                                                autocomplete="cc-exp-month" 
+                                                required
+                                            />
                                             <div class="month arrow-wrapper">
                                                 <div class="arrow"></div>
                                             </div>
@@ -203,7 +240,13 @@
                                     <!-- input year -->
                                     <div class="special-pet-select">
                                     <div class="select-trigger">
-                                        <input class="input-primary" placeholder="Year">
+                                        <input 
+                                            type="text" 
+                                            name="cc-exp-year"
+                                            placeholder="Year" class="input-primary" 
+                                            autocomplete="cc-exp-year" 
+                                            required
+                                        />
                                         <div class="year arrow-wrapper">
                                             <div class="arrow"></div>
                                         </div>
@@ -257,6 +300,9 @@
                 <div class="meet-pets-container">
                     <!-- <a href="#"> -->
                         <div class="meet-pet-card">
+                            <div class="meet-pet-tag subheader-text">
+                                Lucas 
+                            </div>
                             <img src="../../assets/icons/lucas.svg" alt="Panda image" class="meet-pet-image">
                             <div class="meet-pet-info">
                                 <div class="meet-pet-name">Giant Panda</div>
@@ -269,6 +315,9 @@
                         </div>
                     <!-- </a> -->
                     <div class="meet-pet-card">
+                        <div class="meet-pet-tag subheader-text">
+                            Sam & Lora 
+                        </div>
                         <img src="../../assets/icons/sam-lora.svg" alt="Eagles image" class="meet-pet-image">
                         <div class="meet-pet-info">
                             <div class="meet-pet-name">West End Bald Eagles</div>
@@ -280,6 +329,9 @@
                         </div> 
                     </div>
                     <div class="meet-pet-card">
+                        <div class="meet-pet-tag subheader-text">
+                            Andy 
+                        </div>
                         <img src="../../assets/icons/andy.svg" alt="Lemur image" class="meet-pet-image">
                         <div class="meet-pet-info">
                             <div class="meet-pet-name">Madagascarian Lemur </div>
@@ -291,6 +343,9 @@
                         </div>
                     </div>
                     <div class="meet-pet-card">
+                        <div class="meet-pet-tag subheader-text">
+                            Liz 
+                        </div>
                         <img src="../../assets/icons/liz.svg" alt="Koala image" class="meet-pet-image">
                         <div class="meet-pet-info">
                             <div class="meet-pet-name">Australian Koala</div>
@@ -303,6 +358,9 @@
                         </div>
                     </div>
                     <div class="meet-pet-card">
+                        <div class="meet-pet-tag subheader-text">
+                            Glen
+                        </div>
                         <img src="../../assets/icons/glen.svg" alt="Gorilla image" class="meet-pet-image">
                         <div class="meet-pet-info">
                             <div class="meet-pet-name">Gorilla in Congo</div>
@@ -314,6 +372,9 @@
                         </div>
                     </div>
                     <div class="meet-pet-card">
+                        <div class="meet-pet-tag subheader-text">
+                            Shake 
+                        </div>
                         <img src="../../assets/icons/shake.svg" alt="Lion image" class="meet-pet-image">
                         <div class="meet-pet-info">
                             <div class="meet-pet-name">African Lion</div>
@@ -327,7 +388,10 @@
                         </div>
                     </div>
                     <div class="meet-pet-card">
-                            <img src="../../assets/images/mike.png" alt="Alligator image" class="meet-pet-image">
+                        <div class="meet-pet-tag subheader-text">
+                            Mike 
+                        </div>
+                        <img src="../../assets/images/mike.png" alt="Alligator image" class="meet-pet-image">
                         <div class="meet-pet-info">
                             <div class="meet-pet-name">Chinese Alligator</div>
                             <div class="text">
@@ -340,6 +404,9 @@
                         </div>
                     </div>
                     <div class="meet-pet-card">
+                        <div class="meet-pet-tag subheader-text">
+                            Senja 
+                        </div>
                         <img src="../../assets/images/senja.png" alt="Tiger image" class="meet-pet-image">
                         <div class="meet-pet-info">
                             <div class="meet-pet-name">Sumatran Tiger</div>
