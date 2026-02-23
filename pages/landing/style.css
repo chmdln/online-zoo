@@ -8,6 +8,11 @@ header {
     background-color: #f58021;
 }
 
+main {
+    display: flex; 
+    flex-direction: column; ;
+}
+
 .logo-image {
     width: 96px; 
     height: 50px; 
@@ -1187,6 +1192,151 @@ input[type="number"]::-webkit-inner-spin-button {
     border-bottom-color: var(--white);
     border-right-color: var(--white); 
 }
+
+.care {
+    padding: 136px 260px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+.care .h2-heading {
+    width: 655px;
+    text-align: center; 
+}
+
+.care .care-subheader {
+    width: 537px; 
+    margin-top: 50px;
+    text-align: center;  
+}
+
+.care-pets-container {
+    width: 1380px;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    gap: 20px; 
+    margin-top: 50px; 
+}
+
+.care-pets-container:first-child {
+    width: 920px; 
+}
+
+.care-pet-card {
+    width: 440px; 
+    height: 658px;
+    display: flex; 
+    flex-direction: column;  
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer; 
+}
+
+.care-pet-card:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+    transition: .3s ease-in-out;
+}
+
+.care-pet-card > img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.care-pet-info {
+    display: flex; 
+    flex-direction: column; 
+    flex: 1; 
+    align-items: center;
+    padding: 30px 30px 60px 30px; 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: var(--navy);
+    color: var(--white); 
+}
+
+.care-pet-info-text {
+    text-align: center;
+}
+
+.care-pet-info button {
+    width: 142px;
+    border-radius: 5px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    color: var(--orange); 
+    border: none;  
+    padding: 26px 45px;
+    margin-top: auto; 
+    cursor: pointer;
+}
+
+.care-pet-info .arrow-line {
+    background-color: var(--orange);
+}
+
+.care-pet-info .arrow-right {
+    border-bottom-color: var(--orange);
+    border-right-color: var(--orange); 
+}
+
+.care-button {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    width: 359px;
+    height: 74px;
+    border: 1px solid var(--navy); 
+    border-radius: 5px;
+    padding: 26px 45px;
+    border-width: 1px;
+    color: var(--navy); 
+    margin-top: 50px; 
+    cursor: pointer;
+}
+
+.care-button:hover {
+    background-color: var(--navy);
+    color: var(--white); 
+    transition: .3s ease-in-out;
+}
+
+.care-button:hover .arrow-line {
+    background-color: var(--white);
+}
+
+.care-button:hover .arrow-right {
+    border-bottom-color: var(--white);
+    border-right-color: var(--white); 
+}
+
+.care .touch-the-animal {
+    max-width: 1380px;
+    margin-top: 100px; 
+    margin-bottom: 100px;  
+}
+
+footer {
+    display: flex; 
+    flex-direction: column;
+    margin-top: auto; 
+    width: 100%; 
+    height: 329px;
+    padding: 50px 260px; 
+    
+    background-color: var(--navy);
+    color: var(--white); 
+}
+
+
 
 
 
