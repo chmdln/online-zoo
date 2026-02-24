@@ -1,26 +1,31 @@
+import { renderHeader } from '../../components/header.js';
+import { renderFooter } from '../../components/footer.js';
 
-  const donateBtn = document.querySelector('.donate-right .btn-primary');
-  const popup = document.getElementById('donationPopup');
-  const closeBtn = document.getElementById('closePopup');
-  const overlay = document.getElementById('popupOverlay');
+document.getElementById('header').innerHTML = renderHeader();
+document.getElementById('footer').innerHTML = renderFooter();
+  
+const donateBtn = document.querySelector('.donate-right .btn-primary');
+const popup = document.getElementById('donationPopup');
+const closeBtn = document.getElementById('closePopup');
+const overlay = document.getElementById('popupOverlay');
 
-  donateBtn.addEventListener('click', () => {
-    popup.style.display = 'block';
-    document.body.classList.add('no-scroll');
-  });
+donateBtn.addEventListener('click', () => {
+  popup.style.display = 'block';
+  document.body.classList.add('no-scroll');
+});
 
-  function closePopup() {
-    popup.style.display = 'none';
-    document.body.classList.remove('no-scroll');
-    trigger.textContent = 'Choose your favourite';
-    trigger.style.color = '#A4A8AE';
-    popupSteps[currPopupStep].classList.remove('active');
-    currPopupStep = 0;
-    popupSteps[currPopupStep].classList.add('active');
-  }
+function closePopup() {
+  popup.style.display = 'none';
+  document.body.classList.remove('no-scroll');
+  trigger.textContent = 'Choose your favourite';
+  trigger.style.color = '#A4A8AE';
+  popupSteps[currPopupStep].classList.remove('active');
+  currPopupStep = 0;
+  popupSteps[currPopupStep].classList.add('active');
+}
 
-  closeBtn.addEventListener('click', closePopup);
-  overlay.addEventListener('click', closePopup);
+closeBtn.addEventListener('click', closePopup);
+overlay.addEventListener('click', closePopup);
 
 
 
