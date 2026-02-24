@@ -1,0 +1,71 @@
+.map {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 260px; 
+    padding-right: 260px;
+}
+
+header#map.active {
+    color: var(--turq); 
+}
+
+.map .h2-heading {
+    width: 601px; 
+    margin-top: 50px; 
+    text-align: center;
+}
+
+.map-container {
+    width: 1406px;
+    margin-top: 70px; 
+    margin-bottom: 100px;
+    position: relative;  
+}
+
+.map-container .location-icon {
+    width: 100px; 
+    position: absolute;
+    cursor: pointer;
+}
+
+.map-container .location-icon.eagle-icon {
+    top: 47%;
+    left: 11.5%; 
+}
+
+.map-container .location-icon.alligator-icon {
+    top: 47%;
+    left: 20.5%; 
+}
+
+.map-container .location-icon.lion-icon {
+    top: 52.5%;
+    left: 41%; 
+}
+
+.map-container .location-icon.gorilla-icon {
+    top: 55%;
+    left: 49%; 
+}
+
+.map-container .location-icon.lemur-icon {
+    top: 69%;
+    left: 56.5%; 
+}
+
+.map-container .location-icon.panda-icon {
+    top: 40%;
+    left: 67%; 
+}
+
+.map-container .location-icon.tiger-icon {
+    top: 58.5%;
+    left: 72%; 
+}
+
+.map-container .location-icon.koala-icon {
+    top: 70%;
+    left: 82%; 
+}

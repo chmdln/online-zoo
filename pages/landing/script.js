@@ -3,6 +3,9 @@ import { renderFooter } from '../../components/footer.js';
 
 document.getElementById('header').innerHTML = renderHeader();
 document.getElementById('footer').innerHTML = renderFooter();
+
+const about = document.getElementById('about');
+about.classList.add('active');
   
 const donateBtn = document.querySelector('.donate-right .btn-primary');
 const popup = document.getElementById('donationPopup');
@@ -209,26 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateButtons();
 
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-  const weCareBtn = document.querySelector('.footer-btn.btn-text');
-  const weCarePopup = document.getElementById('weCarePopup');
-  const weCareCloseBtn = document.querySelector('.we-care-popup-content .close-btn');
-  const weCareOverlay = document.querySelector('.we-care-popup-overlay');
-
-  weCareBtn.addEventListener('click', () => {
-    weCarePopup.style.display = 'block';
-    document.body.classList.add('no-scroll');
-  });
-
-  function closePopup() {
-    weCarePopup.style.display = 'none';
-    document.body.classList.remove('no-scroll');
-  }
-
-  weCareCloseBtn.addEventListener('click', closePopup);
-  weCareOverlay.addEventListener('click', closePopup);
-}); 
   
 
 

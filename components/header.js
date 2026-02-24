@@ -1,18 +1,18 @@
 export function renderHeader() {
     return `
         <header>
-            <img 
+            <h1><img 
                 src="../../assets/images/logo.png" 
                 alt="logo"
                 class="logo-image"
-            >
+            ></h1>
             <div class="container-right">
                 <div class="nav-menu">
-                    <a href="#" class="active">About</a>
-                    <a href="#">Map</a>
-                    <a href="#">Zoos</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Design</a>
+                    <a href="#" id="about">About</a>
+                    <a href="#" id="map">Map</a>
+                    <a href="#" id="zoos">Zoos</a>
+                    <a href="#" id="contact-us">Contact Us</a>
+                    <a href="#" id="design">Design</a>
                 </div>
                 <div class="social-media">
                     <img src="../../assets/images/youtube.png" alt="Youtube Logo">
