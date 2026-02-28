@@ -1,0 +1,92 @@
+.contact-us {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 260px; 
+    padding-right: 260px;
+}
+
+.get-in-touch-container {
+    display: flex; 
+    column-gap: 175px; 
+    margin-top: 160px; 
+}
+
+.get-in-touch-container .left-section {
+    width: 545px; 
+    display: flex; 
+    flex-direction: column;
+    row-gap: 50px; 
+}
+
+.get-in-touch-container .left-section .h2-heading {
+    color: var(--turq);
+}
+
+.get-in-touch-container .right-section {
+    width: 680px; 
+    margin-bottom: 150px; 
+}
+
+.get-in-touch-container .right-section .contact-form {
+    display: flex; 
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100%; 
+}
+
+.get-in-touch-container .right-section .contact-form input {
+    height: 60px; 
+    height: 60;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    padding: 20px; 
+}
+
+.get-in-touch-container .right-section .contact-form label span {
+    color: var(--turq); 
+}
+
+.get-in-touch-container .right-section .contact-form textarea {
+    min-height: 200px;
+    width: 680px;  
+    padding: 20px; 
+}
+
+.get-in-touch-container .right-section .contact-form input::placeholder, .get-in-touch-container .right-section .contact-form textarea::placeholder {
+    color: var(--grey);
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.get-in-touch-container .right-section .contact-form button {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 359px;
+    height: 74px;
+    border-radius: 5px;
+    padding: 26px 45px;
+    color: var(--white);
+    background-color: var(--turq);
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.get-in-touch-container .right-section .contact-form button .arrow-container .arrow-line {
+    background-color: var(--white);
+}
+
+.get-in-touch-container .right-section .contact-form button .arrow-container .arrow-right {
+    border-bottom-color: var(--white);
+    border-right-color: var(--white);
+}
+
+.get-in-touch-container .right-section .contact-form button:hover {
+    background-color: var(--turq-dark);
+    transition: .3s ease-in-out;
+}
+
+
