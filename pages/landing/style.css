@@ -1,4 +1,3 @@
-
 main {
     display: flex; 
     flex-direction: column; ;
@@ -94,12 +93,20 @@ main {
     border-radius: 5px;
 }
 
+.how-it-works-container img.screen-1200 {
+    display: none;
+}
+
+.how-it-works-container img.screen-320 {
+    display: none;
+}
+
 .container-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     row-gap: 50px;
-    width: 560px; 
+    /* width: 560px;  */
 }
 
 .container-text-header {
@@ -118,18 +125,18 @@ main {
     letter-spacing: 0;
 }
 
-
-
 .meet-pets {
     display: flex; 
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding-left: 260px; 
     padding-right: 260px;
     margin-top: 136px; 
 }
 
 .h2-heading {
+    text-align: center; 
     color: var(--turq); 
 }
 
@@ -137,6 +144,7 @@ main {
     width: 920px; 
     height: 102px;
     margin-top: 50px;  
+    text-align: center; 
 }
 
 .slider-container {
@@ -210,7 +218,7 @@ main {
 }
 
 .meet-pets-content {
-  width: 1420px; /* or a fixed width for the carousel */
+  width: 1420px; /* or a fixed width for the carousel */ 
   overflow: hidden; /* hide extra columns */
 }
 
@@ -502,6 +510,10 @@ main {
     color: var(--black); 
 }
 
+.users-think-card.screen-320 {
+    display: none; 
+}
+
 .users-think-card .quotation-marks {
     width: 50px !important; 
     height: 56px !important; 
@@ -563,6 +575,10 @@ main {
     border-right-color: var(--navy); 
 }
 
+.what-users-think-container .progress-dots {
+    display: none; 
+}
+
 .what-users-think button {
     display: flex; 
     justify-content: center;
@@ -578,6 +594,10 @@ main {
     margin-top: auto; 
     align-self: flex-start; 
     cursor: pointer;
+}
+
+.what-users-think .btn-text.screen-320 {
+    display: none; 
 }
 
 .what-users-think button:hover {
@@ -725,6 +745,646 @@ main {
     margin-bottom: 100px;  
 }
 
+@media screen and (max-width: 1919px) {
+    .what-users-think {
+        padding-left: 40px; 
+        padding-right: 40px;
+    }
+
+    .what-users-think-container {
+        flex-direction: column;
+        justify-content: space-between; 
+        width: 1100px; 
+        row-gap: 30px; 
+    }
+
+    .what-users-think-container > div:first-child {
+        align-self: flex-start;
+    }
+
+    .what-users-think-container > div:last-child {
+        align-self: flex-end;
+    }
+
+    .what-users-think-cards-content {
+        display: flex; 
+        flex-direction: column;  
+    }
+
+    .what-users-think-cards-content .slider-container {
+        margin-left: 600px;  
+    }
+      
+}
+
+@media screen and (max-width: 1620px) {
+    .how-it-works,
+    .pay-and-feed {
+        padding-left: 100px; 
+        padding-right: 100px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .main-intro {
+        background-image: url("../../assets/icons/1200-background.svg");
+        background-size: contain; 
+        padding-left: 160px; 
+    }
+
+    .meet-pets-content {
+        width: 1155px;  
+        overflow: hidden; 
+    }
+
+    .meet-pets-container {
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 8px;
+        row-gap: 8px; 
+        grid-auto-columns: calc((100% - 20px) / 2.9);
+    }
+
+    .meet-pet-card {
+        width: calc((100% - 20px) / 2.9);
+        height: 651px;  
+    }
+
+    .meet-pet-info {
+        width: 385px; 
+        row-gap: 10px;
+    }
+
+    .meet-pet-card .meet-pet-image {
+        width: 385px; 
+        height: 380px; 
+    }
+
+    .what-users-think {
+        padding: 40px; 
+    }
+
+    .what-users-think button {
+        margin-top: 50px;
+        margin-left: 20px;  
+    }
+
+    .what-users-think {
+        background:
+        url("../../assets/icons/panda-behind-tree-640.svg") no-repeat; 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+}
+
+@media screen and (max-width: 1300px) {
+    .how-it-works {
+        padding-left: 40px; 
+        padding-right: 40px;
+    }
+
+    .how-it-works-container {
+        margin-top: 50px; 
+    }
+
+    .pay-and-feed {
+        padding-left: 40px; 
+        padding-right: 40px;
+    }
+
+    .pay-and-feed-card {
+        column-gap: 30px;
+        align-items: center;
+    }
+
+    .pay-and-feed-card-info {
+        width: 600px; 
+        align-items: center;
+        text-align: center; 
+    }
+
+    .pay-and-feed-btn.btn-text {
+        align-self: start;
+        margin-top: 100px; 
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main-intro {
+        height: 725px;
+        padding-top: 100px; 
+        padding-left: 40px; 
+    }
+
+    .how-it-works {
+        row-gap: 30px; 
+    }
+
+    .how-it-works-container {
+        flex-direction: column;  
+    }
+
+    .how-it-works-container.top {
+        align-self: flex-start; 
+        align-items: flex-start;
+    }
+
+    .how-it-works-container.bottom {
+        justify-content: flex-start;
+        align-self: flex-end;
+        align-items: flex-start; 
+    }
+
+    .how-it-works-container.bottom .container-text-main {
+        text-align: left 
+    }
+
+    .how-it-works-container img {
+        display: none;  
+    }
+
+    .how-it-works-container img.screen-1200 {
+        display: block; 
+        width: 660px; 
+        height: 438px; 
+    }
+
+    .container-text {
+        width: 550px; 
+    }
+
+    .meet-pets .h2-heading {
+        width: 400px; 
+    }
+
+    .meet-pets .subheader-text {
+        width: 800px; 
+    }
+
+    .meet-pets-content {
+        width: 780px;  
+        overflow: hidden; 
+    }
+
+    .meet-pets-container {
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 20px; 
+        grid-auto-columns: calc((100% - 20px) / 2);
+    }
+
+    .meet-pet-card {
+        width: calc((100% - 20px) / 2);
+        height: 651px;  
+        position: relative; 
+    }
+
+    .meet-pet-info {
+        width: 385px; 
+        row-gap: 10px;
+    }
+    
+    .meet-pet-card .meet-pet-image {
+        width: 385px; 
+        height: 380px; 
+    }
+
+    .meet-pet-tag.subheader-text {
+        display: inline-flex;
+        justify-content: start;
+        align-items: center;
+        position: absolute; 
+        top: 0; 
+        left: 0;
+        width: 150px; 
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .what-users-think-container > div:first-child {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .what-users-think {
+        padding-left: 40px; 
+        padding-right: 40px; 
+    }
+
+    .what-users-think-container {
+        width: 520px; 
+    }
+
+    .what-users-think-header-container {
+
+        justify-content: center;
+    }
+
+    .what-users-think-cards-content {
+        align-items: center;
+        width: 520px; 
+    }
+
+    .what-users-think-cards-container {
+        width: 520px; 
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(1, 1fr);
+        overflow-x: hidden;  
+        justify-items: center; 
+    }
+
+    .what-users-think .slider-container {
+        display: none;  
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main-intro {
+        background-image: url("../../assets/icons/640-background.svg");
+        background-size: contain; 
+        padding-left: 20px; 
+        padding-right: 20px;
+        padding-top: 50px; 
+    }
+    
+    .main-header {
+        width: 600px; 
+        font-size: 72px; 
+        line-height: 100%;
+        letter-spacing: 1;
+    }
+
+    .how-it-works-container.top {
+        margin-top: 0; 
+    }
+
+    .pay-and-feed {
+        margin-top: -80px; 
+    }
+
+    .pay-and-feed .h2-heading {
+        align-self: center; 
+    }
+
+    .pay-and-feed-card {
+        flex-direction: column;  
+        row-gap: 20px; 
+    }
+
+    .pay-and-feed-btn.btn-text {
+        align-self: center; 
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .meet-pets {
+        padding: 20px 
+    }
+
+    .meet-pets .subheader-text {
+        width: 500px; 
+    }
+
+    .meet-pets .slider-container {
+        margin-top: 150px; 
+    }
+
+    .meet-pets-content {
+        width: 500px;
+        overflow: hidden; 
+    }
+
+    .meet-pets-container {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+        grid-auto-columns: 500px;      
+        column-gap: 10px;                      
+    }
+
+    .meet-pet-card {
+        width: 500px;
+        height: auto;
+    }
+
+    .meet-pet-card .meet-pet-image {
+        width: 500px;
+        height: 495px;
+    }
+
+    .meet-pet-info {
+        width: 500px;
+        height: 380px; 
+    }
+
+    .meet-pet-tag.subheader-text {
+        width: 150px; 
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .how-it-works {
+        padding-left: 1px; 
+        padding-right: 1px; 
+    }
+
+    .how-it-works-container.top {
+        margin-top: -80px; 
+    }
+
+    .how-it-works-container img.screen-1200 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-intro {
+        row-gap: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pay-and-feed {
+        padding-left: 10px; 
+        padding-right: 10px; 
+    }
+
+    .pay-and-feed .h2-heading {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: center;
+        margin-bottom: -50px; 
+    }
+
+    .pay-and-feed-card {
+        margin-top: 20px; 
+    }
+
+    .pay-and-feed-card > img {
+        width: 100%;  
+    }
+
+    .pay-and-feed-card-info {
+        width: 100%; 
+    }
+
+    .pay-and-feed-card-text {
+        width: 100%;  
+    }
+
+    .pay-and-feed-line-wrapper {
+        column-gap: 20px; 
+    }
+}
+
+@media screen and (max-width: 641px) {
+    .main-header {
+        width: 530px; 
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .main-intro {
+        height: 644px; 
+        background-position: center bottom; 
+    }
+
+    .main-header {
+        height: 300px; 
+    }
+
+    .main-subheader {
+        width: 339px; 
+        height: 60px; 
+        margin-top: 20px;
+    }
+
+    .main-intro button {
+        margin-top: 30px; 
+    }
+
+    .container-text {
+        padding-left: 21px; 
+    }
+
+    .how-it-works-container img.screen-1200 {
+        display: none; 
+    }
+
+    .how-it-works-container img.screen-320 {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .how-it-works-container.top {
+        margin-top: 50px; 
+    }
+
+    .how-it-works-container.bottom {
+        align-items: flex-start; 
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .main-header {
+        width: 400px; 
+        height: 100px; 
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 1;
+    }
+
+    .container-text {
+        width: 100%; 
+    }
+
+    .what-users-think {
+        width: 100%; 
+        height: 1461px; 
+        background:
+        url("../../assets/icons/panda-behind-tree-320.svg") no-repeat; 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-left: 20px; 
+        padding-right: 20px; 
+    }
+
+    .what-users-think {
+        /* padding: 40px;  */
+        align-items: center;
+    }
+    
+    .what-users-think-header-container {
+        width: 100%; 
+        display: flex; 
+        align-items: center; 
+        flex-direction: column;
+    }
+
+    .what-users-think .h2-heading {
+        width: 300px; 
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 100%;
+        letter-spacing: 0;
+        align-self: center; 
+    }
+
+    .what-users-think-header-text.subheader-text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0; 
+        text-align: center;
+        width: 300px; 
+    }
+
+    .what-users-think-cards-content {
+        display: none; 
+    }
+
+    .what-users-think-container {
+        width: 320px; 
+    }
+
+    .users-think-card.screen-320 {
+        display: flex;
+        width: 310px;  
+        height: 549px; 
+        margin: 0 auto; 
+    }
+
+    .what-users-think-container .progress-dots {
+        display: flex;
+        column-gap: 10px;
+        margin: 10px auto; 
+    }
+
+    .what-users-think-container .what-users-think-container 
+    .progress-dots .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid var(--white) !important;
+    }
+
+    .what-users-think-container .progress-dots .progress-dots .dot.active {
+        background: var(--white) !important;
+    }
+
+    .what-users-think .btn-text {
+        display: none; 
+    }
+
+    .what-users-think-container .btn-text.screen-320 {
+        width: 300px; 
+        height: 45px; 
+        margin: 10px auto; 
+        display: flex; 
+    } 
+
+}
+
+@media screen and (max-width: 500px) {
+    .meet-pets .slider-container {
+        display: none; 
+    }
+
+    .meet-pets .h2-heading {
+        width: 310px; 
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 100%;
+        letter-spacing: 0;
+        margin-top: -20px; 
+    }
+
+    .meet-pets .subheader-text {
+        width: 300px; 
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    .meet-pets-content {
+        margin-top: 10px; 
+        width: 300px;
+        overflow: hidden; 
+    }
+
+    .meet-pets-container {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+        grid-auto-columns: 300px;      
+        column-gap: 10px;                      
+    }
+
+    .meet-pet-card {
+        width: 300px;
+        height: auto;
+        position: relative; 
+    }
+
+    .meet-pet-card .meet-pet-image {
+        width: 300px;
+        height: 495px;
+    }
+
+    .meet-pet-info {
+        width: 300px;
+        height: 300px;
+        margin-top: -100px; 
+    }
+
+    .meet-pet-tag.subheader-text {
+        width: 150px;
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        margin-top: 100px; 
+    }
+
+    .choose-favorite.btn-text {
+        width: 300px; 
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .main-intro {
+        padding-left: 10px; 
+    }
+
+    .main-header {
+        width: 300px; 
+        height: 150px;   
+    }
+
+    .main-subheader {
+        width: 299px; 
+        height: 106px;  
+    }
+
+    .main-intro button {
+        width: 100%;  
+    }
+
+    .how-it-works-container .container-text-header {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 100%;
+        letter-spacing: 0;  
+    }
+}
 
 
 

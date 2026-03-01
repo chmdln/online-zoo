@@ -69,3 +69,88 @@ header#map.active {
     top: 70%;
     left: 82%; 
 }
+
+@media screen and (max-width: 1406px) {
+    .map {
+        padding-left: 100px; 
+        padding-right: 100px;
+    }
+
+    .map-container {
+        width: 1200px;
+    }
+
+    .map-container img {
+        width: 100%;    
+    }
+
+    .map-container .location-icon.eagle-icon {
+        top: 44%;
+        left: 10.5%; 
+    }
+
+    .map-container .location-icon.alligator-icon {
+        top: 46%;
+        left: 20%; 
+    }
+
+    .map-container .location-icon.lion-icon {
+        top: 49%;
+        left: 40%; 
+    }
+
+    .map-container .location-icon.gorilla-icon {
+        top: 52.5%;
+        left: 48.5%; 
+    }
+
+    .map-container .location-icon.lemur-icon {
+        top: 67%;
+        left: 55.5%; 
+    }
+
+    .map-container .location-icon.panda-icon {
+        top: 35%;
+        left: 71%; 
+    }
+
+    .map-container .location-icon.tiger-icon {
+        top: 57.5%;
+        left: 71%; 
+    }
+
+    .map-container .location-icon.koala-icon {
+        top: 69%;
+        left: 81%; 
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .map {
+        padding-left: 100px; 
+        padding-right: 100px;
+    }
+
+    .map-container {
+        width: 1024px;
+    }
+
+    .map-container img {
+        width: 1024px;    
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .map {
+        padding-left: 40px; 
+        padding-right: 40px;
+    }
+
+    .map-container {
+        width: 768px;
+    }
+
+    .map-container img {
+        width: 768px;    
+    }
+}

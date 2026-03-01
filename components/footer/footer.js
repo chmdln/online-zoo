@@ -60,7 +60,13 @@ export function renderFooter() {
                     <a href="https://www.facebook.com/rsschoolEN/" target="_blank">
                         <img src="../../assets/images/facebook.png" alt="Facebook logo icon">
                     </a>
-                    
+                </div>
+                <div class="footer-separator screen-320"></div>
+                <div
+                    class="footer-bottom-left-screen-320">
+                    <div>© 2021 DinaK</div>
+                    <div>© Yem Digital</div>
+                    <div>© RSSchool</div>
                 </div>
             </div>
         </footer>

@@ -1,5 +1,5 @@
-import { renderHeader } from '../../components/header.js';
-import { renderFooter } from '../../components/footer.js';
+import { renderHeader } from '../../components/header/header.js';
+import { renderFooter } from '../../components/footer/footer.js';
 
 document.getElementById('header').innerHTML = renderHeader();
 document.getElementById('footer').innerHTML = renderFooter();

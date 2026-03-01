@@ -1,16 +1,16 @@
-import { renderHeader } from '../../components/header.js';
-import { renderFooter } from '../../components/footer.js';
+import { renderHeader } from '../../components/header/header.js';
+import { renderFooter } from '../../components/footer/footer.js';
 import { renderQuickDonateSection } from '../../components/quick-donate/quick-donate.js';
 
-document.getElementById('header').innerHTML = renderHeader();
+// document.getElementById('header').innerHTML = renderHeader();
 document.getElementById('footer').innerHTML = renderFooter();
 document.getElementById('quick-donate').innerHTML = renderQuickDonateSection(
   "Your donation makes a differece!",
   "The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch your favourite animals — live, 24/7!"
 );
 
-const about = document.getElementById('about');
-about.classList.add('active');
+// const about = document.getElementById('about');
+// about.classList.add('active');
 
 
 // meet pets slider
@@ -20,10 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const rightBtn = document.querySelector('.slider.right');
   const gap = parseInt(getComputedStyle(container).gap) || 0;
 
-  function getColumnWidth() {
-    const columnWidth = container.clientWidth / 2.5; // 3 visible columns
-    return columnWidth + gap;
-  }
+ function getVisibleColumns() {
+  const width = window.innerWidth;
+  if (width <= 800) return 1.02;
+  if (width <= 1200) return 2;
+  return 2.6;
+}
+
+function getColumnWidth() {
+  const visibleCols = getVisibleColumns();
+  const columnWidth = container.clientWidth / visibleCols;
+  return columnWidth + gap;
+}
 
   rightBtn.addEventListener('click', () => {
     container.scrollBy({

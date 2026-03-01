@@ -6,12 +6,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../global.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../../components/header/style.css">
+    <link rel="stylesheet" href="../../components/footer/style.css">
     <link rel="stylesheet" href="../../components/quick-donate/style.css">
     <script type="module" src="./script.js"></script>
     <title>About Us</title>
 </head>
 <body>
-    <div id="header"></div>
+    <!-- <div id="header"></div> -->
     <main>
         <section class="main-intro">
             <div class="main-header">Watch your favorite animal online</div>
@@ -22,15 +24,31 @@
             </button>
         </section>
         <section class="how-it-works">
-            <div class="how-it-works-container">
+            <div class="how-it-works-container top">
+                <img 
+                    src="../../assets/icons/welcome.svg" alt="Welcome to online zoo image"
+                    class="screen-1200"
+                >
+                <img 
+                    src="../../assets/images/welcome-320.png" alt="Welcome to online zoo image"
+                    class="screen-320"
+                >
                 <div class="container-text">
                     <h2 class="container-text-header">Welcome to the Online Zoo!</h2>
                     <div class="container-text-main">On our website, using live webcams, fans of all ages can observe various animals. Among them, are Giant pandas, eagles, alligators, forest gorillas, African lions, and others. It is the whole natural world in real-time in front of our cameras. We hope you will enjoy watching closely and explore animals’ behavior and habitats! Note: animals are not always on view on cameras, so please check back if you don't see anything.</div>
                 </div>
                 <img src="../../assets/images/welcome.png" alt="Welcome to online zoo image">
             </div>
-            <div class="how-it-works-container">
+            <div class="how-it-works-container bottom">
                 <img src="../../assets/images/birds.png" alt="Birds image">
+                <img 
+                    src="../../assets/icons/birds.svg" alt="Birds image"
+                    class="screen-1200"
+                >
+                <img 
+                    src="../../assets/icons/birds-320.svg" alt="Birds image"
+                    class="screen-320"
+                >
                 <div class="container-text">
                     <div class="container-text-header">How we work</div>
                     <div class="container-text-main">Online Zoo is a nonprofit committed to inspiring awareness and preservation of nature and wild animals in our zoo and worldwide. Every day, our experts work to safeguard the health and wellness of the animals. To continue these efforts, we need your help. We're so grateful to our numerous supporters. All donations, large and small, go a long way to the conservation efforts of our pets.</div>
@@ -58,22 +76,20 @@
             </div>
             <div class="meet-pets-content">
                 <div class="meet-pets-container">
-                    <!-- <a href="#"> -->
-                        <div class="meet-pet-card">
-                            <div class="meet-pet-tag subheader-text">
-                                Lucas 
-                            </div>
-                            <img src="../../assets/icons/lucas.svg" alt="Panda image" class="meet-pet-image">
-                            <div class="meet-pet-info">
-                                <div class="meet-pet-name">Giant Panda</div>
-                                <div class="text">Native to central China, giant pandas have come to symbolize vulnerable species.</div>
-                                <button class="btn-text">
-                                    View live cam 
-                                    <img src="../../assets/icons/arrow-orange.svg" alt="Orange Arrow Icon">
-                                </button>
-                            </div>
+                    <div class="meet-pet-card">
+                        <div class="meet-pet-tag subheader-text">
+                            Lucas 
                         </div>
-                    <!-- </a> -->
+                        <img src="../../assets/icons/lucas.svg" alt="Panda image" class="meet-pet-image">
+                        <div class="meet-pet-info">
+                            <div class="meet-pet-name">Giant Panda</div>
+                            <div class="text">Native to central China, giant pandas have come to symbolize vulnerable species.</div>
+                            <button class="btn-text">
+                                View live cam 
+                                <img src="../../assets/icons/arrow-orange.svg" alt="Orange Arrow Icon">
+                            </button>
+                        </div>
+                    </div>
                     <div class="meet-pet-card">
                         <div class="meet-pet-tag subheader-text">
                             Sam & Lora 
@@ -234,7 +250,6 @@
                     </button>
                 </div>
             </div>
-                
         </section>
         <section class="what-users-think">
             <div class="what-users-think-container">
@@ -298,16 +313,34 @@
                         </button>
                     </div>
                 </div>
-            </div> 
-            <button class="btn-text">
+                <div class="users-think-card screen-320">
+                            <img src="../../assets/icons/quotation-marks.svg" alt="Quotation marks icon" class="quotation-marks">
+                            <div class="users-think-card-date subheader-text">New Jersey, June 2020</div>
+                            <div class="users-think-card-text text">I am writing to thank you for your mission is to bring people closer to nature! Like myself, children were very impressed by the opportunity to explore the life of incredible animals in real-time.</div>
+                            <div class="users-think-card-author btn-text">Karen Maithlan</div>
+                </div>
+                <div class="progress-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="btn-text screen-320">
                 Leave feedback
                 <div class="arrow-container">
                     <div class="arrow-line"></div>
                     <div class="arrow-right"></div>
                 </div>
+                </button>
+            </div> 
+            <button class="btn-text">
+                Leave feedback
+            <div class="arrow-container">
+                <div class="arrow-line"></div>
+                <div class="arrow-right"></div>
+            </div>
             </button>
         </section>
-        <section class="care">
+        <!-- <section class="care">
             <div class="h2-heading">Care for the animals you love</div>
             <div class="care-subheader subheader-text">You can help to look after the animals you love with your gift today
             </div>
@@ -377,7 +410,7 @@
                 src="../../assets/icons/touch-the-animal.svg" alt="Image of touching an animal on screen"
                 class="touch-the-animal"
             >
-        </section>
+        </section> -->
     </main>
     <div id="footer"></div>
 </body>
