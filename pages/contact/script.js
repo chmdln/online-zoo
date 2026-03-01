@@ -1,9 +1,9 @@
-import { renderHeader } from '../../components/header.js';
-import { renderFooter } from '../../components/footer.js';
+import { renderHeader } from '../../components/header/header.js';
+import { renderFooter } from '../../components/footer/footer.js';
 
 
 
 document.getElementById('header').innerHTML = renderHeader();
 document.getElementById('footer').innerHTML = renderFooter();
-// const contact = document.getElementById('contact');
-// contact.classList.add('active');
+const contact = document.getElementById('contact');
+contact.classList.add('active');
