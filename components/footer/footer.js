@@ -11,11 +11,12 @@ export function renderFooter() {
                     <img src="${BASE_PATH}/assets/images/yem-digital-logo.png" alt="Yem Digital logo icon">
                     <img src="${BASE_PATH}/assets/images/rs-school-js-logo-white.png" alt="RS School logo icon">
                 </div>
-                <div class="footer-nav-links btn-text">
-                    <div>About</div>
-                    <div>Map</div>
-                    <div>Zoos</div>
-                    <div>Contact Us</div>
+                <div class="footer-nav-links btn-text nav-menu">
+                    <a href="${BASE_PATH}/" id="about">
+                    About</a>
+                    <a href="${BASE_PATH}/pages/map/" id="map">Map</a>
+                    <a href="${BASE_PATH}/pages/zoos/" id="zoos">Zoos</a>
+                    <a href="${BASE_PATH}/pages/contact/" id="contact-us">Contact Us</a>
                 </div>
                 <button class="footer-btn btn-text">
                     Donate for volunteers

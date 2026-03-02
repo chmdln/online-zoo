@@ -6,7 +6,7 @@ footer {
     height: 329px;
     padding: 50px 260px; 
     background-color: var(--navy);
-    color: var(--white); 
+    color: var(--white) !important; 
 }
 
 .footer-top {
@@ -36,6 +36,14 @@ footer {
 
 .footer-top .footer-nav-links > div {
     cursor: pointer; 
+}
+
+.footer-nav-links.btn-text.nav-menu > a {
+    color: var(--white);  
+}
+
+.footer-nav-links.btn-text.nav-menu > a:hover {
+    color: var(--turq);  
 }
 
 .footer-top .footer-btn {

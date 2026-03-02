@@ -140,8 +140,15 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = `${BASE_PATH}/pages/zoos/index.html`;
     });
   })
-  
 
+  document.querySelectorAll('.care-pet-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const id = card.dataset.id ? card.dataset.id : 'panda';
+      localStorage.setItem('selectedPetId', id);
+      window.location.href = `${BASE_PATH}/pages/zoos/index.html`;
+    });
+  })
+  
   function getVisibleColumns() {
     const width = window.innerWidth;
     if (width <= 800) return 1.02;
