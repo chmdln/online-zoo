@@ -10,7 +10,7 @@ export function renderHeader() {
     return `
         <header>
             <h1><img 
-                src="../../assets/images/logo.png" 
+                src="${BASE_PATH}/assets/images/logo.png"
                 alt="logo"
                 class="logo-image"
             ></h1>
@@ -23,9 +23,9 @@ export function renderHeader() {
                     <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=44-9749&t=I2rApDlHU6JUq024-0" id="design">Design</a>
                 </div>
                 <div class="social-media">
-                    <img src="../../assets/images/youtube.png" alt="Youtube Logo">
-                    <img src="../../assets/images/instagram.png" alt="Instagram Logo">
-                    <img src="../../assets/images/facebook.png" alt="Facebook Logo">
+                    <img src="${BASE_PATH}/assets/images/youtube.png" alt="Youtube Logo">
+                    <img src="${BASE_PATH}/assets/images/instagram.png" alt="Instagram Logo">
+                    <img src="${BASE_PATH}/assets/images/facebook.png" alt="Facebook Logo">
                 </div>
             </div>
         </header>
