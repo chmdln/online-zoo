@@ -11,7 +11,8 @@ export const zooData = [
         cams: [
             {
                 id: 'cam-main',
-                src: '../../assets/icons/panda-youtube-main.svg'
+                src: '../../assets/icons/panda-youtube-main.svg',
+                link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s'
             },
             {
                 id: 'cam-1',
@@ -51,7 +52,8 @@ export const zooData = [
         cams: [
             {
                 id: 'cam-main',
-                src: '../../assets/icons/eagle-youtube-main.svg'
+                src: '../../assets/icons/eagle-youtube-main.svg',
+                link: 'https://www.youtube.com/watch?v=dUE_AMCliSU'
             },
             {
                 id: 'cam-1',
@@ -91,7 +93,8 @@ export const zooData = [
         cams: [
             {
                 id: 'cam-main',
-                src: '../../assets/icons/gorilla-youtube-main.svg'
+                src: '../../assets/icons/gorilla-youtube-main.svg',
+                link: 'https://www.youtube.com/watch?v=SOVaFcSATEc&pp=ygUcZ29yaWxsYXMgbmF0aW9uYWwgZ2VvZ3JhcGhpYw%3D%3D'
             },
             {
                 id: 'cam-1',
@@ -131,7 +134,8 @@ export const zooData = [
         cams: [
             {
                 id: 'cam-main',
-                src: '../../assets/icons/lemur-youtube-main.svg'
+                src: '../../assets/icons/lemur-youtube-main.svg',
+                link: 'https://www.youtube.com/watch?v=fW1ZQF1N6JE&pp=ygUZbGVtdXIgbmF0aW9uYWwgZ2VvZ3JhcGhpYw%3D%3D'
             },
             {
                 id: 'cam-1',
@@ -182,7 +186,9 @@ function renderPet(pet) {
                 </button>
             </div>
             <div class="live-cams-mid">
-                <img src=${pet.cams[0].src} alt="Youtube ${pet.id} image">
+                <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
+                    <img src=${pet.cams[0].src} alt="Youtube ${pet.id} image">
+                </a>
             </div>
             <div class="live-cams-bott">
                 <div class="live-cams-bott-txt">More live views</div>
@@ -194,21 +200,24 @@ function renderPet(pet) {
                     >
                     <div class="live-cams-viewport">
                         <div class="live-cams-track">
-                            <img src=${pet.cams[1].src} alt="Youtube preview of ${pet.id}">
-                            <img src=${pet.cams[2].src} alt="Youtube preview of ${pet.id}">
-                            <img src=${pet.cams[3].src} alt="Youtube preview of ${pet.id}">
-                            <img src="../../assets/icons/panda-youtube-cam-1.svg
-                            " alt="Youtube preview of panda">
-                            <img src="../../assets/icons/panda-youtube-cam-2.svg
-                            " alt="Youtube preview of panda">
-                            <img src="../../assets/icons/panda-youtube-cam-3.svg
-                            " alt="Youtube preview of panda">
-                            <img src="../../assets/icons/panda-youtube-cam-1.svg
-                            " alt="Youtube preview of panda">
-                            <img src="../../assets/icons/panda-youtube-cam-2.svg
-                            " alt="Youtube preview of panda">
-                            <img src="../../assets/icons/panda-youtube-cam-3.svg
-                            " alt="Youtube preview of panda">
+                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
+                                <img src=${pet.cams[1].src} alt="Youtube preview of ${pet.id}">
+                            </a>
+                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
+                                <img src=${pet.cams[2].src} alt="Youtube preview of ${pet.id}">
+                            </a>
+                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
+                                <img src=${pet.cams[3].src} alt="Youtube preview of ${pet.id}">
+                            </a>
+                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
+                                <img src=${pet.cams[1].src} alt="Youtube preview of ${pet.id}">
+                            </a>
+                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
+                                <img src=${pet.cams[2].src} alt="Youtube preview of ${pet.id}">
+                            </a>
+                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
+                                <img src=${pet.cams[3].src} alt="Youtube preview of ${pet.id}">
+                            </a>
                         </div>
                     </div>
                     <img 
@@ -425,7 +434,12 @@ function setupDonationPopup() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const storedPet = localStorage.getItem('selectedPetId') !== 'undefined' ? localStorage.getItem('selectedPetId') : 'panda';
+    const storedPet = (
+        localStorage.getItem('selectedPetId') !== 'undefined' && localStorage.getItem('selectedPetId')
+        ? localStorage.getItem('selectedPetId') 
+        : 'panda'
+    );
+    localStorage.removeItem('selectedPetId');
     renderZoosPage(zooData, storedPet);
 
     // default active sidebar icon
