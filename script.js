@@ -1,8 +1,8 @@
-import { renderHeader } from '../../components/header/header.js';
-import { renderFooter } from '../../components/footer/footer.js';
-import { renderSidebar } from '../../components/sidebar/sidebar.js';
-import { renderQuickDonateSection } from '../../components/quick-donate/quick-donate.js';
-import { renderDidYouKnowSection } from '../../components/did-you-know/did-you-know.js';
+import { renderHeader } from './components/header/header.js';
+import { renderFooter } from './components/footer/footer.js';
+import { renderSidebar } from './components/sidebar/sidebar.js';
+import { renderQuickDonateSection } from './components/quick-donate/quick-donate.js';
+import { renderDidYouKnowSection } from './components/did-you-know/did-you-know.js';
 
 const zooData = [
     {
