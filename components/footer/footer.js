@@ -1,11 +1,15 @@
 export function renderFooter() {
+    const BASE_PATH = window.location.hostname === 'localhost' 
+        ? '' 
+        : '/online-zoo';
+
     return `
         <footer>
             <div class="footer-top">
                 <div class="footer-logos">
-                    <img src="../../assets/images/zoo-logo-white.png" alt="Online Zoo logo icon">
-                    <img src="../../assets/images/yem-digital-logo.png" alt="Yem Digital logo icon">
-                    <img src="../../assets/images/rs-school-js-logo-white.png" alt="RS School logo icon">
+                    <img src="${BASE_PATH}/assets/images/zoo-logo-white.png" alt="Online Zoo logo icon">
+                    <img src="${BASE_PATH}/assets/images/yem-digital-logo.png" alt="Yem Digital logo icon">
+                    <img src="${BASE_PATH}/assets/images/rs-school-js-logo-white.png" alt="RS School logo icon">
                 </div>
                 <div class="footer-nav-links btn-text">
                     <div>About</div>
@@ -24,7 +28,7 @@ export function renderFooter() {
                     <div class="we-care-popup-overlay"></div>
                     <div class="we-care-popup-content">
                         <div class="close-btn">×</div>
-                        <img src="../../assets/icons/hand-and-paw.svg" alt="Hand and paw image">
+                        <img src="${BASE_PATH}/assets/icons/hand-and-paw.svg" alt="Hand and paw image">
                         <div class="we-care-popup-body">
                             <div class="h2-heading">Together we care, save and protect!</div>
                             <div class="we-care-subheader text">
