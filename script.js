@@ -1,5 +1,5 @@
-import { renderHeader } from './online-zoo/components/header/header.js';
-import { renderFooter } from './online-zoo/components/footer/footer.js';
+import { renderHeader } from './components/header/header.js';
+import { renderFooter } from './components/footer/footer.js';
 import { renderQuickDonateSection } from './online-zoo/components/quick-donate/quick-donate.js';
 
 document.getElementById('header').innerHTML = renderHeader();
