@@ -9,6 +9,7 @@
 <path d="M182.537 95.9018C182.537 95.9018 182.089 92.7673 180.707 91.3855C178.958 89.5745 176.996 89.5673 176.1 89.4582C169.663 89 160.007 89 160.007 89H159.985C159.985 89 150.33 89 143.893 89.4582C142.996 89.5673 141.034 89.5745 139.285 91.3855C137.904 92.7673 137.456 95.9018 137.456 95.9018C137.456 95.9018 137 99.5818 137 103.269V106.724C137 110.404 137.463 114.084 137.463 114.084C137.463 114.084 137.911 117.218 139.293 118.6C141.042 120.411 143.342 120.353 144.363 120.542C148.037 120.891 160 121 160 121C160 121 169.663 120.985 176.1 120.527C176.996 120.418 178.958 120.411 180.707 118.6C182.089 117.218 182.537 114.084 182.537 114.084C182.537 114.084 183 110.404 183 106.724V103.269C183 99.5818 182.537 95.9018 182.537 95.9018Z" fill="black" fill-opacity="0.7"/>
 <path d="M155.253 98.1128V110.898L167.679 104.527L155.253 98.1128Z" fill="#EAEAEA"/>
 </g>
+<rect x="1.5" y="1.5" width="317" height="206" rx="3.5" stroke="#F58021" stroke-width="3"/>
 <defs>
 <pattern id="pattern0_1_816" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_1_816" transform="matrix(0.000833333 0 0 0.00148325 0 -0.167464)"/>
@@ -16,9 +17,9 @@
 <pattern id="pattern1_1_816" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image1_1_816" transform="matrix(0.000258424 0 0 0.000385802 -0.000307909 0)"/>
 </pattern>
-<linearGradient id="paint0_linear_1_816" x1="160.125" y1="158.201" x2="159.956" y2="209" gradientUnits="userSpaceOnUse">
-<stop offset="0.421496" stop-opacity="0"/>
-<stop offset="1"/>
+<linearGradient id="paint0_linear_1_816" x1="6.74473" y1="6.38611" x2="15.2083" y2="75.804" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
 </linearGradient>
 <clipPath id="clip0_1_816">
 <rect width="320" height="209" rx="5" fill="white"/>

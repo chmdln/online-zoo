@@ -16,15 +16,15 @@ export const zooData = [
             },
             {
                 id: 'cam-1',
-                src: '../../assets/icons/panda-youtube-cam-1.svg'
+                src: ['../../assets/icons/panda-youtube-cam-1.svg', '../../assets/icons/panda-youtube-cam-1-active.svg']
             },
             {
                 id: 'cam-2',
-                src: '../../assets/icons/panda-youtube-cam-2.svg'
+                src: ['../../assets/icons/panda-youtube-cam-2.svg', '../../assets/icons/panda-youtube-cam-2-active.svg']
             },
             {
                 id: 'cam-3',
-                src: '../../assets/icons/panda-youtube-cam-3.svg'
+                src: ['../../assets/icons/panda-youtube-cam-3.svg', '../../assets/icons/panda-youtube-cam-3-active.svg']
             },
         ],
         donate: {
@@ -57,15 +57,15 @@ export const zooData = [
             },
             {
                 id: 'cam-1',
-                src: '../../assets/icons/eagle-youtube-cam-1.svg'
+                src: ['../../assets/icons/eagle-youtube-cam-1.svg', '../../assets/icons/eagle-youtube-cam-1-active.svg']
             },
             {
                 id: 'cam-2',
-                src: '../../assets/icons/eagle-youtube-cam-2.svg'
+                src: ['../../assets/icons/eagle-youtube-cam-2.svg', '../../assets/icons/eagle-youtube-cam-2-active.svg']
             },
             {
                 id: 'cam-3',
-                src: '../../assets/icons/eagle-youtube-cam-3.svg'
+                src: ['../../assets/icons/eagle-youtube-cam-3.svg', '../../assets/icons/eagle-youtube-cam-3-active.svg']
             },
         ], 
         donate: {
@@ -98,15 +98,15 @@ export const zooData = [
             },
             {
                 id: 'cam-1',
-                src: '../../assets/icons/gorilla-youtube-cam-1.svg'
+                src: ['../../assets/icons/gorilla-youtube-cam-1.svg', '../../assets/icons/gorilla-youtube-cam-1-active.svg']
             },
             {
                 id: 'cam-2',
-                src: '../../assets/icons/gorilla-youtube-cam-2.svg'
+                src: ['../../assets/icons/gorilla-youtube-cam-2.svg', '../../assets/icons/gorilla-youtube-cam-2-active.svg']
             },
             {
                 id: 'cam-3',
-                src: '../../assets/icons/gorilla-youtube-cam-3.svg'
+                src: ['../../assets/icons/gorilla-youtube-cam-3.svg', '../../assets/icons/gorilla-youtube-cam-3-active.svg']
             },
         ], 
         donate: {
@@ -139,15 +139,15 @@ export const zooData = [
             },
             {
                 id: 'cam-1',
-                src: '../../assets/icons/lemur-youtube-cam-1.svg'
+                src: ['../../assets/icons/lemur-youtube-cam-1.svg', '../../assets/icons/lemur-youtube-cam-1-active.svg']
             },
             {
                 id: 'cam-2',
-                src: '../../assets/icons/lemur-youtube-cam-2.svg'
+                src: ['../../assets/icons/lemur-youtube-cam-2.svg', '../../assets/icons/lemur-youtube-cam-2-active.svg']
             },
             {
                 id: 'cam-3',
-                src: '../../assets/icons/lemur-youtube-cam-3.svg'
+                src: ['../../assets/icons/lemur-youtube-cam-3.svg', '../../assets/icons/lemur-youtube-cam-3-active.svg']
             },
         ], 
         donate: {
@@ -201,22 +201,58 @@ function renderPet(pet) {
                     <div class="live-cams-viewport">
                         <div class="live-cams-track">
                             <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img src=${pet.cams[1].src} alt="Youtube preview of ${pet.id}">
+                                <img 
+                                    src="${pet.cams[1].src[0]}"
+                                    data-default="${pet.cams[1].src[0]}"
+                                    data-active="${pet.cams[1].src[1]}"
+                                    data-id="${pet.id}"
+                                    alt="Youtube preview of ${pet.id}"
+                                >
                             </a>
                             <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img src=${pet.cams[2].src} alt="Youtube preview of ${pet.id}">
+                                <img 
+                                    src="${pet.cams[2].src[0]}"
+                                    data-default="${pet.cams[2].src[0]}"
+                                    data-active="${pet.cams[2].src[1]}"
+                                    data-id="${pet.id}"
+                                    alt="Youtube preview of ${pet.id}"
+                                >
                             </a>
                             <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img src=${pet.cams[3].src} alt="Youtube preview of ${pet.id}">
+                                <img 
+                                    src="${pet.cams[3].src[0]}"
+                                    data-default="${pet.cams[3].src[0]}"
+                                    data-active="${pet.cams[3].src[1]}"
+                                    data-id="${pet.id}"
+                                    alt="Youtube preview of ${pet.id}"
+                                >
                             </a>
                             <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img src=${pet.cams[1].src} alt="Youtube preview of ${pet.id}">
+                                <img 
+                                    src="${pet.cams[1].src[0]}"
+                                    data-default="${pet.cams[1].src[0]}"
+                                    data-active="${pet.cams[1].src[1]}"
+                                    data-id="${pet.id}"
+                                    alt="Youtube preview of ${pet.id}"
+                                >
                             </a>
                             <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img src=${pet.cams[2].src} alt="Youtube preview of ${pet.id}">
+                                <img 
+                                    src="${pet.cams[2].src[0]}"
+                                    data-default="${pet.cams[2].src[0]}"
+                                    data-active="${pet.cams[2].src[1]}"
+                                    data-id="${pet.id}"
+                                    alt="Youtube preview of ${pet.id}"
+                                >
                             </a>
                             <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img src=${pet.cams[3].src} alt="Youtube preview of ${pet.id}">
+                                <img 
+                                    src="${pet.cams[3].src[0]}"
+                                    data-default="${pet.cams[3].src[0]}"
+                                    data-active="${pet.cams[3].src[1]}"
+                                    data-id="${pet.id}"
+                                    alt="Youtube preview of ${pet.id}"
+                                >
                             </a>
                         </div>
                     </div>
@@ -272,13 +308,23 @@ function renderZoosPage(data, pet) {
     
     data.forEach(zooPet => {
         if (zooPet.id === pet) {
+            // render pet page 
             liveCams.innerHTML = renderPet(zooPet);
+            // render quick donate
             donate.innerHTML = renderQuickDonateSection(
                 zooPet.donate.header, zooPet.donate.subheader
             );
+            // render did you know
             didYouKnow.innerHTML = renderDidYouKnowSection(zooPet);
-            setupLiveCamsCarousel();
             setupDonationPopup(); 
+            setupLiveCamsCarousel();
+
+            const cams = document.querySelectorAll('.live-cams-track img');
+            cams.forEach(cam => {
+                cam.addEventListener('click', () => {
+                    setActiveCam(cam);
+                });
+            })
         }
     });
 }
@@ -433,6 +479,14 @@ function setupDonationPopup() {
     });
 }
 
+function setActiveCam(clickedCam) {
+    const cams = document.querySelectorAll('.live-cams-track img');
+    cams.forEach((cam) => {
+        cam.src = cam.dataset.default;
+    });
+    clickedCam.src = clickedCam.dataset.active;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const storedPet = (
         localStorage.getItem('selectedPetId') !== 'undefined' && localStorage.getItem('selectedPetId')
@@ -441,6 +495,14 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     localStorage.removeItem('selectedPetId');
     renderZoosPage(zooData, storedPet);
+
+    // listener for live cams 
+    const cams = document.querySelectorAll('.live-cams-track img');
+    cams.forEach((cam) => {
+        cam.addEventListener('click', () => {
+            setActiveCam(cam);
+        });
+    });
 
     // default active sidebar icon
     const pandas = document.querySelectorAll('.sidebar-item[data-pet="panda"]');
@@ -495,5 +557,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebarOpen = !sidebarOpen;
         });
     });
+
 });
    
