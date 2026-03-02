@@ -4,7 +4,7 @@ export function renderDidYouKnowSection(obj) {
         <section class="did-you-know">
             <div class="did-you-know-top">
                 <div class="content">
-                    <div class="content-header">Did you know?</div>
+                    <h2 class="content-header">Did you know?</h2>
                     <div class="content-text subheader-text">
                         ${pet.header}
                     </div>
@@ -42,10 +42,10 @@ export function renderDidYouKnowSection(obj) {
                             <span class="range-value text">${pet.facts.range}</span>
                             <button class="view-live-btn btn-text">
                                 View live
-                                <div class="arrow-container">
-                                    <div class="arrow-line"></div>
-                                    <div class="arrow-right"></div>
-                                </div>
+                                <span class="arrow-container">
+                                    <span class="arrow-line"></span>
+                                    <span class="arrow-right"></span>
+                                </span>
                             </button>
                         </div>
                     </div>

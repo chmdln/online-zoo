@@ -19,10 +19,10 @@ export function renderFooter() {
                 </div>
                 <button class="footer-btn btn-text">
                     Donate for volunteers
-                    <div class="arrow-container">
-                        <div class="arrow-line"></div>
-                        <div class="arrow-right"></div>
-                    </div>
+                    <span class="arrow-container">
+                        <span class="arrow-line"></span>
+                        <span class="arrow-right"></span>
+                    </span>
                 </button>
                 <div class="we-care-popup" id="weCarePopup">
                     <div class="we-care-popup-overlay"></div>
@@ -56,13 +56,13 @@ export function renderFooter() {
                 </div>
                 <div class="footer-bottom-right">
                     <a href="https://www.youtube.com/@RSSchool" target="_blank">
-                        <img src="../../assets/images/youtube.png" alt="Youtube logo icon">
+                        <img src="${BASE_PATH}/assets/images/youtube.png" alt="Youtube logo icon">
                     </a>
                     <a href="https://www.instagram.com/rsschool_en/" target="_blank">
-                        <img src="../../assets/images/instagram.png" alt="Instagram logo icon">
+                        <img src="${BASE_PATH}/assets/images/instagram.png" alt="Instagram logo icon">
                     </a>
                     <a href="https://www.facebook.com/rsschoolEN/" target="_blank">
-                        <img src="../../assets/images/facebook.png" alt="Facebook logo icon">
+                        <img src="${BASE_PATH}/assets/images/facebook.png" alt="Facebook logo icon">
                     </a>
                 </div>
                 <div class="footer-separator screen-320"></div>

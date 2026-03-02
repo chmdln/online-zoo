@@ -2,7 +2,7 @@ export function renderQuickDonateSection(header, subheader) {
     return `
         <section class="donate">
             <div class="donate-left">
-                <div class="donate-left-header">${header}</div>
+                <h2 class="donate-left-header">${header}</h2>
                 <div class="donate-left-content">${subheader}</div>
             </div>
             <div class="donate-right">
@@ -84,7 +84,10 @@ export function renderQuickDonateSection(header, subheader) {
                                 </div>
                                 <button class="next-btn">
                                     Next
-                                    <img src="../../assets/icons/arrow.svg">
+                                    <img 
+                                        src="../../assets/icons/arrow.svg" 
+                                        alt="Arrow icon"
+                                    >
                                 </button>
                             </div>
                         </div>
@@ -99,7 +102,7 @@ export function renderQuickDonateSection(header, subheader) {
                                     placeholder="First and last name"
                                     class="input-primary name-input"
                                     required
-                                />
+                                >
                                 <div class="required-label email-label">* Your Email Address:</div>
                                 <input 
                                     type="email"
@@ -108,7 +111,7 @@ export function renderQuickDonateSection(header, subheader) {
                                     class="input-primary email-input"
                                     autocomplete="email"
                                     required
-                                />
+                                >
                                 <div class="popup-disclaimer">
                                     You will receive emails from the Online Zoo, including updates and news on the latest discoveries and translations. You can unsubscribe at any time.
                                 </div>
@@ -124,7 +127,7 @@ export function renderQuickDonateSection(header, subheader) {
                                 </div>
                                 <button class="next-btn">
                                     Next
-                                    <img src="../../assets/icons/arrow.svg">
+                                    <img src="../../assets/icons/arrow.svg" alt="Arrow icon">
                                 </button>
                             </div>
                         </div>
@@ -140,9 +143,8 @@ export function renderQuickDonateSection(header, subheader) {
                                             name="cc-number"
                                             placeholder='1234 1234 1234 1234'  
                                             class="input-primary"
-                                            autocomplete="cc-number"
                                             required
-                                        />
+                                        >
                                     </div>
                                     <div class="cvv-number-container">
                                         <div class="required-label">* CVV Number:</div>
@@ -156,7 +158,7 @@ export function renderQuickDonateSection(header, subheader) {
                                             autocomplete="cc-csc"
                                             maxlength="4"
                                             required
-                                        />
+                                        >
                                     </div>
                                 </div>
                                 <div class="card-expiry-container">
@@ -170,7 +172,7 @@ export function renderQuickDonateSection(header, subheader) {
                                                 class="input-primary"
                                                 autocomplete="cc-exp-month" 
                                                 required
-                                            />
+                                            >
                                             <div class="month arrow-wrapper">
                                                 <div class="arrow"></div>
                                             </div>
@@ -190,7 +192,7 @@ export function renderQuickDonateSection(header, subheader) {
                                             placeholder="Year" class="input-primary" 
                                             autocomplete="cc-exp-year" 
                                             required
-                                        />
+                                        >
                                         <div class="year arrow-wrapper">
                                             <div class="arrow"></div>
                                         </div>
@@ -214,14 +216,14 @@ export function renderQuickDonateSection(header, subheader) {
                                 </div>
                                 <button class="btn-primary complete-donation-btn">
                                     Complete donation
-                                    <img src="../../assets/icons/arrow.svg">
+                                    <img src="../../assets/icons/arrow.svg" alt="Arrow icon">
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </template>
+        </section>
     `; 
 }
 
