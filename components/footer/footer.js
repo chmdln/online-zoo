@@ -1,5 +1,5 @@
 export function renderFooter() {
-    const BASE_PATH = window.location.hostname === 'localhost' 
+    const BASE_PATH = window.location.hostname === '127.0.0.1' 
         ? '' 
         : '/online-zoo';
 

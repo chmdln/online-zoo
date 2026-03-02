@@ -1,5 +1,5 @@
 export function renderHeader() {
-    const BASE_PATH = window.location.hostname === 'localhost' 
+    const BASE_PATH = window.location.hostname === '127.0.0.1' 
         ? '' 
         : '/online-zoo';
 
@@ -19,9 +19,15 @@ export function renderHeader() {
                     <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=44-9749&t=I2rApDlHU6JUq024-0" id="design">Design</a>
                 </div>
                 <div class="social-media">
-                    <img src="${BASE_PATH}/assets/images/youtube.png" alt="Youtube Logo">
-                    <img src="${BASE_PATH}/assets/images/instagram.png" alt="Instagram Logo">
-                    <img src="${BASE_PATH}/assets/images/facebook.png" alt="Facebook Logo">
+                    <a href="https://www.youtube.com/@RSSchool" target="_blank">
+                        <img src="${BASE_PATH}/assets/images/youtube.png" alt="Youtube Logo">
+                    </a>
+                    <a href="https://www.instagram.com/rsschool_en/" target="_blank">
+                        <img src="${BASE_PATH}/assets/images/instagram.png" alt="Instagram Logo">
+                    </a>
+                    <a href="https://www.facebook.com/rsschoolEN/" target="_blank">
+                        <img src="${BASE_PATH}/assets/images/facebook.png" alt="Facebook Logo">
+                    </a>
                 </div>
             </div>
         </header>

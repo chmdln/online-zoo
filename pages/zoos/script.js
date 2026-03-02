@@ -4,7 +4,7 @@ import { renderSidebar } from '../../components/sidebar/sidebar.js';
 import { renderQuickDonateSection } from '../../components/quick-donate/quick-donate.js';
 import { renderDidYouKnowSection } from '../../components/did-you-know/did-you-know.js';
 
-const zooData = [
+export const zooData = [
     {
         id: 'panda', 
         header: 'Live panda cams',
@@ -425,7 +425,9 @@ function setupDonationPopup() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderZoosPage(zooData, 'panda');
+    const storedPet = localStorage.getItem('selectedPetId') !== 'undefined' ? localStorage.getItem('selectedPetId') : 'panda';
+    renderZoosPage(zooData, storedPet);
+
     // default active sidebar icon
     const pandas = document.querySelectorAll('.sidebar-item[data-pet="panda"]');
     pandas.forEach(panda => panda.classList.add('active'));
