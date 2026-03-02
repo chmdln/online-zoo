@@ -1,4 +1,8 @@
 export function renderQuickDonateSection(header, subheader) {
+    const BASE_PATH = window.location.hostname === '127.0.0.1' 
+        ? '' 
+        : '/online-zoo';
+
     return `
         <section class="donate">
             <div class="donate-left">
@@ -12,7 +16,7 @@ export function renderQuickDonateSection(header, subheader) {
                         $ Donation amount 
                     </div>
                     <div class="donate-right-btn-img">
-                        <img src="../../assets/icons/arrow.svg" alt="Arrow icon">
+                        <img src="${BASE_PATH}/assets/icons/arrow.svg" alt="Arrow icon">
                     </div>
                 </div>
             </div>
@@ -85,7 +89,7 @@ export function renderQuickDonateSection(header, subheader) {
                                 <button class="next-btn">
                                     Next
                                     <img 
-                                        src="../../assets/icons/arrow.svg" 
+                                        src="${BASE_PATH}/assets/icons/arrow.svg" 
                                         alt="Arrow icon"
                                     >
                                 </button>
@@ -127,7 +131,7 @@ export function renderQuickDonateSection(header, subheader) {
                                 </div>
                                 <button class="next-btn">
                                     Next
-                                    <img src="../../assets/icons/arrow.svg" alt="Arrow icon">
+                                    <img src="${BASE_PATH}/assets/icons/arrow.svg" alt="Arrow icon">
                                 </button>
                             </div>
                         </div>
@@ -216,7 +220,7 @@ export function renderQuickDonateSection(header, subheader) {
                                 </div>
                                 <button class="btn-primary complete-donation-btn">
                                     Complete donation
-                                    <img src="../../assets/icons/arrow.svg" alt="Arrow icon">
+                                    <img src="${BASE_PATH}/assets/icons/arrow.svg" alt="Arrow icon">
                                 </button>
                             </div>
                         </div>
