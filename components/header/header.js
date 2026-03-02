@@ -1,7 +1,5 @@
-const scriptSrc = document.currentScript?.src || '';
-const BASE_PATH = scriptSrc.substring(0, scriptSrc.indexOf('/components/header/header.js'));
-
 export function renderHeader() {
+    const BASE_PATH = 'https://chmdln.github.io/online-zoo'; 
     const paths = [
         `${BASE_PATH}/index.html`,
         `${BASE_PATH}/pages/map/index.html`,
