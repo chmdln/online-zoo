@@ -30,6 +30,18 @@ export function renderHeader() {
                     </a>
                 </div>
             </div>
+            <div class="burger-menu">
+                <div class="burger-close-btn">&times</div>
+                <a href="${BASE_PATH}/" id="about">About</a>
+                <a href="${BASE_PATH}/pages/map/" id="map">Map</a>
+                <a href="${BASE_PATH}/pages/zoos/" id="zoos">Zoos</a>
+                <a href="${BASE_PATH}/pages/contact/" id="contact-us">Contact Us</a>
+                <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=44-9749&t=I2rApDlHU6JUq024-0" id="design">Design</a>
+            </div>
+            <img 
+                src="../../assets/icons/burger.svg" alt="Hamburger icon"
+                class="hamburger-icon"
+            >
         </header>
     `; 
 }
