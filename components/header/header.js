@@ -39,7 +39,7 @@ export function renderHeader() {
                 <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=44-9749&t=I2rApDlHU6JUq024-0" id="design">Design</a>
             </div>
             <img 
-                src="../../assets/icons/burger.svg" alt="Hamburger icon"
+                src="${BASE_PATH}/assets/icons/burger.svg" alt="Hamburger icon"
                 class="hamburger-icon"
             >
         </header>
