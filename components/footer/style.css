@@ -301,6 +301,10 @@ footer {
 
 
 @media screen and (max-width: 640px) {
+    #footer {
+        margin-top: auto;
+    }
+
     .footer-top {
         flex-direction: column;
         align-items: center;
@@ -315,7 +319,12 @@ footer {
     .footer-bottom .footer-bottom-left {
         width: 400px; 
         justify-content: center;
-        column-gap: 10px; 
+        /* column-gap: 10px;  */
+    }
+
+    .footer-nav-links.footer-nav-links.btn-text.nav-menu {
+        width: 300px; 
+        font-size: 12px; 
     }
 }
 

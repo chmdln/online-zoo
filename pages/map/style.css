@@ -5,6 +5,7 @@
     align-items: center;
     padding-left: 260px; 
     padding-right: 260px;
+    margin-bottom: 200px;
 }
 
 header#map.active {
@@ -85,43 +86,43 @@ header#map.active {
     }
 
     .map-container .location-icon.eagle-icon {
-        top: 44%;
-        left: 10.5%; 
+        top: 41%;
+        left: 9.5%; 
     }
 
     .map-container .location-icon.alligator-icon {
-        top: 46%;
-        left: 20%; 
+        top: 44%;
+        left: 19.5%; 
     }
 
     .map-container .location-icon.lion-icon {
-        top: 49%;
-        left: 40%; 
+        top: 46%;
+        left: 39.5%; 
     }
 
     .map-container .location-icon.gorilla-icon {
-        top: 52.5%;
-        left: 48.5%; 
+        top: 50%;
+        left: 47.5%; 
     }
 
     .map-container .location-icon.lemur-icon {
-        top: 67%;
-        left: 55.5%; 
+        top: 64%;
+        left: 55%; 
     }
 
     .map-container .location-icon.panda-icon {
-        top: 35%;
+        top: 34%;
         left: 71%; 
     }
 
     .map-container .location-icon.tiger-icon {
-        top: 57.5%;
+        top: 56%;
         left: 71%; 
     }
 
     .map-container .location-icon.koala-icon {
-        top: 69%;
-        left: 81%; 
+        top: 67%;
+        left: 79%; 
     }
 }
 
@@ -153,4 +154,179 @@ header#map.active {
     .map-container img {
         width: 768px;    
     }
+
+    .map-container .location-icon.eagle-icon {
+        top: 36%;
+        left: 8%; 
+    }
+
+    .map-container .location-icon.alligator-icon {
+        top: 38.5%;
+        left: 18%; 
+    }
+
+    .map-container .location-icon.lion-icon {
+        top: 41.5%;
+        left: 37.5%; 
+    }
+
+    .map-container .location-icon.gorilla-icon {
+        top: 45%;
+        left: 46%; 
+    }
+
+    .map-container .location-icon.lemur-icon {
+        top: 59%;
+        left: 53.5%; 
+    }
+
+    .map-container .location-icon.panda-icon {
+        top: 28%;
+        left: 69%; 
+    }
+
+    .map-container .location-icon.tiger-icon {
+        top: 51%;
+        left: 69%; 
+    }
+
+    .map-container .location-icon.koala-icon {
+        top: 62%;
+        left: 78%; 
+    }
 }
+
+@media screen and (max-width: 768px) {
+    .map {
+        padding-left: 10px; 
+        padding-right: 10px;
+    }
+
+    .map .h2-heading {
+        font-family: Montserrat;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 100%;
+    }
+
+    .map-container {
+        width: 640px;
+    }
+
+    .map-container img {
+        width: 640px;
+    }
+
+    .map-container .location-icon {
+        width: 60px; 
+    }
+
+    .map-container .location-icon.eagle-icon {
+        top: 41.5%;
+        left: 10%; 
+    }
+
+    .map-container .location-icon.alligator-icon {
+        top: 43%;
+        left: 19.5%; 
+    }
+
+    .map-container .location-icon.lion-icon {
+        top: 46%;
+        left: 40%; 
+    }
+
+    .map-container .location-icon.gorilla-icon {
+        top: 48.5%;
+        left: 48%; 
+    }
+
+    .map-container .location-icon.lemur-icon {
+        top: 63%;
+        left: 55.5%; 
+    }
+
+    .map-container .location-icon.panda-icon {
+        top: 33.5%;
+        left: 70.5%; 
+    }
+
+    .map-container .location-icon.tiger-icon {
+        top: 55%;
+        left: 70.5%; 
+    }
+
+    .map-container .location-icon.koala-icon {
+        top: 65%;
+        left: 79%; 
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .map {
+        padding-left: 5px; 
+        padding-right: 5px;
+        margin-bottom: 150px;  
+    }
+
+    .map .h2-heading {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 130%;
+        width: 300px; 
+    }
+
+    .map-container {
+        width: 320px;
+    }
+
+    .map-container img {
+        width: 320px;
+    }
+
+    .map-container .location-icon {
+        width: 35px; 
+        height: 50px; 
+    }
+
+    .map-container .location-icon.eagle-icon {
+        top: 38%;
+        left: 9%; 
+    }
+
+    .map-container .location-icon.alligator-icon {
+        top: 39%;
+        left: 18.5%; 
+    }
+
+    .map-container .location-icon.lion-icon {
+        top: 43%;
+        left: 39%; 
+    }
+
+    .map-container .location-icon.gorilla-icon {
+        top: 46.5%;
+        left: 47%; 
+    }
+
+    .map-container .location-icon.lemur-icon {
+        top: 61%;
+        left: 54.5%; 
+    }
+
+    .map-container .location-icon.panda-icon {
+        top: 31%;
+        left: 70.5%; 
+    }
+
+    .map-container .location-icon.tiger-icon {
+        top: 52.5%;
+        left: 70.5%; 
+    }
+
+    .map-container .location-icon.koala-icon {
+        top: 62%;
+        left: 79%; 
+    }
+}
+
