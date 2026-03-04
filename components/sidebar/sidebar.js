@@ -15,35 +15,51 @@ export function renderSidebar() {
                 <div class="sidebar-track">
                     <div class="sidebar-item" data-pet="panda">
                         <img src="../../assets/icons/panda-sidebar.svg" alt="Panda icon" class="default">
-                        <img src="../../assets/icons/panda-sidebar-active.svg" alt="Panda icon" class="active">
+                        <img src="../../assets/icons/panda-sidebar-active.svg" alt="Panda icon" class="default-active">
+                        <img src="../../assets/icons/panda-sidebar-exp.svg" alt="Panda icon" class="default-small">
+                        <img src="../../assets/icons/panda-sidebar-exp-active.svg" alt="Panda icon" class="default-small-active">
                     </div>
                     <div class="sidebar-item" data-pet="eagle">
                         <img src="../../assets/icons/eagle-sidebar.svg" alt="Eagle icon" class="default">
-                        <img src="../../assets/icons/eagle-sidebar-active.svg" alt="Eagle icon" class="active">
+                        <img src="../../assets/icons/eagle-sidebar-active.svg" alt="Eagle icon" class="default-active">
+                        <img src="../../assets/icons/eagle-sidebar-exp.svg" alt="Eagle icon" class="default-small">
+                        <img src="../../assets/icons/eagle-sidebar-exp-active.svg" alt="Eagle icon" class="default-small-active">
                     </div>
                     <div class="sidebar-item" data-pet="gorilla">
                         <img src="../../assets/icons/gorilla-sidebar.svg" alt="Gorilla icon" class="default">
-                        <img src="../../assets/icons/gorilla-sidebar-active.svg" alt="Gorilla icon" class="active">
+                        <img src="../../assets/icons/gorilla-sidebar-active.svg" alt="Gorilla icon" class="default-active">
+                        <img src="../../assets/icons/gorilla-sidebar-exp.svg" alt="Gorilla icon" class="default-small">
+                        <img src="../../assets/icons/gorilla-sidebar-exp-active.svg" alt="Gorilla icon" class="default-small-active">
                     </div>
                     <div class="sidebar-item" data-pet="lemur">
                         <img src="../../assets/icons/lemur-sidebar.svg" alt="Lemur icon" class="default">
-                        <img src="../../assets/icons/lemur-sidebar-active.svg" alt="Lemur icon" class="active">
+                        <img src="../../assets/icons/lemur-sidebar-active.svg" alt="Lemur icon" class="default-active">
+                        <img src="../../assets/icons/lemur-sidebar-exp.svg" alt="Lemur icon" class="default-small">
+                        <img src="../../assets/icons/lemur-sidebar-exp-active.svg" alt="Lemur icon" class="default-small-active">
                     </div> 
                     <div class="sidebar-item" data-pet="koala">
                         <img src="../../assets/icons/koala-sidebar.svg" alt="Koala icon" class="default">
-                        <img src="../../assets/icons/koala-sidebar-active.svg" alt="Koala icon" class="active">
+                        <img src="../../assets/icons/koala-sidebar-active.svg" alt="Koala icon" class="default-active">
+                        <img src="../../assets/icons/koala-sidebar-exp.svg" alt="Koala icon" class="default-small">
+                        <img src="../../assets/icons/koala-sidebar-exp-active.svg" alt="Koala icon" class="default-small-active">
                     </div>
                     <div class="sidebar-item" data-pet="lion">
                         <img src="../../assets/icons/lion-sidebar.svg" alt="Lion icon" class="default">
-                        <img src="../../assets/icons/lion-sidebar-active.svg" alt="Lion icon" class="active">
+                        <img src="../../assets/icons/lion-sidebar-active.svg" alt="Lion icon" class="default-active">
+                        <img src="../../assets/icons/lion-sidebar-exp.svg" alt="Lion icon" class="default-small">
+                        <img src="../../assets/icons/lion-sidebar-exp-active.svg" alt="Lion icon" class="default-small-active">
                     </div> 
                     <div class="sidebar-item" data-pet="alligator">
                         <img src="../../assets/icons/alligator-sidebar.svg" alt="Alligator icon" class="default">
-                        <img src="../../assets/icons/alligator-sidebar-active.svg" alt="Alligator icon" class="active">
+                        <img src="../../assets/icons/alligator-sidebar-active.svg" alt="Alligator icon" class="default-active">
+                        <img src="../../assets/icons/alligator-sidebar-exp.svg" alt="Alligator icon" class="default-small">
+                        <img src="../../assets/icons/alligator-sidebar-exp-active.svg" alt="Alligator icon" class="default-small-active">
                     </div>
                     <div class="sidebar-item" data-pet="tiger">
                         <img src="../../assets/icons/tiger-sidebar.svg" alt="Tiger icon" class="default">
-                        <img src="../../assets/icons/tiger-sidebar-active.svg" alt="Tiger icon" class="active">
+                        <img src="../../assets/icons/tiger-sidebar-active.svg" alt="Tiger icon" class="default-active">
+                        <img src="../../assets/icons/tiger-sidebar-exp.svg" alt="Tiger icon" class="default-small">
+                        <img src="../../assets/icons/tiger-sidebar-exp-active.svg" alt="Tiger icon" class="default-small-active">
                     </div>
                 </div>
             </div>

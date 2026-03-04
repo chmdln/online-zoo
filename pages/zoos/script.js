@@ -504,17 +504,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    
     // default active sidebar icon
+    function handleScreenChange(e) {
+        const items = document.querySelectorAll('.sidebar-item');
+        items.forEach(item => {
+            if (e.matches) {
+                item.classList.add('small');   // 1420px and below
+            } else {
+                item.classList.remove('small'); // above 1420px
+            }
+        });
+    }
+
     const pandas = document.querySelectorAll('.sidebar-item[data-pet="panda"]');
     pandas.forEach(panda => panda.classList.add('active'));
 
     sidebar.addEventListener('click', (e) => {
         const petItem = e.target.closest('.sidebar-item');
-        const items = sidebar.querySelectorAll('.sidebar-item'); 
+        const items = sidebar.querySelectorAll('.sidebar-item');
         if (petItem) {
             const petId = petItem.dataset.pet;
             renderZoosPage(zooData, petId);
-            // Update active sidebar icon
+
             items.forEach(item => {
                 if (item.dataset.pet === petId) {
                     item.classList.add('active');
@@ -522,8 +534,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.classList.remove('active');
                 }
             });
-            
-        };
+        }
     });
 
     let sidebarOpen = false;

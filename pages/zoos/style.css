@@ -114,3 +114,73 @@
 .live-cams-arrow {
     cursor: pointer; 
 }
+
+@media screen and (max-width: 1670px) {
+    .live-cams-top, 
+    .live-cams-mid, 
+    .live-cams-bott {
+        width: 1200px; 
+    }
+
+    .live-cams-mid img {
+        width: 1200px; 
+    }
+
+    .live-cams-content {
+        margin-left: 100px; 
+    }
+}
+
+@media screen and (max-width: 1550px) {
+    .live-cams .h2-heading {
+        font-weight: 600;
+        font-size: 54px;
+        line-height: 100%;
+        letter-spacing: 0; 
+    }
+
+    .live-cams-top, 
+    .live-cams-mid, 
+    .live-cams-bott {
+        width: 1025px; 
+    }
+
+    .live-cams-mid img {
+        width: 1025px; 
+    }
+
+    .live-cams-carousel {
+        width: 1025px; 
+    }
+
+    .live-cams-content {
+        margin-left: 40px; 
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .live-cams .h2-heading {
+        font-weight: 600;
+        font-size: 54px;
+        line-height: 100%;
+        letter-spacing: 0; 
+    }
+
+    .live-cams-top, 
+    .live-cams-mid, 
+    .live-cams-bott {
+        width: 1025px; 
+    }
+
+    .live-cams-mid img {
+        width: 1025px; 
+    }
+
+    .live-cams-carousel {
+        width: 1025px; 
+    }
+
+    .live-cams-content {
+        margin-left: 40px; 
+    }
+}
