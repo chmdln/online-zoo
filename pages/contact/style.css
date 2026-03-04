@@ -38,7 +38,6 @@
 
 .get-in-touch-container .right-section .contact-form input {
     height: 60px; 
-    height: 60;
     border: 1px solid var(--black);
     border-radius: 5px;
     padding: 20px; 
@@ -89,4 +88,81 @@
     transition: .3s ease-in-out;
 }
 
+@media screen and (max-width: 1450px) {
+    .contact-us {
+        padding-left: 100px; 
+        padding-right: 100px;
+    }
 
+    .get-in-touch-container {
+        width: 100%; 
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 1399px) {
+    .contact-us {
+        width: 100%; 
+    }
+
+    .contact-us > img {
+        width: 100%;  
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    .contact-us {
+        padding-left: 0px; 
+        padding-right: 0px; 
+    }
+
+    .get-in-touch-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;  
+        padding-left: 10px;
+        padding-right: 10px; 
+    }
+
+    .get-in-touch-container .h2-heading,
+    .get-in-touch-container .info.text {
+        text-align: center; 
+    }
+
+    .get-in-touch-container .right-section {
+        margin-top: 40px;  
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    .get-in-touch-container .right-section,
+    .get-in-touch-container .right-section .contact-form textarea {
+        width: 630px;  
+    }
+
+    .get-in-touch-container .right-section .contact-form button {
+        align-self: center; 
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .get-in-touch-container .h2-heading {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 100%;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+     .get-in-touch-container .left-section,
+     .get-in-touch-container .right-section,
+     .get-in-touch-container .right-section .contact-form textarea {
+        width: 100%; 
+    }
+
+    .get-in-touch-container .right-section .contact-form button {
+        width: 300px; 
+    }
+}
