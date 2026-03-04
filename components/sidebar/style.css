@@ -1,0 +1,196 @@
+#sidebar {
+    width: 220px;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+}
+
+.sidebar-collapsed {
+    width: 220px;
+    height: 846px;
+    display: flex;
+    flex-direction: column;
+    background: var(--navy);
+    color: var(--white); 
+}
+
+.sidebar-expanded {
+    width: 300px; 
+    height: 846px;
+    flex-direction: column;
+    background: var(--navy);
+    color: var(--white); 
+    display: none; 
+}
+
+.sidebar-viewport {
+    flex: 1; 
+    height: 100%; 
+    overflow: hidden; 
+}
+
+.sidebar-track {
+    transition: transform 0.3s ease;
+}
+
+.sidebar-expanded.active {
+    display: flex; 
+}
+
+.sidebar-top {
+    height: 84.6px; 
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center; 
+    padding: 30px; 
+    position: relative; 
+    border-top: none; 
+}
+
+.live-badge-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center;  
+    gap: 10px; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    background: var(--orange);
+    padding: 6px 40px; 
+    border-bottom-right-radius: 5px;
+}
+
+.sidebar-top .live-badge-container div {
+    text-transform: uppercase;
+    border-color: var(--orange); 
+}
+
+.sidebar-top .live-badge-container img {
+    width: 20px; 
+    height: 20px; 
+}
+
+.sidebar-top .double-arrow-container {
+    display: flex; 
+    gap: 5px; 
+    cursor: pointer; 
+}
+
+.sidebar-top .arrow-right {
+    border-right: 1px solid var(--white); 
+    border-bottom: 1px solid var(--white); 
+}
+
+.sidebar-top .double-arrow-container {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+    height: 40px; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.sidebar-bottom,
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-item {
+    height: 169px; 
+    gap: 20px; 
+    padding: 30px; 
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    cursor: pointer; 
+}
+
+.sidebar-expanded .sidebar-top .arrow-right {
+    transform: rotate(135deg);
+}
+
+.sidebar-expanded .sidebar-item img {
+    min-width: 60px; 
+}
+
+.sidebar-expanded .sidebar-item .sidebar-item-text.text {
+    text-align: left; 
+}  
+
+.sidebar-bottom {
+    display: flex; 
+    flex-direction: column;
+    padding: 30px; 
+    border-bottom: none; 
+}
+
+.sidebar-bottom .arrow-right {
+    border-right: 1px solid var(--white); 
+    border-bottom: 1px solid var(--white); 
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+/* Collapsed sidebar, large screens (> 1420px) */
+.sidebar-item .default         { display: block; }
+.sidebar-item .default-active  { display: none; }
+.sidebar-item .default-small   { display: none; }
+.sidebar-item .default-small-active { display: none; }
+
+.sidebar-item.active .default         { display: none; }
+.sidebar-item.active .default-active  { display: block; }
+.sidebar-item.active .default-small   { display: none; }
+.sidebar-item.active .default-small-active { display: none; }
+
+
+.sidebar-item .active {
+    display: none; 
+} 
+
+.sidebar-item.active .active {
+    display: block; 
+}
+
+@media screen and (max-width: 1420px) {
+    .sidebar-collapsed {
+        width: 125px; 
+    }
+
+    .sidebar-collapsed .sidebar-top {
+        justify-content: center;
+        font-size: 18px; 
+        font-weight: 800; 
+    }
+    
+    .sidebar-collapsed .sidebar-top .live-badge-container {
+        display: none; 
+    }
+
+    @media screen and (max-width: 1420px) {
+        .sidebar-collapsed .sidebar-item .default { 
+            display: none; 
+        }
+        .sidebar-collapsed .sidebar-item .default-active { 
+            display: none; 
+        }
+        .sidebar-collapsed .sidebar-item .default-small { 
+            display: block; 
+        }
+        .sidebar-collapsed .sidebar-item .default-small-active { 
+            display: none; 
+        }
+        .sidebar-collapsed .sidebar-item.active .default { 
+            display: none; 
+        }
+        .sidebar-collapsed .sidebar-item.active .default-active { 
+            display: none; 
+        }
+        .sidebar-collapsed .sidebar-item.active .default-small { 
+            display: none; 
+        }
+        .sidebar-collapsed .sidebar-item.active .default-small-active {     
+            display: block; 
+        }
+    }
+}
