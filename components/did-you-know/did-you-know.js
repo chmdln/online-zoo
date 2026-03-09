@@ -41,7 +41,7 @@ export function renderDidYouKnowSection(obj) {
                             <span class="range-row subheader-text">Range:</span>
                             <span class="range-value text">${pet.facts.range}</span>
                             <button class="view-live-btn btn-text">
-                                View live
+                                View map
                                 <span class="arrow-container">
                                     <span class="arrow-line"></span>
                                     <span class="arrow-right"></span>

@@ -1,6 +1,8 @@
+import { Loader } from './components/loader/loader.js';
 import { renderHeader } from './components/header/header.js';
 import { renderFooter } from './components/footer/footer.js';
 import { renderQuickDonateSection } from './components/quick-donate/quick-donate.js';
+
 
 const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 
@@ -126,8 +128,80 @@ function setupDonationPopup() {
 }
 setupDonationPopup();
 
-// meet pets slider
-document.addEventListener('DOMContentLoaded', () => {
+
+// meet-pets-section
+async function fetchPetData() {
+  try {
+    const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+      console.error('Error fetching pet data:', error);
+      // return { data: [] };
+  }
+}
+
+function buildPetDataWithImages(data) {
+  const petsWithImages = data.data.map(pet => {
+    const fileName = pet.commonName
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-");
+      return {
+        ...pet,
+        img: `/assets/images/pets/${pet.id}-${fileName}.png`
+      };
+    });
+  return petsWithImages;
+}
+
+function renderMeetPetCard(pet) {
+    return `
+      <div class="meet-pet-card" data-id="${pet.commonName}">
+          <div class="meet-pet-tag subheader-text">
+              ${pet.name}
+          </div>
+          <img 
+              src="${pet.img}" 
+              alt="${pet.commonName} image" 
+              class="meet-pet-image"
+          >
+          <div class="meet-pet-info">
+              <div class="meet-pet-name">${pet.commonName}</div>
+              <div class="text">${pet.description}.</div>
+              <button class="btn-text">
+                  View live cam 
+                  <img src="./assets/icons/arrow-orange.svg" alt="Orange Arrow Icon">
+              </button>
+          </div>
+      </div>
+    `
+}
+
+// meet pets section
+document.addEventListener('DOMContentLoaded', async () => {
+  const content = document.querySelector('.meet-pets-content');
+  // show loader
+  content.innerHTML = Loader();
+  try {
+    const data = await fetchPetData();
+    const dataWithImages = buildPetDataWithImages(data);
+    content.innerHTML = '<div class="meet-pets-container"></div>';
+    const container = document.querySelector('.meet-pets-container');
+    dataWithImages.forEach(pet => {
+      container.innerHTML += renderMeetPetCard(pet);
+    });
+
+  } catch (error) {
+    content.innerHTML = `
+        <div class="load-error">Something went wrong. Please, refresh the page</div>
+    `;
+    console.error(error);
+  }
+
+  // meet pets slider
   const container = document.querySelector('.meet-pets-container');
   const leftBtn = document.querySelector('.slider.left');
   const rightBtn = document.querySelector('.slider.right');
@@ -153,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = window.innerWidth;
     if (width <= 800) return 1.02;
     if (width <= 1200) return 2;
-    return 2.6;
+    return 2.9;
   }
 
   function getColumnWidth() {
