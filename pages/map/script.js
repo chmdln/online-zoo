@@ -1,7 +1,10 @@
 import { renderHeader } from '../../components/header/header.js';
 import { renderFooter } from '../../components/footer/footer.js';
 
-document.getElementById('header').innerHTML = renderHeader();
+const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
+
+const header = document.getElementById('header');
+header.innerHTML = renderHeader();
 document.getElementById('footer').innerHTML = renderFooter();
 const burger = document.querySelector('.hamburger-icon');
 const burgerMenu = document.querySelector('.burger-menu');
@@ -77,5 +80,27 @@ document.querySelectorAll('.location-icon').forEach(icon => {
     icon.addEventListener('mouseleave', function () {
         this.src = this.src.replace('-white.svg', '.svg');
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    header.addEventListener('click', (e) => {
+        if (e.target.closest('.user-icon')) {
+            const popup = document.querySelector('.user-popup');
+            popup.classList.toggle('active');
+        }
+
+        if (e.target.closest('.sign-in-btn')) {
+            window.location.href = `${BASE_PATH}/pages/signin/`;
+        } 
+
+        if (e.target.closest('.sign-up-btn')) {
+            window.location.href = `${BASE_PATH}/pages/signup/`;
+        }
+
+        if (e.target.closest('.sign-out-btn')) {
+            localStorage.removeItem('user');
+            header.innerHTML = renderHeader();
+        }
+    }); 
 });
 

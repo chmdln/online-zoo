@@ -3,6 +3,30 @@ export function renderHeader() {
         ? '' 
         : '/online-zoo';
 
+    const user = (
+        localStorage.getItem("user") 
+        && localStorage.getItem("user") !== "undefined") 
+        ? JSON.parse(localStorage.getItem("user")) 
+        : "";
+    
+    const userName = user ? user.name : "";
+    const userEmail = user ? user.email : "";
+    const userPopupContent = user
+        ? `
+            <div class="user-info user-info-logged-in">
+                <div class="user-popup-name">${userName}</div>
+                <div class="user-popup-email">${userEmail}</div>
+                <button class="sign-out-btn">Sign out</button>
+            </div>
+        `
+        : `
+            <div class="user-info user-info-logged-out">
+                <button class="sign-in-btn">Sign in</button>
+                <span>or</span>
+                <button class="sign-up-btn">Register</button>
+            </div>
+        `;
+
     return `
         <header>
             <h1><img 
@@ -28,6 +52,15 @@ export function renderHeader() {
                     <a href="https://www.facebook.com/rsschoolEN/" target="_blank">
                         <img src="${BASE_PATH}/assets/images/facebook.png" alt="Facebook Logo">
                     </a>
+                </div>
+            </div>
+            <div class="user-container">
+                <div class="user-icon">
+                    <img src="${BASE_PATH}/assets/icons/user.svg" alt="User icon">
+                </div>
+                <div class="user-name">${userName}</div>
+                <div class="user-popup">
+                    ${userPopupContent}
                 </div>
             </div>
             <div class="burger-menu">

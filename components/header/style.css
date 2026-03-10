@@ -8,6 +8,88 @@ header {
     background-color: #f58021;
 }
 
+.user-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin-right: -150px;
+    row-gap: 5px; 
+    color: var(--black); 
+    position: relative; 
+}
+
+.user-icon {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 40px; 
+    height: 40px;
+    padding: 10px;  
+    border: 1px solid var(--turq); 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+
+.user-icon:hover {
+    opacity: 70%; 
+}
+
+.user-icon img {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%; 
+}
+
+.user-popup {
+    display: none; 
+    width: 300px; 
+    height: 200px; 
+    position: absolute; 
+    top: 135%; 
+    background-color: var(--orange); 
+    opacity: 90%; 
+    border-radius: 5px; 
+    font-size: 18px; 
+}
+
+.user-popup button {
+    display: none; 
+}
+
+.user-popup.active {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.user-popup.active .user-popup-email {
+    margin-bottom: 20px; 
+}
+
+.user-popup.active .user-info {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.user-popup.active .user-popup-name {
+    font-weight: 600 !important;
+}
+
+.user-popup.active button {
+    display: block;
+    padding: 10px 30px;
+    background-color: var(--turq);
+    color: var(--white); 
+    border-radius: 5px;
+    border: none; 
+    cursor: pointer; 
+}
+
 header .logo-image {
     width: 96px; 
     height: 50px; 

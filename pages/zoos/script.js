@@ -4,6 +4,8 @@ import { renderSidebar } from '../../components/sidebar/sidebar.js';
 import { renderQuickDonateSection } from '../../components/quick-donate/quick-donate.js';
 import { renderDidYouKnowSection } from '../../components/did-you-know/did-you-know.js';
 
+const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
+
 export const zooData = [
     {
         id: 'panda', 
@@ -486,6 +488,31 @@ function setActiveCam(clickedCam) {
     });
     clickedCam.src = clickedCam.dataset.active;
 }
+
+
+// auth
+document.addEventListener('DOMContentLoaded', () => {
+    header.addEventListener('click', (e) => {
+        if (e.target.closest('.user-icon')) {
+            const popup = document.querySelector('.user-popup');
+            popup.classList.toggle('active');
+        }
+
+        if (e.target.closest('.sign-in-btn')) {
+            window.location.href = `${BASE_PATH}/pages/signin/`;
+        } 
+
+        if (e.target.closest('.sign-up-btn')) {
+            window.location.href = `${BASE_PATH}/pages/signup/`;
+        }
+
+        if (e.target.closest('.sign-out-btn')) {
+            localStorage.removeItem('user');
+            header.innerHTML = renderHeader();
+        }
+    }); 
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const storedPet = (

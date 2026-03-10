@@ -6,15 +6,41 @@ import { renderQuickDonateSection } from './components/quick-donate/quick-donate
 
 const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 
-document.getElementById('header').innerHTML = renderHeader();
-document.getElementById('footer').innerHTML = renderFooter();
-document.getElementById('quick-donate').innerHTML = renderQuickDonateSection(
+const header = document.getElementById('header');
+const footer = document.getElementById('footer');
+const quickDonate = document.getElementById('quick-donate');
+header.innerHTML = renderHeader();
+footer.innerHTML = renderFooter();
+quickDonate.innerHTML = renderQuickDonateSection(
   "Your donation makes a differece!",
   "The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch your favourite animals — live, 24/7!"
 );
 
 const about = document.getElementById('about');
 about.classList.add('active');
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    header.addEventListener('click', (e) => {
+    if (e.target.closest('.user-icon')) {
+        const popup = document.querySelector('.user-popup');
+        popup.classList.toggle('active');
+    }
+
+    if (e.target.closest('.sign-in-btn')) {
+        window.location.href = `${BASE_PATH}/pages/signin/`;
+    } 
+
+    if (e.target.closest('.sign-up-btn')) {
+        window.location.href = `${BASE_PATH}/pages/signup/`;
+    }
+
+    if (e.target.closest('.sign-out-btn')) {
+        localStorage.removeItem('user');
+        header.innerHTML = renderHeader();
+    }
+}); 
+});
 
 
 function setupDonationPopup() {
