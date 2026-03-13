@@ -19,7 +19,7 @@ quickDonate.innerHTML = renderQuickDonateSection(
 const about = document.getElementById('about');
 about.classList.add('active');
 
-
+// auth 
 document.addEventListener('DOMContentLoaded', () => {
     header.addEventListener('click', (e) => {
     if (e.target.closest('.user-icon')) {
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 }); 
 });
 
-
+// donation popup
 function setupDonationPopup() {
     const donateBtn = document.querySelector('.donate-right .btn-primary');
     const popup = document.getElementById('donationPopup');
@@ -155,12 +155,12 @@ function setupDonationPopup() {
 setupDonationPopup();
 
 
-// meet-pets-section
+// meet-pets section
 async function fetchPetData() {
   try {
     const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets');
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('Network error.');
     }
     const data = await response.json();
     return data;
@@ -206,7 +206,6 @@ function renderMeetPetCard(pet) {
     `
 }
 
-// meet pets section
 document.addEventListener('DOMContentLoaded', async () => {
   const content = document.querySelector('.meet-pets-content');
   // show loader
@@ -312,8 +311,54 @@ document.addEventListener('DOMContentLoaded', async () => {
   
 });
 
-// what users think slider
-document.addEventListener('DOMContentLoaded', () => {
+
+// what users think section
+async function fetchFeedbackData() {
+  try {
+    const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/feedback');
+    
+    if (!response.ok) {
+      throw new Error('Network error.');
+    }
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+      console.error('Error fetching feedback data:', error);
+      return { data: [] };
+  }
+}
+
+function renderWhatUsersThinkCard(user) {
+  const { city, month, text, year, name } = user;
+  const feedbackDate = `${city}, ${month} ${year}`;
+  return `
+    <div class="users-think-card">
+      <img src="./assets/icons/quotation-marks.svg" alt="Quotation marks icon" class="quotation-marks">
+      <div class="users-think-card-date subheader-text">${feedbackDate}</div>
+      <div class="users-think-card-text text">${text}</div>
+      <div class="users-think-card-author btn-text">${name}</div>
+    </div>
+  `
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const content = document.querySelector('.what-users-think-cards-container');
+  // show loader
+  content.innerHTML = Loader();
+  try {
+    const data = await fetchFeedbackData();
+    content.innerHTML = '';
+    data.forEach(user => {
+      content.innerHTML += renderWhatUsersThinkCard(user);
+    });
+  } catch (error) {
+    content.innerHTML = `
+        <div class="load-error">Something went wrong. Please, refresh the page</div>
+    `;
+    console.error(error);
+  }
+
+  // slider
   const container = document.querySelector('.what-users-think-cards-container');
   const leftBtn = document.querySelector('.what-users-think-cards-content .slider.left');
   const rightBtn = document.querySelector('.what-users-think-cards-content .slider.right');
