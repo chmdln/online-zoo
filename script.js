@@ -177,7 +177,7 @@ function buildPetDataWithImages(data) {
       .replace(/[^a-z0-9]+/g, "-");
       return {
         ...pet,
-        img: `/assets/images/pets/${pet.id}-${fileName}.png`
+        img: `${BASE_PATH}/assets/images/pets/${pet.id}-${fileName}.png`
       };
     });
   return petsWithImages;
