@@ -1,3 +1,18 @@
+.loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+/* #did-you-know.is-loading {
+    min-height: 400px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+} */
+
+
 .live-cams-layout {
     display: flex; 
 }
@@ -7,6 +22,7 @@
     display: flex;
     justify-content: flex-start;
     margin-left: 35px; 
+    height: 100%; 
 }
 
 .live-cams {
@@ -60,6 +76,15 @@
     border-right-color: var(--white);
     border-bottom-color: var(--white);
 }
+
+.live-cams-mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+}
+
 
 .live-cams-mid img {
     margin-top: 46px; 

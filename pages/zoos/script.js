@@ -1,274 +1,13 @@
 import { renderHeader } from '../../components/header/header.js';
 import { renderFooter } from '../../components/footer/footer.js';
 import { renderSidebar } from '../../components/sidebar/sidebar.js';
-import { renderQuickDonateSection } from '../../components/quick-donate/quick-donate.js';
+import { Loader } from '../../components/loader/loader.js';
 import { renderDidYouKnowSection } from '../../components/did-you-know/did-you-know.js';
+import { renderQuickDonateSection } from '../../components/quick-donate/quick-donate.js';
+import { renderMapModal } from '../../components/mapModal/mapModal.js';
 
 const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 
-export const zooData = [
-    {
-        id: 'panda', 
-        header: 'Live panda cams',
-        cams: [
-            {
-                id: 'cam-main',
-                src: '../../assets/icons/panda-youtube-main.svg',
-                link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s'
-            },
-            {
-                id: 'cam-1',
-                src: ['../../assets/icons/panda-youtube-cam-1.svg', '../../assets/icons/panda-youtube-cam-1-active.svg']
-            },
-            {
-                id: 'cam-2',
-                src: ['../../assets/icons/panda-youtube-cam-2.svg', '../../assets/icons/panda-youtube-cam-2-active.svg']
-            },
-            {
-                id: 'cam-3',
-                src: ['../../assets/icons/panda-youtube-cam-3.svg', '../../assets/icons/panda-youtube-cam-3-active.svg']
-            },
-        ],
-        donate: {
-            header: 'make the Bamboo Donation!',
-            subheader: 'Our process for bamboo donations first starts with a site evaluation. It is important that our team sees where the bamboo is growing, then determining if the bamboo is a species that our animals are currently eating. Thank you for your interest in donating bamboo for our pandas.' 
-        }, 
-        didYouKnow: {
-            header: 'Pandas are often seen eating in a relaxed sitting posture, with their hind legs stretched out before them. They may appear sedentary, but they are skilled tree-climbers and efficient swimmers.', 
-            facts: {
-                commonName: 'Giant Panda', 
-                sciName: 'Ailuropoda melanoleuca',
-                type: 'Herbivore',
-                size: '4 to 5 feet',
-                diet: 'Omnivore',
-                habitat: 'Forests',
-                range: 'Eastern Asia',
-            },
-            img: '../../assets/icons/panda-did-you-know.svg',
-            info: 'Giant pandas are very unusual animals that eat almost exclusively bamboo, which is very low in nutrients. Because of this, they have many unique adaptations for their low-energy lifestyle. Giant pandas are solitary. They have a highly developed sense of smell that males use to avoid each other and to find females for mating in the spring. After a five-month pregnancy, females give birth to a cub or two, though they cannot care for both twins. The blind infants weigh only 5 ounces at birth and cannot crawl until they reach three months of age. They are born white, and develop their much loved coloring later. Habitat loss is the primary threat to this species. Its popularity around the world has helped the giant panda become the focus of successful conservation programs.'
-        }     
-    }, 
-    {
-        id: 'eagle', 
-        header: 'Bald eagle cams',
-        cams: [
-            {
-                id: 'cam-main',
-                src: '../../assets/icons/eagle-youtube-main.svg',
-                link: 'https://www.youtube.com/watch?v=dUE_AMCliSU'
-            },
-            {
-                id: 'cam-1',
-                src: ['../../assets/icons/eagle-youtube-cam-1.svg', '../../assets/icons/eagle-youtube-cam-1-active.svg']
-            },
-            {
-                id: 'cam-2',
-                src: ['../../assets/icons/eagle-youtube-cam-2.svg', '../../assets/icons/eagle-youtube-cam-2-active.svg']
-            },
-            {
-                id: 'cam-3',
-                src: ['../../assets/icons/eagle-youtube-cam-3.svg', '../../assets/icons/eagle-youtube-cam-3-active.svg']
-            },
-        ], 
-        donate: {
-            header: 'Keep the Bald Eagle cams Streaming!',
-            subheader: 'Watch as this lifelong pair of eagle parents lay and protect eggs, feed their chicks and teach them to hunt and fly. Sam & Lora have stolen the hearts of thousands of viewers! 100% of the donations from this page will be utilized directly for the streaming and operational costs of this project.'
-        },
-        didYouKnow: {
-            header: 'Because of its role as a symbol of the US, but also because of its being a large predator, the bald eagle has many representations in popular culture. Not all of these representations are accurate. In particular, the movie or television bald eagle typically has a bold, powerful cry. The actual eagle has a much softer, chirpy voice, not in keeping with its popular image.', 
-            facts: {
-                commonName: 'Bald Eagle', 
-                sciName: 'Haliaeetus Leucocephalus',
-                type: 'Birds',
-                size: 'Body: 34 to 43 inches; wingspan: 6 to 8 feet',
-                diet: 'Carnivore',
-                habitat: 'Seacoasts, rivers, large lakes or marshes ',
-                range: 'Continental United States',
-            },
-            img: '../../assets/icons/eagle-did-you-know.svg',
-            info: 'The bald eagle, with its snowy-feathered (not bald) head and white tail, is the proud national bird symbol of the United States—yet the bird was nearly wiped out there. For many decades, bald eagles were hunted for sport and for the "protection" of fishing grounds.  These powerful birds of prey use their talons to fish, but they get many of their meals by scavenging carrion or stealing the kills of other animals. They live near water and favor coasts and lakes where fish are plentiful, though they will also snare and eat small mammals. Bald eagles are believed to mate for life. A pair constructs an enormous stick nest—one of the bird-world"s biggest—high above the ground and tends to a pair of eggs each year. Immature eagles are dark, and until they are about five years old, they lack the distinctive white markings that make their parents so easy to identify.'
-        }
-    }, 
-    {
-        id: 'gorilla', 
-        header: 'Gorillas cams',
-        cams: [
-            {
-                id: 'cam-main',
-                src: '../../assets/icons/gorilla-youtube-main.svg',
-                link: 'https://www.youtube.com/watch?v=SOVaFcSATEc&pp=ygUcZ29yaWxsYXMgbmF0aW9uYWwgZ2VvZ3JhcGhpYw%3D%3D'
-            },
-            {
-                id: 'cam-1',
-                src: ['../../assets/icons/gorilla-youtube-cam-1.svg', '../../assets/icons/gorilla-youtube-cam-1-active.svg']
-            },
-            {
-                id: 'cam-2',
-                src: ['../../assets/icons/gorilla-youtube-cam-2.svg', '../../assets/icons/gorilla-youtube-cam-2-active.svg']
-            },
-            {
-                id: 'cam-3',
-                src: ['../../assets/icons/gorilla-youtube-cam-3.svg', '../../assets/icons/gorilla-youtube-cam-3-active.svg']
-            },
-        ], 
-        donate: {
-            header: 'Make a difference for the gorillas!',
-            subheader: 'It is our goal to ensure the conservation and restoration of the gorilla population and their habitat in Central Africa. To do this, we need your help! Bring your food charity straight to Glen and his family.'
-        },
-        didYouKnow: {
-            header: 'In addition to having distinctive fingerprints like humans do, gorillas also have unique nose prints. Gorillas are the largest of the great apes, but the western lowland gorilla is the smallest of the subspecies.', 
-            facts: {
-                commonName: 'Western lowland gorillas', 
-                sciName: 'Gorilla gorilla gorilla',
-                type: 'Mammals',
-                size: 'Standing height, four to six feet',
-                diet: 'Omnivore',
-                habitat: 'Rainforests',
-                range: 'Western Africa',
-            },
-            img: '../../assets/icons/gorilla-did-you-know.svg',
-            info: 'Western lowland gorillas are the smallest of the four subspecies. They live in thick tropical rainforests, where they find plenty of food for their vegetarian diet. They eat roots, shoots, fruit, wild celery, and tree bark and pulp. Gorillas can climb trees, but they"re usually found on the ground in communities—known as troops. Troops are led by one dominant, older adult male, often called a silverback because of the swath of silver hair that adorns his otherwise dark fur. Troops also include several other young males, some females, and their offspring. The leader organizes troop activities, such as eating, nesting in leaves, and moving about the group"s home range. Gorillas prefer traveling on all fours, pushing themselves forward with their knuckles and soles of their feet. Female gorillas give birth to one infant after a pregnancy of nearly nine months. These infants ride on their mothers’ backs from the age of four months through the first two or three years of their lives.'
-        }
-    },
-    {
-        id: 'lemur', 
-        header: 'Lemurs cams',
-        cams: [
-            {
-                id: 'cam-main',
-                src: '../../assets/icons/lemur-youtube-main.svg',
-                link: 'https://www.youtube.com/watch?v=fW1ZQF1N6JE&pp=ygUZbGVtdXIgbmF0aW9uYWwgZ2VvZ3JhcGhpYw%3D%3D'
-            },
-            {
-                id: 'cam-1',
-                src: ['../../assets/icons/lemur-youtube-cam-1.svg', '../../assets/icons/lemur-youtube-cam-1-active.svg']
-            },
-            {
-                id: 'cam-2',
-                src: ['../../assets/icons/lemur-youtube-cam-2.svg', '../../assets/icons/lemur-youtube-cam-2-active.svg']
-            },
-            {
-                id: 'cam-3',
-                src: ['../../assets/icons/lemur-youtube-cam-3.svg', '../../assets/icons/lemur-youtube-cam-3-active.svg']
-            },
-        ], 
-        donate: {
-            header: 'Provide Andy the lemur with fruits!',
-            subheader: 'More than 90% of lemur species are endangered and might face extinction in the nearest future. Watch the ring-tailed lemurs play and climb in this soothing setting and support them by donating for the fruits they adore.'
-        },
-        didYouKnow: {
-            header: 'A ring-tailed lemur mob will gather in open areas of the forest to sunbathe. They sit in what some call a "yoga position" with their bellies toward the sun and their arms and legs stretched out to the sides.', 
-            facts: {
-                commonName: 'Ring-tailed Lemur',
-                sciName: 'Lemur catta',
-                type: 'Mammals',
-                size: 'Head and body 17.75 inches;, tail: 21.75 inches',
-                diet: 'Herbivore',
-                habitat: 'Arid, open areas and forests',
-                range: 'Southeast Asia'
-            },
-            img: '../../assets/icons/lemur-did-you-know.svg',
-            info: 'Ring-tailed lemurs are named for the 13 alternating black and white bands that adorn their tails. Unlike most other lemurs, ringtails spend 40 percent of their time on the ground, moving quadrupedally along the forest floor. Ring-tailed lemurs live in southwestern Madagascar, in arid, open areas and forests in territories that range from 15 to 57 acres (0.06 to 0.2 square kilometers) in size. As with all lemurs, olfactory communication is important for ringtails. Ring-tailed lemurs have scent glands on their wrists and chests that they use to mark their foraging routes. Ringtails eat leaves, flowers and insects. They can also eat fruit, herbs and small vertebrates. Females usually give birth to their first baby when they are three years old, and usually once a year every year after that. All adult females participate in raising the offspring of the group. The median life expectancy for a ring-tailed lemur is about 16 years.'
-        } 
-    }
-];
-
-function renderPet(pet) {
-    return `
-        <div class="live-cams-content">
-            <section class="live-cams">
-            <div class="live-cams-top">
-                <div class="h2-heading">${pet.header}</div>
-                <button class="donate-now-btn btn-text">
-                    Donate now
-                    <div class="arrow-container">
-                        <div class="arrow-line"></div>
-                        <div class="arrow-right"></div>
-                    </div>
-                </button>
-            </div>
-            <div class="live-cams-mid">
-                <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                    <img src=${pet.cams[0].src} alt="Youtube ${pet.id} image">
-                </a>
-            </div>
-            <div class="live-cams-bott">
-                <div class="live-cams-bott-txt">More live views</div>
-                <div class="live-cams-carousel">
-                    <img 
-                        src="../../assets/icons/live-cams-left-arrow.svg" 
-                        alt="Left arrow icon"
-                        class="live-cams-arrow left"
-                    >
-                    <div class="live-cams-viewport">
-                        <div class="live-cams-track">
-                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img 
-                                    src="${pet.cams[1].src[0]}"
-                                    data-default="${pet.cams[1].src[0]}"
-                                    data-active="${pet.cams[1].src[1]}"
-                                    data-id="${pet.id}"
-                                    alt="Youtube preview of ${pet.id}"
-                                >
-                            </a>
-                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img 
-                                    src="${pet.cams[2].src[0]}"
-                                    data-default="${pet.cams[2].src[0]}"
-                                    data-active="${pet.cams[2].src[1]}"
-                                    data-id="${pet.id}"
-                                    alt="Youtube preview of ${pet.id}"
-                                >
-                            </a>
-                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img 
-                                    src="${pet.cams[3].src[0]}"
-                                    data-default="${pet.cams[3].src[0]}"
-                                    data-active="${pet.cams[3].src[1]}"
-                                    data-id="${pet.id}"
-                                    alt="Youtube preview of ${pet.id}"
-                                >
-                            </a>
-                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img 
-                                    src="${pet.cams[1].src[0]}"
-                                    data-default="${pet.cams[1].src[0]}"
-                                    data-active="${pet.cams[1].src[1]}"
-                                    data-id="${pet.id}"
-                                    alt="Youtube preview of ${pet.id}"
-                                >
-                            </a>
-                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img 
-                                    src="${pet.cams[2].src[0]}"
-                                    data-default="${pet.cams[2].src[0]}"
-                                    data-active="${pet.cams[2].src[1]}"
-                                    data-id="${pet.id}"
-                                    alt="Youtube preview of ${pet.id}"
-                                >
-                            </a>
-                            <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
-                                <img 
-                                    src="${pet.cams[3].src[0]}"
-                                    data-default="${pet.cams[3].src[0]}"
-                                    data-active="${pet.cams[3].src[1]}"
-                                    data-id="${pet.id}"
-                                    alt="Youtube preview of ${pet.id}"
-                                >
-                            </a>
-                        </div>
-                    </div>
-                    <img 
-                        src="../../assets/icons/live-cams-right-arrow.svg" 
-                        alt="Right arrow icon"
-                        class="live-cams-arrow right"
-                    >
-                </div> 
-            </div>
-            </section>
-        </div>
-    `;
-}
 
 function setupRotatingSidebar(sidebarSelector) {
     const sidebar = document.querySelector(sidebarSelector);
@@ -301,75 +40,29 @@ setupRotatingSidebar('.sidebar-collapsed');
 setupRotatingSidebar('.sidebar-expanded');
 
 
-function renderZoosPage(data, pet) {
-    const zooNav = document.getElementById('zoos');
-    zooNav.classList.add('active');
-    const liveCams = document.getElementById('live-cams-container');
-    const donate = document.getElementById('quick-donate');
-    const didYouKnow = document.getElementById('did-you-know');
-    
-    data.forEach(zooPet => {
-        if (zooPet.id === pet) {
-            // render pet page 
-            liveCams.innerHTML = renderPet(zooPet);
-            // render quick donate
-            donate.innerHTML = renderQuickDonateSection(
-                zooPet.donate.header, zooPet.donate.subheader
-            );
-            // render did you know
-            didYouKnow.innerHTML = renderDidYouKnowSection(zooPet);
-            setupDonationPopup(); 
-            setupLiveCamsCarousel();
-
-            const cams = document.querySelectorAll('.live-cams-track img');
-            cams.forEach(cam => {
-                cam.addEventListener('click', () => {
-                    setActiveCam(cam);
-                });
-            })
-        }
-    });
-}
-
-function setupLiveCamsCarousel() {
-    const track = document.querySelector('.live-cams-track');
-    if (!track) return;
-
-    const leftBtn = document.querySelector('.live-cams-arrow.left');
-    const rightBtn = document.querySelector('.live-cams-arrow.right');
-
-    // wait for images to load
-    const firstImg = track.querySelector('img');
-    firstImg.onload = () => {
-        const style = getComputedStyle(track);
-        const gap = parseFloat(style.gap) || 0;
-        const itemWidth = firstImg.offsetWidth + gap; // full width per image
-
-        let carouselIndex = 0;
-        const maxIndex = track.childElementCount - 3; // adjust to viewport
-
-        function showNext() {
-            if (carouselIndex < maxIndex) {
-                carouselIndex++;
-                track.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
-            }
+// auth
+document.addEventListener('DOMContentLoaded', () => {
+    header.addEventListener('click', (e) => {
+        if (e.target.closest('.user-icon')) {
+            const popup = document.querySelector('.user-popup');
+            popup.classList.toggle('active');
         }
 
-        function showPrev() {
-            if (carouselIndex > 0) {
-                carouselIndex--;
-                track.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
-            }
+        if (e.target.closest('.sign-in-btn')) {
+            window.location.href = `${BASE_PATH}/pages/signin/`;
+        } 
+
+        if (e.target.closest('.sign-up-btn')) {
+            window.location.href = `${BASE_PATH}/pages/signup/`;
         }
 
-        // replace buttons to remove previous listeners
-        leftBtn.replaceWith(leftBtn.cloneNode(true));
-        rightBtn.replaceWith(rightBtn.cloneNode(true));
+        if (e.target.closest('.sign-out-btn')) {
+            localStorage.removeItem('user');
+            header.innerHTML = renderHeader();
+        }
+    }); 
+});
 
-        document.querySelector('.live-cams-arrow.left').addEventListener('click', showPrev);
-        document.querySelector('.live-cams-arrow.right').addEventListener('click', showNext);
-    };
-}
 
 function setupDonationPopup() {
     const donateBtn = document.querySelector('.donate-right .btn-primary');
@@ -490,69 +183,82 @@ function setActiveCam(clickedCam) {
 }
 
 
-// auth
-document.addEventListener('DOMContentLoaded', () => {
-    header.addEventListener('click', (e) => {
-        if (e.target.closest('.user-icon')) {
-            const popup = document.querySelector('.user-popup');
-            popup.classList.toggle('active');
-        }
-
-        if (e.target.closest('.sign-in-btn')) {
-            window.location.href = `${BASE_PATH}/pages/signin/`;
-        } 
-
-        if (e.target.closest('.sign-up-btn')) {
-            window.location.href = `${BASE_PATH}/pages/signup/`;
-        }
-
-        if (e.target.closest('.sign-out-btn')) {
-            localStorage.removeItem('user');
-            header.innerHTML = renderHeader();
-        }
-    }); 
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const storedPet = (
-        localStorage.getItem('selectedPetId') !== 'undefined' && localStorage.getItem('selectedPetId')
-        ? localStorage.getItem('selectedPetId') 
-        : 'panda'
-    );
-    localStorage.removeItem('selectedPetId');
-    renderZoosPage(zooData, storedPet);
-
-    // listener for live cams 
-    const cams = document.querySelectorAll('.live-cams-track img');
-    cams.forEach((cam) => {
-        cam.addEventListener('click', () => {
-            setActiveCam(cam);
-        });
-    });
-
-    
-    // default active sidebar icon
-    function handleScreenChange(e) {
-        const items = document.querySelectorAll('.sidebar-item');
-        items.forEach(item => {
-            if (e.matches) {
-                item.classList.add('small');   // 1420px and below
-            } else {
-                item.classList.remove('small'); // above 1420px
-            }
-        });
+// sidebar 
+async function fetchSidebarPetData() {
+  try {
+    const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/cameras');
+    if (!response.ok) {
+      throw new Error('Network error.');
     }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+      throw new Error('Error fetching camera data:', error);
+      return { data: [] };
+  }
+}
 
-    const pandas = document.querySelectorAll('.sidebar-item[data-pet="panda"]');
-    pandas.forEach(panda => panda.classList.add('active'));
+function renderSidebarItem(pet) {
+    const id = pet.petId;
+    const fallback = "../../assets/icons/sidebar/1/1-sidebar.svg"
+    const fallbackActive = "../../assets/icons/sidebar/1/1-sidebar-active.svg"
+    const imgSrc = `../../assets/icons/sidebar/${id}/${id}-sidebar.svg`;
+    const imgSrcActive = `../../assets/icons/sidebar/${id}/${id}-sidebar-active.svg`;
+    
+    if (id >= 9) {
+        return `
+            <div class="sidebar-item" data-pet="${id}">
+                <img src="${fallback}" alt="Pet white icon" class="default">
+                <img src="${fallbackActive}" alt="Pet white icon" class="default-active">
+            </div>
+        `
+    } else {
+        return `
+            <div class="sidebar-item" data-pet="${id}">
+                <img src="${imgSrc}" alt="Pet white icon" class="default">
+                <img src="${imgSrcActive}" alt="Pet white icon" class="default-active">
+            </div>
+        `
+    }
+}
 
-    sidebar.addEventListener('click', (e) => {
+function renderExpandedSidebarItem(pet) {
+    const id = pet.petId;
+    const fallback = "../../assets/icons/sidebar/1/1-sidebar-exp.svg"
+    const fallbackActive = "../../assets/icons/sidebar/1/1-sidebar-exp-active.svg"
+    const imgSrc = `../../assets/icons/sidebar/${id}/${id}-sidebar-exp.svg`;
+    const imgSrcActive = `../../assets/icons/sidebar/${id}/${id}-sidebar-exp-active.svg`;
+
+    if (id >= 9) {
+        return `
+        <div class="sidebar-item" data-pet="${id}">
+            <img src="${fallback}" alt="Pet white icon" class="default">
+            <img src="${fallbackActive}" alt="Pet white icon" class="active">
+            <div class="sidebar-item-text text">
+                ${pet.text} 
+            </div>
+        </div>
+    `
+    }
+    return `
+        <div class="sidebar-item" data-pet="${id}">
+            <img src="${imgSrc}" alt="Pet white icon" class="default">
+            <img src="${imgSrcActive}" alt="Pet white icon" class="active">
+            <div class="sidebar-item-text text">
+                ${pet.text} 
+            </div>
+        </div>
+    `
+}
+
+function setupSidebarListener(sidebar, data) {
+    sidebar.addEventListener('click', async (e) => {
         const petItem = e.target.closest('.sidebar-item');
         const items = sidebar.querySelectorAll('.sidebar-item');
+
         if (petItem) {
             const petId = petItem.dataset.pet;
-            renderZoosPage(zooData, petId);
+            renderZoosPage(data, petId, true);
 
             items.forEach(item => {
                 if (item.dataset.pet === petId) {
@@ -561,9 +267,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.classList.remove('active');
                 }
             });
+
+            // render quick-donate 
+            const quickDonate = document.getElementById('quick-donate');
+            quickDonate.innerHTML = renderQuickDonateSection(petId);
+
+            // render did-you-know 
+            const didYouKnow = document.getElementById('did-you-know');
+            didYouKnow.innerHTML = Loader(); 
+            try {
+                const pet = await fetchPetById(petId);
+                didYouKnow.innerHTML = renderDidYouKnowSection(pet);
+
+            } catch (error) {
+                didYouKnow.innerHTML = '';
+                didYouKnow.insertAdjacentHTML(
+                    'beforeend', 
+                    '<div class="load-error">Something went wrong. Please, refresh the page</div>'
+                );
+
+                didYouKnow.style.height = '1508px';
+                const loadError = document.querySelector('.load-error');
+                loadError.style = 'margin-top: 500px;'; 
+                console.error('Failed to load pet data:', error);
+            }
         }
     });
+}
 
+function setupSyncListenerForSidebar() {
     let sidebarOpen = false;
     const sidebarArrows = document.querySelectorAll('.double-arrow-container');
     const sidebarCollapsed = document.querySelector('.sidebar-collapsed');
@@ -595,20 +327,612 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebarOpen = !sidebarOpen;
         });
     });
+    
+}
 
-    const burger = document.querySelector('.hamburger-icon');
-    const burgerMenu = document.querySelector('.burger-menu');
-    const burgerCloseBtn = document.querySelector('.burger-close-btn');
+function setupActiveSidebarIcon(petId) {
+    const items = document.querySelectorAll(`.sidebar-item[data-pet="${petId}"]`);
+    items.forEach(item => item.classList.add('active'));
+}
 
-    burger.addEventListener('click', () => {
-    burgerMenu.classList.add('burger');
-    burgerCloseBtn.classList.add('active');
+function handleScreenChange(e) {
+    const items = document.querySelectorAll('.sidebar-item');
+    items.forEach(item => {
+        if (e.matches) {
+            item.classList.add('small');   // 1420px and below
+        } else {
+            item.classList.remove('small'); // above 1420px
+        }
+    });
+}
+
+
+// live cams
+const camData = {
+  "1": {
+    name: 'panda',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s'
+  },
+  "5": {
+    name: 'eagle',
+    link: 'https://www.youtube.com/watch?v=dUE_AMCliSU'
+  },
+  "3": {
+    name: 'gorilla',
+    link: 'https://www.youtube.com/watch?v=SOVaFcSATEc&pp=ygUcZ29yaWxsYXMgbmF0aW9uYWwgZ2VvZ3JhcGhpYw%3D%3D'
+  },
+  "2": {
+    name: 'lemur',
+    link: 'https://www.youtube.com/watch?v=fW1ZQF1N6JE&pp=ygUZbGVtdXIgbmF0aW9uYWwgZ2VvZ3JhcGhpYw%3D%3D'
+  },
+  "4": {
+    name: 'alligator', 
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "6": {
+    name: 'australian koala',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "7": {
+    name: 'african lion', 
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  }, 
+  "8": {
+    name: 'sumatran tiger', 
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  }, 
+  "9": {
+    name: 'red panda',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "10": {
+    name: 'mountain gorilla',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "11": {
+    name: 'african elephant',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "12": {
+    name: 'sea otter',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "13": {
+    name: 'bengal tiger',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "14": {
+    name: 'gray wolf',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "15": {
+    name: 'fennec fox',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "16": {
+    name: 'grizzly bear',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "17": {
+    name: 'bottlenose dolphin', 
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "18": {
+    name: 'snow leopard',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "19": {
+    name: 'polar bear',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "20": {
+    name: 'jaguar',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "21": {
+    name: 'ring-tailed lemur',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "22": {
+    name: 'white Rhinoceros',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "23": {
+    name: 'arctic fox',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "24": {
+    name: 'saltwater crocodile',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "25": {
+    name: 'scarlet macaw',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "26": {
+    name: 'komodo dragon',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "27": {
+    name: 'sloth',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  },
+  "28": {
+    name: 'cheetah',
+    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+  }
+};
+
+function renderLiveCamsHeader(petId) {
+    const cam = camData[petId];
+    return `
+        <div class="live-cams-top">
+            <div class="h2-heading">Live ${cam.name} cams</div>
+            <button class="donate-now-btn btn-text">
+                Donate now
+                <div class="arrow-container">
+                    <div class="arrow-line"></div>
+                    <div class="arrow-right"></div>
+                </div>
+            </button>
+        </div>
+        <div class="loader-hook"></div>
+    `
+}
+
+function renderPet(petId, isActive = false) {
+    const imgs = {
+        'main': `../../assets/icons/live-cams/${petId}/${petId}-youtube-main.svg`,
+        'default': [
+            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-1.svg`,
+            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-2.svg`,
+            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-3.svg`,
+        ],
+        'active': [
+            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-1-active.svg`,
+            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-2-active.svg`,
+            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-3-active.svg`
+        ],
+        'fallback': {
+            'main': `../../assets/icons/live-cams/1/1-youtube-main.svg`,
+            'default': [
+                `../../assets/icons/live-cams/1/1-youtube-cam-1.svg`,
+                `../../assets/icons/live-cams/1/1-youtube-cam-2.svg`,
+                `../../assets/icons/live-cams/1/1-youtube-cam-3.svg`,
+            ],
+            'active': [
+                `../../assets/icons/live-cams/1/1-youtube-cam-1-active.svg`,
+                `../../assets/icons/live-cams/1/1-youtube-cam-2-active.svg`,
+                `../../assets/icons/live-cams/1/1-youtube-cam-3-active.svg`
+            ],
+        }
+    };
+
+    const cam = camData[petId];
+    return `
+        <div class="live-cams-mid">
+            <a href=${cam.link} target="_blank" rel="noopener noreferrer">
+                <img 
+                    src=${imgs.main} 
+                    alt="Youtube ${cam.name} image"
+                    onerror="this.src='${imgs.fallback.main}'"
+                >
+            </a>
+        </div>
+        <div class="live-cams-bott">
+            <div class="live-cams-bott-txt">More live views</div>
+            <div class="live-cams-carousel">
+                <img 
+                    src="../../assets/icons/live-cams-left-arrow.svg" 
+                    alt="Left arrow icon"
+                    class="live-cams-arrow left"
+                >
+                <div class="live-cams-viewport">
+                    <div class="live-cams-track">
+                        <a href=${cam.link} target="_blank" rel="noopener noreferrer">
+                            <img 
+                                src="${imgs.default[0]}"
+                                data-default="${imgs.default[0]}"
+                                data-active="${imgs.active[0]}"
+                                data-id="${petId}"
+                                alt="Youtube preview of ${cam.name}"
+                                onerror="this.src='${isActive ? imgs.fallback.active[0] : imgs.fallback.default[0]}'"
+                            >
+                        </a>
+                        <a href=${cam.link} target="_blank" rel="noopener noreferrer">
+                            <img 
+                                src="${imgs.default[1]}"
+                                data-default="${imgs.default[1]}"
+                                data-active="${imgs.active[1]}"
+                                data-id="${petId}"
+                                alt="Youtube preview of ${cam.name}"
+                                onerror="this.src='${isActive ? imgs.fallback.active[1] : imgs.fallback.default[1]}'"
+                            >
+                        </a>
+                        <a href=${cam.link} target="_blank" rel="noopener noreferrer">
+                            <img 
+                                src="${imgs.default[2]}"
+                                data-default="${imgs.default[2]}"
+                                data-active="${imgs.active[2]}"
+                                data-id="${petId}"
+                                alt="Youtube preview of ${cam.name}"
+                                onerror="this.src='${isActive ? imgs.fallback.active[2] : imgs.fallback.default[2]}'"
+                            >
+                        </a>
+                    </div>
+                </div>
+                <img 
+                    src="../../assets/icons/live-cams-right-arrow.svg" 
+                    alt="Right arrow icon"
+                    class="live-cams-arrow right"
+                >
+            </div> 
+        </div>
+    `;
+}
+
+// function renderPet(petId) {
+//     const imgs = {
+//         'main': `../../assets/icons/live-cams/${petId}/${petId}-youtube-main.svg`,
+//         'default': [
+//             `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-1.svg`,
+//             `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-2.svg`,
+//             `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-3.svg`,
+//         ],
+//         'active': [
+//             `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-1-active.svg`,
+//             `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-2-active.svg`,
+//             `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-3-active.svg`
+//         ],
+//         'fallback': {
+//             'main': `../../assets/icons/live-cams/1/1-youtube-main.svg`,
+//             'default': [
+//                 `../../assets/icons/live-cams/1/1-youtube-cam-1.svg`,
+//                 `../../assets/icons/live-cams/1/1-youtube-cam-2.svg`,
+//                 `../../assets/icons/live-cams/1/1-youtube-cam-3.svg`,
+//             ],
+//             'active': [
+//                 `../../assets/icons/live-cams/1/1-youtube-cam-1-active.svg`,
+//                 `../../assets/icons/live-cams/1/1-youtube-cam-2-active.svg`,
+//                 `../../assets/icons/live-cams/1/1-youtube-cam-3-active.svg`
+//             ],
+//         }
+//     };
+
+//     const cam = camData[petId];
+//     console.log("cam", cam);
+//     return `
+//         <div class="live-cams-content">
+//             <section class="live-cams">
+//             <div class="live-cams-top">
+//                 <div class="h2-heading">Live ${cam.name} cams</div>
+//                 <button class="donate-now-btn btn-text">
+//                     Donate now
+//                     <div class="arrow-container">
+//                         <div class="arrow-line"></div>
+//                         <div class="arrow-right"></div>
+//                     </div>
+//                 </button>
+//             </div>
+//             <div class="live-cams-mid">
+//                 <a href=${cam.link} target="_blank" rel="noopener noreferrer">
+//                     <img 
+//                         src=${imgs.main} 
+//                         alt="Youtube ${cam.name} image"
+//                     >
+//                 </a>
+//             </div>
+//             <div class="live-cams-bott">
+//                 <div class="live-cams-bott-txt">More live views</div>
+//                 <div class="live-cams-carousel">
+//                     <img 
+//                         src="../../assets/icons/live-cams-left-arrow.svg" 
+//                         alt="Left arrow icon"
+//                         class="live-cams-arrow left"
+//                     >
+//                     <div class="live-cams-viewport">
+//                         <div class="live-cams-track">
+//                             <a href=${cam.link} target="_blank" rel="noopener noreferrer">
+//                                 <img 
+//                                     src="${imgs.default[0]}"
+//                                     data-default="${imgs.default[0]}"
+//                                     data-active="${imgs.active[0]}"
+//                                     data-id="${petId}"
+//                                     alt="Youtube preview of ${cam.name}"
+//                                 >
+//                             </a>
+//                             <a href=${cam.link} target="_blank" rel="noopener noreferrer">
+//                                 <img 
+//                                     src="${imgs.default[1]}"
+//                                     data-default="${imgs.default[1]}"
+//                                     data-active="${imgs.active[1]}"
+//                                     data-id="${petId}"
+//                                     alt="Youtube preview of ${cam.name}"
+//                                 >
+//                             </a>
+//                             <a href=${cam.link} target="_blank" rel="noopener noreferrer">
+//                                 <img 
+//                                     src="${imgs.default[2]}"
+//                                     data-default="${imgs.default[2]}"
+//                                     data-active="${imgs.active[2]}"
+//                                     data-id="${petId}"
+//                                     alt="Youtube preview of ${cam.name}"
+//                                 >
+//                             </a>
+//                             // <a href=${cam.link} target="_blank" rel="noopener noreferrer">
+//                             //     <img 
+//                             //         src="${pet.cams[1].src[0]}"
+//                             //         data-default="${pet.cams[1].src[0]}"
+//                             //         data-active="${pet.cams[1].src[1]}"
+//                             //         data-id="${pet.id}"
+//                             //         alt="Youtube preview of ${pet.id}"
+//                             //     >
+//                             // </a>
+//                             // <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
+//                             //     <img 
+//                             //         src="${pet.cams[2].src[0]}"
+//                             //         data-default="${pet.cams[2].src[0]}"
+//                             //         data-active="${pet.cams[2].src[1]}"
+//                             //         data-id="${pet.id}"
+//                             //         alt="Youtube preview of ${pet.id}"
+//                             //     >
+//                             // </a>
+//                             // <a href=${pet.cams[0].link} target="_blank" rel="noopener noreferrer">
+//                             //     <img 
+//                             //         src="${pet.cams[3].src[0]}"
+//                             //         data-default="${pet.cams[3].src[0]}"
+//                             //         data-active="${pet.cams[3].src[1]}"
+//                             //         data-id="${pet.id}"
+//                             //         alt="Youtube preview of ${pet.id}"
+//                             //     >
+//                             // </a>
+//                         </div>
+//                     </div>
+//                     <img 
+//                         src="../../assets/icons/live-cams-right-arrow.svg" 
+//                         alt="Right arrow icon"
+//                         class="live-cams-arrow right"
+//                     >
+//                 </div> 
+//             </div>
+//             </section>
+//         </div>
+//     `;
+// }
+
+function renderZoosPage(data, petId, isActive = false) {
+    const zooNav = document.getElementById('zoos');
+    zooNav.classList.add('active');
+    const liveCams = document.querySelector('.live-cams');
+    const donate = document.getElementById('quick-donate');
+    const didYouKnow = document.getElementById('did-you-know');
+
+    try {
+        data.forEach(pet => {
+            if (String(pet.petId) === String(petId)) {  
+            // render header 
+            liveCams.innerHTML = renderLiveCamsHeader(pet.petId);   
+            // render main live cam
+            liveCams.insertAdjacentHTML('beforeend', renderPet(pet.petId, isActive));
+            // // render quick donate
+            // donate.innerHTML = renderQuickDonateSection(
+            //     zooPet.donate.header, zooPet.donate.subheader
+            // );
+
+            // const cams = document.querySelectorAll('.live-cams-track img');
+            // cams.forEach(cam => {
+            //     cam.addEventListener('click', () => {
+            //         setActiveCam(cam);
+            //     });
+            // })
+            }
+        });
+    } catch (error) {
+        console.error(error);
+    }
+    
+}
+
+function setupLiveCamsCarousel() {
+    const track = document.querySelector('.live-cams-track');
+    if (!track) return;
+
+    const leftBtn = document.querySelector('.live-cams-arrow.left');
+    const rightBtn = document.querySelector('.live-cams-arrow.right');
+
+    // wait for images to load
+    const firstImg = track.querySelector('img');
+    firstImg.onload = () => {
+        const style = getComputedStyle(track);
+        const gap = parseFloat(style.gap) || 0;
+        const itemWidth = firstImg.offsetWidth + gap; // full width per image
+
+        let carouselIndex = 0;
+        const maxIndex = track.childElementCount - 3; // adjust to viewport
+
+        function showNext() {
+            if (carouselIndex < maxIndex) {
+                carouselIndex++;
+                track.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
+            }
+        }
+
+        function showPrev() {
+            if (carouselIndex > 0) {
+                carouselIndex--;
+                track.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
+            }
+        }
+
+        // replace buttons to remove previous listeners
+        leftBtn.replaceWith(leftBtn.cloneNode(true));
+        rightBtn.replaceWith(rightBtn.cloneNode(true));
+
+        document.querySelector('.live-cams-arrow.left').addEventListener('click', showPrev);
+        document.querySelector('.live-cams-arrow.right').addEventListener('click', showNext);
+    };
+}
+
+// did-you-know
+async function fetchPetById(petId) {
+  try {
+    const response = await fetch(`https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets/${petId}`);
+    if (!response.ok) {
+      throw new Error('Network error.');
+    }
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+      throw new Error('Error fetching pet data:', error);
+      return { data: [] };
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const liveCams = document.querySelector('.live-cams');
+    const sidebarCol = document.querySelector('.sidebar-collapsed .sidebar-track');
+    const sidebarExp = document.querySelector('.sidebar-expanded .sidebar-track');
+    
+    // if redirected from another page
+    const storedPetId = localStorage.getItem('selectedPetId') || '1';
+    liveCams.innerHTML = renderLiveCamsHeader(storedPetId); 
+    const loaderHook = document.querySelector('.loader-hook');
+    loaderHook.innerHTML = Loader();
+    // quick-donate 
+    const donate = document.getElementById('quick-donate');
+    donate.innerHTML = renderQuickDonateSection(storedPetId);
+    // did-you-know 
+    const didYouKnow = document.getElementById('did-you-know');
+    // inject map modal once
+    document.body.insertAdjacentHTML('beforeend', renderMapModal());
+    setupMapModal();
+    
+    try {
+        const [data, pet] = await Promise.all([
+            fetchSidebarPetData(),
+            fetchPetById(storedPetId)
+        ]);
+        const collapsedHTML = data.data.map(pet => renderSidebarItem(pet)).join('');
+        const expandedHTML = data.data.map(pet => renderExpandedSidebarItem(pet)).join('');
+        sidebarCol.innerHTML = collapsedHTML;
+        sidebarExp.innerHTML = expandedHTML; 
+        setupSidebarListener(sidebar, data.data); 
+        setupSyncListenerForSidebar(); 
+
+        // render zoo page
+        renderZoosPage(data.data, storedPetId);
+        // render did-you-know
+        didYouKnow.innerHTML = renderDidYouKnowSection(pet);
+        setupActiveSidebarIcon(storedPetId);
+        localStorage.removeItem('selectedPetId');
+
+    } catch (error) {
+        liveCams.insertAdjacentHTML(
+            'beforeend', 
+            '<div class="load-error">Something went wrong. Please, refresh the page</div>'
+        );
+        const loadErr = document.querySelector('.load-error');
+        loadErr.style = 'margin-top: 10%'; 
+        loaderHook.innerHTML = '';
+        console.error(error);
+    }
+    
+
+//     // listener for live cams 
+//     const cams = document.querySelectorAll('.live-cams-track img');
+//     cams.forEach((cam) => {
+//         cam.addEventListener('click', () => {
+//             setActiveCam(cam);
+//         });
+//     });
+
+
+//     const burger = document.querySelector('.hamburger-icon');
+//     const burgerMenu = document.querySelector('.burger-menu');
+//     const burgerCloseBtn = document.querySelector('.burger-close-btn');
+
+//     burger.addEventListener('click', () => {
+//     burgerMenu.classList.add('burger');
+//     burgerCloseBtn.classList.add('active');
+//     });
+
+//     burgerCloseBtn.addEventListener('click', () => {
+//     burgerMenu.classList.remove('burger');
+//     burgerCloseBtn.classList.remove('active');
+//     });
+
+});
+
+
+// map modal 
+// parse "18.7669° S" → -18.7669, "46.8691° E" → 46.8691
+function parseCoordinate(coordStr) {
+    const match = coordStr.match(/([\d.]+)°?\s*([NSEW])/i);
+    if (!match) return 0;
+    let value = parseFloat(match[1]);
+    const dir = match[2].toUpperCase();
+    if (dir === 'S' || dir === 'W') value = -value;
+    return value;
+}
+
+let leafletMap = null;
+
+function openMapModal(lat, lng, petName) {
+    const overlay = document.getElementById('mapModalOverlay');
+    overlay.classList.add('active');
+
+    if (leafletMap) {
+        leafletMap.remove();
+        leafletMap = null;
+    }
+
+    // wait for the overlay to be visible and painted before init
+    // setTimeout(() => {
+        leafletMap = L.map('mmap').setView([lat, lng], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(leafletMap);
+        L.marker([lat, lng]).addTo(leafletMap)
+            .bindPopup(petName)
+            .openPopup();
+        
+        // force Leaflet to recalculate container size
+        leafletMap.invalidateSize();
+    // }, 5000);
+}
+
+function closeMapModal() {
+    const overlay = document.getElementById('mapModalOverlay');
+    overlay.classList.remove('active');
+    if (leafletMap) {
+        leafletMap.remove();
+        leafletMap = null;
+    }
+}
+
+function setupMapModal() {
+    const overlay = document.getElementById('mapModalOverlay');
+    const closeBtn = document.getElementById('mapModalClose');
+
+    closeBtn.addEventListener('click', closeMapModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMapModal();
     });
 
-    burgerCloseBtn.addEventListener('click', () => {
-    burgerMenu.classList.remove('burger');
-    burgerCloseBtn.classList.remove('active');
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeMapModal();
     });
+}
 
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.view-map-btn');
+    if (btn) {
+        const lat = parseCoordinate(btn.dataset.lat);
+        const lng = parseCoordinate(btn.dataset.lng);
+        const name = btn.dataset.name;
+        openMapModal(lat, lng, name);
+    }
 });
    

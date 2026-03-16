@@ -185,7 +185,7 @@ function buildPetDataWithImages(data) {
 
 function renderMeetPetCard(pet) {
     return `
-      <div class="meet-pet-card" data-id="${pet.commonName}">
+      <div class="meet-pet-card" data-id="${pet.id}">
           <div class="meet-pet-tag subheader-text">
               ${pet.name}
           </div>
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   document.querySelectorAll('.care-pet-card').forEach(card => {
     card.addEventListener('click', () => {
-      const id = card.dataset.id ? card.dataset.id : 'panda';
+      const id = card.dataset.id; 
       localStorage.setItem('selectedPetId', id);
       window.location.href = `${BASE_PATH}/pages/zoos/index.html`;
     });
