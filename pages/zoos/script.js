@@ -4,7 +4,7 @@ import { renderSidebar } from '../../components/sidebar/sidebar.js';
 import { Loader } from '../../components/loader/loader.js';
 import { renderDidYouKnowSection } from '../../components/did-you-know/did-you-know.js';
 import { renderQuickDonateSection } from '../../components/quick-donate/quick-donate.js';
-import { renderMapModal } from '../../components/mapModal/mapModal.js';
+import { renderMapModal } from '../../components/map-modal/mapModal.js';
 
 const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 
@@ -788,7 +788,6 @@ async function fetchPetById(petId) {
   }
 }
 
-
 document.addEventListener('DOMContentLoaded', async () => {
     const liveCams = document.querySelector('.live-cams');
     const sidebarCol = document.querySelector('.sidebar-collapsed .sidebar-track');
@@ -865,7 +864,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 
-// map modal 
+// map modal (did-you-know)
 // parse "18.7669° S" → -18.7669, "46.8691° E" → 46.8691
 function parseCoordinate(coordStr) {
     const match = coordStr.match(/([\d.]+)°?\s*([NSEW])/i);
@@ -888,7 +887,6 @@ function openMapModal(lat, lng, petName) {
     }
 
     // wait for the overlay to be visible and painted before init
-    // setTimeout(() => {
         leafletMap = L.map('mmap').setView([lat, lng], 5);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
@@ -899,7 +897,6 @@ function openMapModal(lat, lng, petName) {
         
         // force Leaflet to recalculate container size
         leafletMap.invalidateSize();
-    // }, 5000);
 }
 
 function closeMapModal() {
