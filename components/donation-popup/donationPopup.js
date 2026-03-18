@@ -764,7 +764,8 @@ export function setupDonationPopup() {
         const toast = document.createElement('div');
         toast.className = 'complete-message';
         toast.textContent = mess;
-        toast.style.color = isOk ? 'green' : 'red';
+        toast.style.color = isOk ? '#00A092' : 'red';
+        toast.style.fontFamily = 'Montserrat';
         document.body.appendChild(toast);
 
         setTimeout(() => {

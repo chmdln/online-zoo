@@ -5,6 +5,7 @@ import { Loader } from '../../components/loader/loader.js';
 import { renderDidYouKnowSection } from '../../components/did-you-know/did-you-know.js';
 import { renderQuickDonateSection } from '../../components/quick-donate/quick-donate.js';
 import { renderMapModal } from '../../components/map-modal/mapModal.js';
+import { renderDonationPopup, setupDonationPopup } from '../../components/donation-popup/donationPopup.js';
 
 const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 
@@ -62,117 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }); 
 });
-
-
-function setupDonationPopup() {
-    const donateBtn = document.querySelector('.donate-right .btn-primary');
-    const popup = document.getElementById('donationPopup');
-    const closeBtn = document.getElementById('closePopup');
-    const overlay = document.getElementById('popupOverlay');
-
-    donateBtn.addEventListener('click', () => {
-    popup.style.display = 'block';
-    document.body.classList.add('no-scroll');
-    });
-
-    function closePopup() {
-    popup.style.display = 'none';
-    document.body.classList.remove('no-scroll');
-    trigger.textContent = 'Choose your favourite';
-    trigger.style.color = '#A4A8AE';
-    popupSteps[currPopupStep].classList.remove('active');
-    currPopupStep = 0;
-    popupSteps[currPopupStep].classList.add('active');
-    }
-
-    closeBtn.addEventListener('click', closePopup);
-    overlay.addEventListener('click', closePopup);
-
-    const select = document.querySelector('.special-pet-select');
-    const trigger = select.querySelector('.select-trigger .trigger-placeholder');
-    const arrow = select.querySelector('.arrow-wrapper');
-    const options = select.querySelector('.select-options');
-    const optionsList = select.querySelectorAll('.select-options li');
-    const dropdown = select.querySelector('.select-dropdown');
-    const upArrow = document.querySelector('.up-arrow');
-    const downArrow = document.querySelector('.down-arrow')
-
-    arrow.addEventListener('click', () => {
-    options.style.display =
-        options.style.display = options.style.display === 'block' ? 'none' : 'block';
-        dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-
-    let currentIndex = 0;
-    function updateActiveOption(index) {
-        optionsList.forEach(option => option.classList.remove('active'));
-        optionsList[index].classList.add('active');
-        optionsList[index].scrollIntoView({
-            block: 'nearest'
-        });
-    }
-
-    updateActiveOption(currentIndex);
-
-    downArrow.addEventListener('click', () => {
-        if (currentIndex < optionsList.length - 1) {
-            currentIndex++;
-            updateActiveOption(currentIndex);
-        }
-    });
-
-    upArrow.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateActiveOption(currentIndex);
-        }
-    });
-
-    optionsList.forEach((option, index) => {
-        option.addEventListener('click', () => {
-            currentIndex = index;
-            updateActiveOption(currentIndex);
-            trigger.textContent = option.textContent;
-            trigger.style.color = '#000000';
-            options.style.display = 'none';
-            dropdown.style.display = 'none';
-        });
-    });
-
-    const popupSteps = document.querySelectorAll('.popup-step');
-    const nextBtns = document.querySelectorAll('.next-btn');
-    const backBtns = document.querySelectorAll('.back-btn');
-    const completeDonationBtn = document.querySelector('.complete-donation-btn');
-
-    let currPopupStep = 0;
-    nextBtns.forEach((nextBtn, index) => {
-        nextBtn.addEventListener('click', () => {
-            popupSteps[currPopupStep].classList.remove('active');
-            currPopupStep++;
-            if (currPopupStep < popupSteps.length) {
-                popupSteps[currPopupStep].classList.add('active');
-            }
-        });
-    });
-
-    backBtns.forEach((backBtn, index) => {
-        backBtn.addEventListener('click', () => {
-            popupSteps[currPopupStep].classList.remove('active');
-            currPopupStep--;
-            if (currPopupStep >= 0) {
-                popupSteps[currPopupStep].classList.add('active');
-            }
-        });
-    });
-
-    completeDonationBtn.addEventListener('click', () => {
-        popupSteps[currPopupStep].classList.remove('active');
-        currPopupStep = 0;
-        popupSteps[currPopupStep].classList.add('active');
-        closePopup();
-    });
-}
 
 function setActiveCam(clickedCam) {
     const cams = document.querySelectorAll('.live-cams-track img');
@@ -271,6 +161,10 @@ function setupSidebarListener(sidebar, data) {
             // render quick-donate 
             const quickDonate = document.getElementById('quick-donate');
             quickDonate.innerHTML = renderQuickDonateSection(petId);
+            // donation popup
+            const popup = document.getElementById('donationPopup');
+            popup.innerHTML = renderDonationPopup();
+            setupDonationPopup();
 
             // render did-you-know 
             const didYouKnow = document.getElementById('did-you-know');
@@ -714,17 +608,6 @@ function renderZoosPage(data, petId, isActive = false) {
             liveCams.innerHTML = renderLiveCamsHeader(pet.petId);   
             // render main live cam
             liveCams.insertAdjacentHTML('beforeend', renderPet(pet.petId, isActive));
-            // // render quick donate
-            // donate.innerHTML = renderQuickDonateSection(
-            //     zooPet.donate.header, zooPet.donate.subheader
-            // );
-
-            // const cams = document.querySelectorAll('.live-cams-track img');
-            // cams.forEach(cam => {
-            //     cam.addEventListener('click', () => {
-            //         setActiveCam(cam);
-            //     });
-            // })
             }
         });
     } catch (error) {
@@ -801,6 +684,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     // quick-donate 
     const donate = document.getElementById('quick-donate');
     donate.innerHTML = renderQuickDonateSection(storedPetId);
+    const popup = document.getElementById('donationPopup');
+    popup.innerHTML = renderDonationPopup();
+    setupDonationPopup();
+    
+
     // did-you-know 
     const didYouKnow = document.getElementById('did-you-know');
     // inject map modal once
