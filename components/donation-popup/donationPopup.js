@@ -167,7 +167,6 @@ export function renderDonationPopup() {
                                 </div>
                             </div>
                             <div class="save-card-info">
-                                
                             </div>
                         </div>
                         <div class="popup-footer">
@@ -716,7 +715,7 @@ export function setupDonationPopup() {
         cardNumberErrorMess.textContent = '';
         cvvNumberErrorMess.textContent = '';
         expiryErrorMess.textContent = '';
-        document.getElementById('saveCardInfo').checked = false
+        document.querySelector('.save-card-info input').checked = false
     }
 
     async function submitDonation(payLoad) {
@@ -729,9 +728,15 @@ export function setupDonationPopup() {
                 body: JSON.stringify(payLoad)
             });
             const data = await response.json(); 
-            return data;
+            data.data.ok = response.ok;
+            return data.data; 
+            
         } catch (error) {
             console.error('Error:', error);
+            return { 
+                message: 'Something went wrong. Please, try again later.', 
+                ok: false 
+            };
         }
     }
 
@@ -753,21 +758,18 @@ export function setupDonationPopup() {
         localStorage.setItem('user', JSON.stringify(user))
     }
 
+
     function showCompleteMessage(mess, isOk) {
-        const popup = document.querySelector('.popup-step.step-3');
-        popup.innerHTML = `
-            <div class="complete-message">
-                ${mess}
-            </div>
-        `;
+        // create a toast-style message outside the popup
+        const toast = document.createElement('div');
+        toast.className = 'complete-message';
+        toast.textContent = mess;
+        toast.style.color = isOk ? 'green' : 'red';
+        document.body.appendChild(toast);
 
-        const completeMessage = document.querySelector('.complete-message');
-        completeMessage.style.color = isOk ? 'green' : 'red';
-        completeMessage.style.display = 'block';
         setTimeout(() => {
-            completeMessage.style.display = 'none';
+            toast.remove();
         }, 3000);
-
     }
 
     completeBtn.addEventListener('click', async () => {
@@ -787,15 +789,15 @@ export function setupDonationPopup() {
             expiry: expiryInput.value
         }]; 
         saveCardInfo(cardInfo);
-        
-        // show message
-        showCompleteMessage(data.message, data.ok);
 
         // reset to step 1
         popupSteps[currPopupStep].classList.remove('active');
         currPopupStep = 0;
         popupSteps[currPopupStep].classList.add('active');
         closePopup();
+
+        // show message
+        showCompleteMessage(data.message, data.ok);
     });
     
     closeBtn.addEventListener('click', closePopup);
