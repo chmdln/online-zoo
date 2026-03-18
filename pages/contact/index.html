@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../assets/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="../../components/header/style.css">
+    <link rel="stylesheet" href="../../components/footer/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./script.js"></script>
+    <title>Contact Us</title>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <section class="contact-us">
+            <img src="../../assets/icons/contact-touch-animal.svg" alt="Image of hand touching a screen">
+            <div class="get-in-touch-container">
+                <div class="left-section">
+                    <h2 class="h2-heading">Get in touch</h2>
+                    <div class="info text">Whether you have a question, or would like to say hello, we're happy to hear from you. Please use the form to send us a message and we'll get back to you as soon as we can. Whether you have a question, or would like to say hello, we're happy to hear from you. Please use the form to send us a message and we'll get back to you as soon as we can. </div>
+                </div>
+                <div class="right-section">
+                    <form class="contact-form">
+                        <label for="name" class="text">
+                            <span class="required">*</span> Your Name
+                        </label>
+                        <input type="text" id="name" placeholder="First and last name" class="text">
+                        <label for="email" class="text">
+                            <span class="required">*</span> Your Email Address
+                        </label>
+                        <input type="email" id="email" placeholder="Enter your email" class="text">
+                        <label for="subject" class="text">
+                            <span class="required">*</span> Subject
+                        </label>
+                        <input type="text" id="subject" placeholder="Enter the subject" class="text">
+                        <label for="message" class="text">
+                            <span class="required">*</span> Your Email Address
+                        </label>
+                        <textarea placeholder="Enter your message" id="message" class="text"></textarea>
+                        <button 
+                            type="submit" 
+                            class="btn-text"
+                        >
+                            Send Message
+                            <span class="arrow-container">
+                                <span class="arrow-line"></span>
+                                <span class="arrow-right"></span>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer"></div>
+</body>
+</html>
