@@ -470,6 +470,10 @@
     max-width: 50%; 
 }
 
+.card-expiry-container input.error {
+    color: red;  
+}
+
 .expiry-error-message {
     color: red; 
     margin-top: 10px;
@@ -492,6 +496,52 @@
     width: 20px; 
     height: 20px; 
 }
+
+/* saved cards info */
+.saved-cards-container {
+    position: relative;
+    margin-bottom: 10px;
+    width: 73.3%; 
+}
+
+.saved-cards-dropdown {
+    position: absolute;
+    top: 130px; 
+    left: 0;
+    width: 100%;
+    background: #f5f5f5;
+    border: 1px solid #000;
+    border-radius: 5px;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.saved-cards-dropdown .required-label {
+    padding: 0 20px;
+    margin-bottom: 5px;
+}
+
+.saved-cards-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.saved-cards-list li {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    color: var(--black);
+    transition: 0.2s ease;
+}
+
+.saved-cards-list li:hover {
+    background-color: #c0d8d6;
+}
+/* saved cards info */
 
 .popup-step .step-3 {
     display: flex;

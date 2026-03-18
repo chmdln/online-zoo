@@ -43,14 +43,14 @@ export function renderDonationPopup() {
                                         <div class="options-scroll">
                                             <ul class="select-options">
                                                 <li>None</li>
-                                                <li>Lukas the Panda</li>
-                                                <li>Andy the Lemur</li>
-                                                <li>Glen the Gorilla</li>
-                                                <li>Mike the Alligator</li>               
-                                                <li>Sam & Lora the eagles family</li>
-                                                <li>Liz the Koala</li>
-                                                <li>Shake the Lion</li>
-                                                <li>Senja the Tiger</li>
+                                                <li data-id="1">Lukas the Panda</li>
+                                                <li data-id="2">Andy the Lemur</li>
+                                                <li data-id="3">Glen the Gorilla</li>
+                                                <li data-id="4">Mike the Alligator</li>               
+                                                <li data-id="5">Sam & Lora the eagles family</li>
+                                                <li data-id="6">Liz the Koala</li>
+                                                <li data-id="7">Shake the Lion</li>
+                                                <li data-id="8">Senja the Tiger</li>
                                             </ul>
                                         </div>
                                         <div class="scroll-arrow-down-wrapper"><div class="scroll-arrow down-arrow"></div>
@@ -124,6 +124,7 @@ export function renderDonationPopup() {
                     <div class="popup-step step-3">
                         <div class="popup-section-title">Payment information:</div>
                         <div class="popup-section-main">
+                            <div class="saved-cards-container"></div>
                             <div class="payment-info-container">
                                 <div class="credit-card-container">
                                     <div class="required-label">* Credit Card Number:</div>
@@ -151,27 +152,6 @@ export function renderDonationPopup() {
                                 </div>
                             </div>
                             <div class="card-expiry-container">
-                                <!-- input month -->
-                                <div class="special-pet-select" style="display: none">
-                                    <div class="select-trigger">
-                                        <input 
-                                            type="text"
-                                            name="cc-exp-month"
-                                            placeholder="Month"
-                                            class="input-primary"
-                                            autocomplete="cc-exp-month" 
-                                            required
-                                        >
-                                        <div class="month arrow-wrapper">
-                                            <div class="arrow"></div>
-                                        </div>
-                                    </div>
-                                    <div class="select-dropdown">
-                                        <div class="scroll-arrow-up-wrapper"><div class="scroll-arrow up-arrow"></div></div>
-                                        <div class="scroll-arrow-down-wrapper"><div class="scroll-arrow down-arrow"></div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div>
                                     <div class="required-label">* Expiration Date</div>
                                     <input
@@ -187,8 +167,7 @@ export function renderDonationPopup() {
                                 </div>
                             </div>
                             <div class="save-card-info">
-                                <input type="checkbox" id="saveCardInfo">
-                                <label for="saveCardInfo">Save card info for future donations</label>
+                                
                             </div>
                         </div>
                         <div class="popup-footer">
@@ -206,6 +185,7 @@ export function renderDonationPopup() {
                             </button>
                         </div>
                     </div>
+                    
                 </div>
             </div>
     `
@@ -213,6 +193,7 @@ export function renderDonationPopup() {
 
 
 export function setupDonationPopup() {
+    const BASE_URL = 'https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod';
     const donateBtn = document.querySelector('.donate-right .btn-primary');
     const popup = document.getElementById('donationPopup');
     const closeBtn = document.getElementById('closePopup');
@@ -234,7 +215,9 @@ export function setupDonationPopup() {
     let selectedAmount = false;
     let selectedPet = false;
     let canProceed = false;
-
+    let AMOUNT;  
+    let PETID; 
+    
     function updateNextBtn() {
         canProceed = selectedAmount && selectedPet;
         nextBtnStep1.disabled = !canProceed;
@@ -369,6 +352,24 @@ export function setupDonationPopup() {
         
     });
 
+    // save amount and petId
+    nextBtnStep1.addEventListener('click', () => {
+        const selectedBtn = [...amountBtns].find(b => !b.classList.contains('active'));
+        if (selectedBtn) {
+            AMOUNT = parseFloat(selectedBtn.textContent.slice(1));
+        }
+
+        if (!otherAmountBtn.classList.contains('active')) {
+            AMOUNT = parseFloat(otherAmountInput.value);
+            console.log("other amount", AMOUNT);
+        }
+
+        if (selectedPet) {
+            PETID = parseInt(optionsList[currentIndex].getAttribute('data-id'));
+        }
+    }); 
+    
+
     // step 2 
     const nameInput = document.querySelector('.name-input');
     const emailInput = document.querySelector('.email-input');
@@ -443,6 +444,80 @@ export function setupDonationPopup() {
     const expiryErrorMess = document.querySelector('.expiry-error-message');
     const completeBtn = document.querySelector('.complete-donation-btn');
 
+    // render saved cards 
+    let savedCardsVisible = false;
+
+    function renderSavedCards(cards) {
+        const container = document.querySelector('.saved-cards-container');
+        if (!cards || cards.length === 0) {
+            container.innerHTML = '';
+            savedCardsVisible = false;
+            return;
+        }
+
+        const cardOptions = cards.map((card, index) => {
+            const num = card.cardNumber.replace(/\s/g, '');
+            const masked = `${num.slice(0, 4)} **** **** ${num.slice(-4)}`;
+            return `<li data-index="${index}">${masked}</li>`;
+        }).join('');
+
+        container.innerHTML = `
+            <div class="saved-cards-dropdown">
+                <ul class="saved-cards-list">
+                    ${cardOptions}
+                </ul>
+            </div>
+        `;
+        savedCardsVisible = true;
+
+        // prefill selected card
+        container.querySelectorAll('.saved-cards-list li').forEach(li => {
+            li.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                const card = cards[parseInt(li.dataset.index)];
+                cardNumberInput.value = card.cardNumber;
+                cvvNumberInput.value = card.cvv;
+                expiryInput.value = card.expiry;
+                container.innerHTML = '';
+                savedCardsVisible = false;
+                updateCompleteBtn();
+            });
+        });
+    }
+
+    // show saved cards on focus
+    cardNumberInput.addEventListener('focus', () => {
+        cardNumberInput.classList.remove('error');
+        cardNumberErrorMess.textContent = '';
+
+        const currUser = localStorage.getItem('user');
+        if (currUser !== null) {
+            const user = JSON.parse(currUser);
+            if (user.cardInfo && user.cardInfo.length > 0) {
+                renderSavedCards(user.cardInfo);
+            }
+        }
+    });
+
+    // hide saved cards on user input
+    cardNumberInput.addEventListener('input', () => {
+        const container = document.querySelector('.saved-cards-container');
+        if (savedCardsVisible && container) {
+            container.innerHTML = '';
+            savedCardsVisible = false;
+        }
+    });
+
+    // hide saved cards on outside click
+    document.addEventListener('click', (e) => {
+        const container = document.querySelector('.saved-cards-container');
+        if (savedCardsVisible && container && !container.contains(e.target) && e.target !== cardNumberInput) {
+            container.innerHTML = '';
+            savedCardsVisible = false;
+        }
+    });
+    
+
     function updateCompleteBtn() {
         const cardNumber = cardNumberInput.value.replace(/\s/g, '');
         const cardValid = /^\d{16}$/.test(cardNumber);
@@ -466,8 +541,24 @@ export function setupDonationPopup() {
         return val;
     }
 
+    nextBtnStep2.addEventListener('click', () => {
+        const currUser = localStorage.getItem('user');
+        const saveCardInfo = document.querySelector('.save-card-info'); 
+
+        // display checkbox
+        if (currUser !== null) {
+            saveCardInfo.innerHTML = `
+            <input type="checkbox" id="saveCardInfo">
+            <label for="saveCardInfo">Save card info for future donations</label>
+            `
+        } else {
+            saveCardInfo.innerHTML = '';
+        }
+    }); 
+
     document.addEventListener('click', (e) => {
-        if (!cardNumberInput.contains(e.target)) {
+        const savedCardsContainer = document.querySelector('.saved-cards-container');
+        if (!cardNumberInput.contains(e.target) && !savedCardsContainer?.contains(e.target)) {
             const cardNumber = cardNumberInput.value.replace(/\s/g, ''); 
             const isValid = /^\d{16}$/.test(cardNumber);
             if (cardNumber && !isValid) {
@@ -484,10 +575,6 @@ export function setupDonationPopup() {
         }
     });
 
-    cardNumberInput.addEventListener('focus', () => {
-        cardNumberInput.classList.remove('error');
-        cardNumberErrorMess.textContent = '';
-    });
 
     cvvNumberInput.addEventListener('input', () => {
         const cvvNumber = cvvNumberInput.value;
@@ -525,6 +612,7 @@ export function setupDonationPopup() {
             val = val.slice(0, 2) + '/' + val.slice(2, 4);
         }
         expiryInput.value = val;
+        updateCompleteBtn();
     });
 
     expiryInput.addEventListener('blur', () => {
@@ -582,63 +670,134 @@ export function setupDonationPopup() {
         });
     });
 
-    completeBtn.addEventListener('click', () => {
+    // complete donation
+    function closePopup() {
+        // reset steps
+        popupSteps[currPopupStep].classList.remove('active');
+        currPopupStep = 0;
+        popupSteps[currPopupStep].classList.add('active');
+        popup.style.display = 'none';
+        document.body.classList.remove('no-scroll');
+
+        // reset step 1
+        amountBtns.forEach(b => b.classList.add('active'));
+        otherAmountBtn.classList.add('active');
+        otherAmountInput.value = '';
+        trigger.textContent = 'Choose your favourite';
+        trigger.style.color = '#A4A8AE';
+        specialPetBtn.classList.add('active');
+        selectedAmount = false;
+        selectedPet = false;
+        canProceed = false;
+        currentIndex = 0;
+        updateActiveOption(currentIndex);
+        options.style.display = 'none';
+        dropdown.style.display = 'none';
+        nextBtnStep1.disabled = true;
+        document.getElementById('monthly').checked = false;
+
+        // reset step 2
+        nameInput.value = '';
+        emailInput.value = '';
+        nameInput.classList.remove('error');
+        emailInput.classList.remove('error');
+        nameErrorMess.textContent = '';
+        emailErrorMess.textContent = '';
+        nextBtnStep2.disabled = true;
+
+        // reset step 3
+        cardNumberInput.value = '';
+        cvvNumberInput.value = '';
+        expiryInput.value = '';
+        cardNumberInput.classList.remove('error');
+        cvvNumberInput.classList.remove('error');
+        expiryInput.classList.remove('error');
+        payInfoContainer.classList.remove('error');
+        cardNumberErrorMess.textContent = '';
+        cvvNumberErrorMess.textContent = '';
+        expiryErrorMess.textContent = '';
+        document.getElementById('saveCardInfo').checked = false
+    }
+
+    async function submitDonation(payLoad) {
+        try {
+            const response = await fetch(`${BASE_URL}/donations`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payLoad)
+            });
+            const data = await response.json(); 
+            return data;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    function saveCardInfo(data) {
+        const checkbox = document.querySelector('.save-card-info input'); 
+        let userStr = localStorage.getItem('user'); 
+        if (!checkbox || !checkbox.checked || !userStr) return;
+        
+        let user = JSON.parse(userStr);
+        if (!Array.isArray(user.cardInfo)) {
+            if (user.cardInfo) {
+                user.cardInfo = [user.cardInfo];
+            } else {
+                user.cardInfo = [];
+            }
+        }
+
+        user.cardInfo.push(...data);
+        localStorage.setItem('user', JSON.stringify(user))
+    }
+
+    function showCompleteMessage(mess, isOk) {
+        const popup = document.querySelector('.popup-step.step-3');
+        popup.innerHTML = `
+            <div class="complete-message">
+                ${mess}
+            </div>
+        `;
+
+        const completeMessage = document.querySelector('.complete-message');
+        completeMessage.style.color = isOk ? 'green' : 'red';
+        completeMessage.style.display = 'block';
+        setTimeout(() => {
+            completeMessage.style.display = 'none';
+        }, 3000);
+
+    }
+
+    completeBtn.addEventListener('click', async () => {
+        // backend call
+        const payLoad = {
+            name: nameInput.value,
+            email: emailInput.value,
+            amount: AMOUNT,
+            petId: PETID,
+        }
+        const data = await submitDonation(payLoad);
+
+        // save card info
+        const cardInfo = [{
+            cardNumber: cardNumberInput.value,
+            cvv: cvvNumberInput.value,
+            expiry: expiryInput.value
+        }]; 
+        saveCardInfo(cardInfo);
+        
+        // show message
+        showCompleteMessage(data.message, data.ok);
+
+        // reset to step 1
         popupSteps[currPopupStep].classList.remove('active');
         currPopupStep = 0;
         popupSteps[currPopupStep].classList.add('active');
         closePopup();
     });
-
-    function closePopup() {
-    popup.style.display = 'none';
-    document.body.classList.remove('no-scroll');
-
-    // reset step 1
-    amountBtns.forEach(b => b.classList.add('active'));
-    otherAmountBtn.classList.add('active');
-    otherAmountInput.value = '';
-    otherAmountInput.style.display = 'none';
-    trigger.textContent = 'Choose your favourite';
-    trigger.style.color = '#A4A8AE';
-    specialPetBtn.classList.add('active');
-    selectedAmount = false;
-    selectedPet = false;
-    canProceed = false;
-    currentIndex = 0;
-    updateActiveOption(currentIndex);
-    options.style.display = 'none';
-    dropdown.style.display = 'none';
-    nextBtnStep1.disabled = true;
-    document.getElementById('monthly').checked = false;
-
-    // reset step 2
-    nameInput.value = '';
-    emailInput.value = '';
-    nameInput.classList.remove('error');
-    emailInput.classList.remove('error');
-    nameErrorMess.textContent = '';
-    emailErrorMess.textContent = '';
-    nextBtnStep2.disabled = true;
-
-    // reset step 3
-    cardNumberInput.value = '';
-    cvvNumberInput.value = '';
-    expiryInput.value = '';
-    cardNumberInput.classList.remove('error');
-    cvvNumberInput.classList.remove('error');
-    expiryInput.classList.remove('error');
-    payInfoContainer.classList.remove('error');
-    cardNumberErrorMess.textContent = '';
-    cvvNumberErrorMess.textContent = '';
-    expiryErrorMess.textContent = '';
-    document.getElementById('saveCardInfo').checked = false
-
-    // reset steps
-    popupSteps[currPopupStep].classList.remove('active');
-    currPopupStep = 0;
-    popupSteps[currPopupStep].classList.add('active');
-}
-
+    
     closeBtn.addEventListener('click', closePopup);
     overlay.addEventListener('click', closePopup);
 }
