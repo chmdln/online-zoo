@@ -1,0 +1,50 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="60" r="58.5" stroke="white" stroke-width="3"/>
+<g filter="url(#ds)"><circle cx="60" cy="60" r="52" fill="white"/></g>
+<!-- ears -->
+<ellipse cx="34" cy="26" rx="12" ry="12" fill="#20113D"/>
+<ellipse cx="86" cy="26" rx="12" ry="12" fill="#20113D"/>
+<ellipse cx="34" cy="26" rx="6" ry="6" fill="white" opacity="0.22"/>
+<ellipse cx="86" cy="26" rx="6" ry="6" fill="white" opacity="0.22"/>
+<!-- head -->
+<ellipse cx="60" cy="62" rx="32" ry="30" fill="#20113D" opacity="0.08"/>
+<!-- forehead stripes -->
+<path d="M52 32 Q54 42 53 50" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M60 30 Q60 40 60 50" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M68 32 Q66 42 67 50" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round"/>
+<!-- cheek stripes -->
+<path d="M28 54 Q38 56 44 60" stroke="#20113D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M26 62 Q36 62 44 65" stroke="#20113D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M92 54 Q82 56 76 60" stroke="#20113D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M94 62 Q84 62 76 65" stroke="#20113D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<!-- eye surrounds -->
+<ellipse cx="45" cy="54" rx="10" ry="9" fill="#20113D" opacity="0.85"/>
+<ellipse cx="75" cy="54" rx="10" ry="9" fill="#20113D" opacity="0.85"/>
+<circle cx="45" cy="54" r="5.5" fill="white" opacity="0.28"/>
+<circle cx="75" cy="54" r="5.5" fill="white" opacity="0.28"/>
+<circle cx="45" cy="54" r="3.2" fill="#20113D"/>
+<circle cx="75" cy="54" r="3.2" fill="#20113D"/>
+<circle cx="46" cy="53" r="1.1" fill="white"/>
+<circle cx="76" cy="53" r="1.1" fill="white"/>
+<!-- muzzle -->
+<ellipse cx="60" cy="74" rx="16" ry="12" fill="#20113D" opacity="0.12"/>
+<!-- nose -->
+<path d="M54 70 Q60 67 66 70 Q66 75 60 76 Q54 75 54 70Z" fill="#20113D"/>
+<!-- mouth -->
+<path d="M60 76 L60 78.5 M60 78.5 C57.5 81 54 80.5 52.5 79 M60 78.5 C62.5 81 66 80.5 67.5 79" stroke="#20113D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<!-- whisker dots -->
+<circle cx="47" cy="73" r="1.3" fill="#20113D" opacity="0.5"/>
+<circle cx="47" cy="77" r="1.3" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="73" r="1.3" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="77" r="1.3" fill="#20113D" opacity="0.5"/>
+<defs>
+<filter id="ds" x="4" y="8" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/><feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>

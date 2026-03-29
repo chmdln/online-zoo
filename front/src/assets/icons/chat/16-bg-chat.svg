@@ -1,0 +1,48 @@
+<svg width="400" height="800" viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="800" fill="#FFFFFF"/>
+<defs>
+<g id="icon">
+
+<ellipse cx="-30" cy="-34" rx="14" ry="14" fill="#20113D"/>
+<ellipse cx="30" cy="-34" rx="14" ry="14" fill="#20113D"/>
+<ellipse cx="0" cy="2" rx="36" ry="32" fill="#20113D"/>
+<ellipse cx="-16" cy="-8" rx="9" ry="8.5" fill="#20113D"/>
+<ellipse cx="16" cy="-8" rx="9" ry="8.5" fill="#20113D"/>
+<circle cx="-16" cy="-8" r="4.5" fill="white" opacity="0.28"/>
+<circle cx="16" cy="-8" r="4.5" fill="white" opacity="0.28"/>
+<circle cx="-16" cy="-8" r="2.6" fill="#20113D"/>
+<circle cx="16" cy="-8" r="2.6" fill="#20113D"/>
+<circle cx="-14" cy="-10" r="1" fill="white"/>
+<circle cx="18" cy="-10" r="1" fill="white"/>
+<ellipse cx="0" cy="14" rx="22" ry="16" fill="#20113D"/>
+<path d="M-8,10 Q0,6 8,10 Q8,18 0,20 Q-8,18 -8,10 Z" fill="#20113D"/>
+<ellipse cx="-5" cy="11" rx="3" ry="2.5" fill="white" opacity="0.25"/>
+<ellipse cx="5" cy="11" rx="3" ry="2.5" fill="white" opacity="0.25"/>
+<path d="M0,20 L0,24 M0,24 C-3,27 -7,26 -8,25 M0,24 C3,27 7,26 8,25" stroke="#20113D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</g>
+</defs>
+<use href="#icon" transform="translate(65,80) rotate(-8) scale(1.0)" opacity="0.05"/>
+<use href="#icon" transform="translate(195,70) rotate(5) scale(1.1)" opacity="0.04"/>
+<use href="#icon" transform="translate(325,82) rotate(-3) scale(0.9)" opacity="0.05"/>
+<use href="#icon" transform="translate(130,180) rotate(6) scale(1.0)" opacity="0.04"/>
+<use href="#icon" transform="translate(260,172) rotate(-10) scale(0.95)" opacity="0.05"/>
+<use href="#icon" transform="translate(390,182) rotate(4) scale(1.05)" opacity="0.04"/>
+<use href="#icon" transform="translate(55,280) rotate(10) scale(0.95)" opacity="0.05"/>
+<use href="#icon" transform="translate(185,272) rotate(-6) scale(1.1)" opacity="0.04"/>
+<use href="#icon" transform="translate(315,282) rotate(3) scale(0.9)" opacity="0.05"/>
+<use href="#icon" transform="translate(120,382) rotate(-4) scale(1.05)" opacity="0.04"/>
+<use href="#icon" transform="translate(250,374) rotate(8) scale(0.9)" opacity="0.05"/>
+<use href="#icon" transform="translate(380,384) rotate(-7) scale(1.0)" opacity="0.04"/>
+<use href="#icon" transform="translate(60,480) rotate(-11) scale(1.0)" opacity="0.05"/>
+<use href="#icon" transform="translate(190,472) rotate(4) scale(0.95)" opacity="0.04"/>
+<use href="#icon" transform="translate(320,482) rotate(-5) scale(1.08)" opacity="0.05"/>
+<use href="#icon" transform="translate(130,582) rotate(7) scale(0.95)" opacity="0.04"/>
+<use href="#icon" transform="translate(258,574) rotate(-8) scale(1.1)" opacity="0.05"/>
+<use href="#icon" transform="translate(385,583) rotate(3) scale(0.9)" opacity="0.04"/>
+<use href="#icon" transform="translate(70,682) rotate(10) scale(1.0)" opacity="0.05"/>
+<use href="#icon" transform="translate(200,674) rotate(-5) scale(0.95)" opacity="0.04"/>
+<use href="#icon" transform="translate(330,684) rotate(6) scale(1.05)" opacity="0.05"/>
+<use href="#icon" transform="translate(140,762) rotate(-7) scale(1.0)" opacity="0.04"/>
+<use href="#icon" transform="translate(270,755) rotate(5) scale(1.05)" opacity="0.05"/>
+<use href="#icon" transform="translate(20,770) rotate(-4) scale(0.9)" opacity="0.04"/>
+</svg>

@@ -1,0 +1,51 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="60" r="58.5" stroke="white" stroke-width="3"/>
+<g filter="url(#ds)"><circle cx="60" cy="60" r="52" fill="white"/></g>
+<!-- mane outer mass -->
+<ellipse cx="60" cy="65" rx="46" ry="44" fill="#20113D" opacity="0.85"/>
+<!-- mane texture strands -->
+<path d="M60 19 Q57 32 60 42 Q63 32 60 19Z" fill="#20113D"/>
+<path d="M36 24 Q43 36 50 40 Q45 30 36 24Z" fill="#20113D"/>
+<path d="M84 24 Q77 36 70 40 Q75 30 84 24Z" fill="#20113D"/>
+<path d="M19 46 Q32 50 40 57 Q29 48 19 46Z" fill="#20113D"/>
+<path d="M101 46 Q88 50 80 57 Q91 48 101 46Z" fill="#20113D"/>
+<path d="M17 68 Q30 68 37 76 Q24 68 17 68Z" fill="#20113D"/>
+<path d="M103 68 Q90 68 83 76 Q96 68 103 68Z" fill="#20113D"/>
+<!-- face -->
+<ellipse cx="60" cy="62" rx="28" ry="26" fill="white" opacity="0.16"/>
+<!-- muzzle -->
+<ellipse cx="60" cy="74" rx="16" ry="12" fill="#20113D" opacity="0.15"/>
+<!-- ears -->
+<ellipse cx="36" cy="36" rx="10" ry="10" fill="#20113D"/>
+<ellipse cx="84" cy="36" rx="10" ry="10" fill="#20113D"/>
+<ellipse cx="36" cy="36" rx="5" ry="5" fill="white" opacity="0.2"/>
+<ellipse cx="84" cy="36" rx="5" ry="5" fill="white" opacity="0.2"/>
+<!-- eyes -->
+<ellipse cx="47" cy="57" rx="8.5" ry="7.5" fill="#20113D"/>
+<ellipse cx="73" cy="57" rx="8.5" ry="7.5" fill="#20113D"/>
+<ellipse cx="47" cy="57" rx="4.5" ry="4" fill="white" opacity="0.28"/>
+<ellipse cx="73" cy="57" rx="4.5" ry="4" fill="white" opacity="0.28"/>
+<circle cx="47" cy="57" r="2.8" fill="#20113D"/>
+<circle cx="73" cy="57" r="2.8" fill="#20113D"/>
+<circle cx="48" cy="56" r="1" fill="white"/>
+<circle cx="74" cy="56" r="1" fill="white"/>
+<!-- nose -->
+<path d="M55 71 Q60 67 65 71 Q65 76 60 77 Q55 76 55 71Z" fill="#20113D"/>
+<!-- mouth -->
+<path d="M60 77 L60 79.5 M60 79.5 C57.5 82 54 81.5 52.5 80 M60 79.5 C62.5 82 66 81.5 67.5 80" stroke="#20113D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<!-- whisker dots -->
+<circle cx="49" cy="75" r="1.4" fill="#20113D" opacity="0.5"/>
+<circle cx="49" cy="79" r="1.4" fill="#20113D" opacity="0.5"/>
+<circle cx="71" cy="75" r="1.4" fill="#20113D" opacity="0.5"/>
+<circle cx="71" cy="79" r="1.4" fill="#20113D" opacity="0.5"/>
+<defs>
+<filter id="ds" x="4" y="8" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/><feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>

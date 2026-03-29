@@ -1,0 +1,38 @@
+{
+  "name": "online-zoo",
+  "version": "1.0.0",
+  "description": "Online zoo backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/server.js"
+  },
+  "keywords": [],
+  "author": "Tatyana Li",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1015.0",
+    "@prisma/adapter-pg": "^7.6.0",
+    "@prisma/client": "^7.5.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "multer": "^2.1.1",
+    "prisma": "^7.5.0",
+    "redis": "^5.11.0",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "nodemonConfig": {
+    "ext": "js,json,ts",
+    "ignore": [
+      "node_modules",
+      "dist"
+    ],
+    "watch": [
+      "src"
+    ]
+  }
+}

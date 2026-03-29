@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../assets/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../../components/header/style.css">
+    <link rel="stylesheet" href="../../components/footer/style.css">
+    <link rel="stylesheet" href="../../components/chat/style.css">
+    <link rel="stylesheet" href="../../components/sidebar/style.css">
+    <link rel="stylesheet" href="../../components/loader/style.css">
+    <link rel="stylesheet" href="../../components/quick-donate/style.css">
+    <link rel="stylesheet" href="../../components/did-you-know/style.css">
+    <link rel="stylesheet" href="../../components/donation-popup/style.css">
+    <!-- leaflet.js -->
+    <link rel="stylesheet" href="../../components/map-modal/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="../../components/chat/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <title>Zoos</title>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <div class="live-cams-layout">
+            <div id="sidebar"></div>
+            <div id="live-cams-container">
+                <div class="live-cams-content">
+                    <section class="live-cams">
+                        
+                    </section>
+                </div>
+            </div>
+            <!-- live chat -->
+            <div id="chat-root">
+                <div class="chat-overlay" id="chat-overlay">
+                    <div class="chat-join-box">
+                        <h2>Join the chat</h2>
+                        <p>Start chatting with others about your fave pets 🐾</p>
+                        <button id="join-btn">Join</button>
+                    </div>
+                </div>
+                <div class="chat">
+                    <!-- Header -->
+                    <div class="chat-header">
+                        <div class="chat-icon">
+                            <img src="../../assets/icons/chat/1-chat.svg" alt="Pet icon">
+                        </div>
+                        <div>
+                            <div class="chat-title">
+                                Live Panda Chat
+                            </div>
+                            <div class="chat-meta">
+                                <span class="chat-status"></span>
+                                <span class="chat-count">0 watching</span>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-close-btn">&times;</div>
+                    </div>
+
+                <!-- Messages -->
+                <div class="chat-messages" id="chat-messages">
+                    <div class="confetti-layer"></div>
+                    <!-- Empty state -->
+                    <div class="chat-empty">
+                        No messages yet.  
+                        Be the first to chat 🐾
+                    </div>
+                    <!-- chat messages -->
+                </div>
+                <!-- file preview -->
+                <div class="file-preview-bar" id="file-preview-bar"></div>
+                <!-- Input -->
+                <div class="chat-input">
+                    <!-- Emoji -->
+                    <button class="chat-btn emoji-btn">
+                        <img src="../../assets/icons/chat/emoji-add-chat.svg" alt="Add emoji icon">
+                    </button>
+                    <div id="emoji-picker" class="emoji-picker hidden"></div>
+                    <!-- Attach file -->
+                    <label class="chat-btn file-btn">
+                        <img src="../../assets/icons/chat/attach-chat.svg" alt="Attach file icon">
+                        <input type="file" id="file-input" hidden />
+                    </label>
+                    <input 
+                        type="text" 
+                        placeholder="Chat about your fave pets..." 
+                        class="chat-text-input"
+                    />
+                    <button class="chat-send">Send</button>
+                </div>
+
+            </div>
+        </div>
+        <div id="quick-donate"></div>
+        <div id="did-you-know"></div>
+        <div class="donation-popup" id="donationPopup"></div>
+    </main>
+    <div id="footer"></div>
+</body>
+</html>

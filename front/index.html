@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./src/assets/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./src/global.css">
+    <link rel="stylesheet" href="./src/pages/landing/style.css">
+    <link rel="stylesheet" href="./src/components/header/style.css">
+    <link rel="stylesheet" href="./src/components/footer/style.css">
+    <link rel="stylesheet" href="./src/components/quick-donate/style.css">
+    <link rel="stylesheet" href="./src/components/donation-popup/style.css">
+    <link rel="stylesheet" href="./src/components/loader/style.css">
+    <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script>
+    <script type="module" src="./script.js"></script>
+    <title>About Us</title>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <section class="main-intro">
+            <h1 class="main-header">Watch your favorite animal online</h1>
+            <div class="main-subheader">Explore the exciting and mysterious world of wild animals in a natural setting without leaving your home.</div>
+            <a href="./src/pages/zoos/" class="live-cam-link">
+                <button>
+                    <span class="btn-text">View live cam</span>
+                    <img 
+                        src="./src/assets/icons/arrow.svg" 
+                        alt="Arrow icon"
+                    >
+                </button>
+            </a>
+        </section>
+        <section class="how-it-works">
+            <div class="how-it-works-container top">
+                <img 
+                    src="./src/assets/icons/welcome.svg" alt="Welcome to online zoo image"
+                    class="screen-1200"
+                >
+                <img 
+                    src="./src/assets/images/welcome-320.png" alt="Welcome to online zoo image"
+                    class="screen-320"
+                >
+                <div class="container-text">
+                    <h2 class="container-text-header">Welcome to the Online Zoo!</h2>
+                    <div class="container-text-main">On our website, using live webcams, fans of all ages can observe various animals. Among them, are Giant pandas, eagles, alligators, forest gorillas, African lions, and others. It is the whole natural world in real-time in front of our cameras. We hope you will enjoy watching closely and explore animals’ behavior and habitats! Note: animals are not always on view on cameras, so please check back if you don't see anything.</div>
+                </div>
+                <img src="./src/assets/images/welcome.png" alt="Welcome to online zoo image">
+            </div>
+            <div class="how-it-works-container bottom">
+                <img src="./src/assets/images/birds.png" alt="Birds image">
+                <img 
+                    src="./src/assets/icons/birds.svg" alt="Birds image"
+                    class="screen-1200"
+                >
+                <img 
+                    src="./src/assets/icons/birds-320.svg" alt="Birds image"
+                    class="screen-320"
+                >
+                <div class="container-text">
+                    <div class="container-text-header">How we work</div>
+                    <div class="container-text-main">Online Zoo is a nonprofit committed to inspiring awareness and preservation of nature and wild animals in our zoo and worldwide. Every day, our experts work to safeguard the health and wellness of the animals. To continue these efforts, we need your help. We're so grateful to our numerous supporters. All donations, large and small, go a long way to the conservation efforts of our pets.</div>
+                </div>
+            </div>
+        </section>
+        <div id="quick-donate"></div>
+        <section class="meet-pets">
+            <h2 class="h2-heading">Meet some of our pets</h2>
+            <div class="subheader-text">Do you have a special place in your heart for animals? Who are your favorites? Perhaps you'd like to donate to special ones or all our pets? We think it's important for you to choose how your donation is used.</div>
+
+            <div class="slider-container">
+                <button class="slider left">
+                    <span class="arrow-container">
+                        <span class="arrow-line"></span>
+                        <span class="arrow-right"></span>
+                    </span>
+                </button>
+                <button class="slider right">
+                    <span class="arrow-container">
+                        <span class="arrow-line"></span>
+                        <span class="arrow-right"></span>
+                    </span>
+                </button>
+            </div>
+            <div class="meet-pets-content">
+                <div class="meet-pets-container"></div>
+            </div>
+            <button class="choose-favorite btn-text">
+                Choose your favorite
+                <span class="arrow-container">
+                    <span class="arrow-line"></span>
+                    <span class="arrow-right"></span>
+                </span>
+            </button>
+        </section>
+        <section class="pay-and-feed">
+            <h2 class="h2-heading">Pay and feed</h2>
+             <div class="pay-and-feed-line-wrapper">
+                01
+                <div class="line"></div>
+            </div>
+            <div class="pay-and-feed-card">
+                <img src="./src/assets/icons/gorilla.svg" alt="Gorilla image">
+                <div class="pay-and-feed-card-info">
+                    <img 
+                        src="./src/assets/icons/pay-and-feed-logo-1.svg" 
+                        alt="Donation logo image"
+                        class="pay-and-feed-card-logo"
+                    >
+                    <div class="pay-and-feed-card-title subheader-text">Your donation has an impact</div>
+                    <div class="pay-and-feed-card-text">Providing our animals with high-quality nutritious diets is just one element of animal care at our Zoo. We do all the best so that our animals can eat food similar to what they might find in their natural habitats while making sure they get the right mix of nutrients, proteins, and vitamins to be happy and healthy. Please help us provide nutritious food for our animals by donating. The generosity of people like you can help us make sure that our animals enjoy good food that keeps them in great condition.</div>
+                </div>
+            </div>
+            <div class="pay-and-feed-line-wrapper">
+                02
+                <div class="line"></div>
+            </div>
+            <div class="pay-and-feed-card">
+                <img 
+                    src="./src/assets/icons/bananas.svg" 
+                    alt="Bananas image"
+                >
+                <div class="pay-and-feed-card-info">
+                    <img 
+                        src="./src/assets/icons/pay-and-feed-logo-2.svg" class="pay-and-feed-card-logo"
+                        alt="Donation logo"
+                    >
+                    <div class="pay-and-feed-card-title subheader-text">Make a donation</div>
+                    <div class="pay-and-feed-card-text">You can donate through your credit card without any fees. It is easy and safe. We do not keep donors' personal information on an online network. Choose an amount to give and the pet's name if needed. One of the most effective ways you can give is by making regular donations.</div>
+                </div>
+            </div>
+            <div class="pay-and-feed-line-wrapper">
+                03
+                <div class="line"></div>
+            </div>
+            <div class="pay-and-feed-card">
+                <img src="./src/assets/icons/gorilla-eat-banana.svg" alt="Gorilla eating bananas image">
+                <div class="pay-and-feed-card-info">
+                    <img src="./src/assets/icons/pay-and-feed-logo-3.svg" class="pay-and-feed-card-logo" alt="Donation logo">
+                    <div class="pay-and-feed-card-title subheader-text">Bring your food charity — straight to your favorites pets.</div>
+                    <div class="pay-and-feed-card-text">
+                        After your donation, the animal receives its favorite foods. You can support your favorite animals or any animal you care about and make a real personal impact. Never doubt that your donation can make a difference even if it is small. 
+                    </div>
+                    <button class="pay-and-feed-btn btn-text">
+                        Donate now
+                        <span class="arrow-container">
+                            <span class="arrow-line"></span>
+                            <span class="arrow-right"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="what-users-think">
+            <div class="what-users-think-container">
+                <div class="what-users-think-header-container">
+                    <h2 class="h2-heading">What our users think</h2>
+                    <div class="what-users-think-header-text subheader-text">
+                        We are continuously striving to improve the experiences of our future guests. Below you can leave your own feedback, or simply view feedback from past clients. 
+                    </div>
+                </div>
+                <div class="what-users-think-cards-content">
+                    <div class="what-users-think-cards-container"></div>
+                    <div class="slider-container">
+                        <button class="slider left">
+                            <span class="arrow-container">
+                                <span class="arrow-line"></span>
+                                <span class="arrow-right"></span>
+                            </span>
+                        </button>
+                        <button class="slider right">
+                            <span class="arrow-container">
+                                <span class="arrow-line"></span>
+                                <span class="arrow-right"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="users-think-card screen-320">
+                    <img src="./src/assets/icons/quotation-marks.svg" alt="Quotation marks icon" class="quotation-marks">
+                    <div class="users-think-card-date subheader-text">New Jersey, June 2020</div>
+                    <div class="users-think-card-text text">I am writing to thank you for your mission is to bring people closer to nature! Like myself, children were very impressed by the opportunity to explore the life of incredible animals in real-time.</div>
+                    <div class="users-think-card-author btn-text">Karen Maithlan</div>
+                </div>
+                <div class="progress-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <a href="./src/pages/contact" class="live-cam-link">
+                    <button class="btn-text screen-320">
+                        Leave feedback
+                        <span class="arrow-container">
+                            <span class="arrow-line"></span>
+                            <span class="arrow-right"></span>
+                        </span>
+                    </button>
+                </a>
+            </div> 
+            <button class="btn-text">
+                Leave feedback
+                <span class="arrow-container">
+                    <span class="arrow-line"></span>
+                    <span class="arrow-right"></span>
+                </span>
+            </button>
+        </section>
+        <section class="care">
+            <h2 class="h2-heading">Care for the animals you love</h2>
+            <div class="care-subheader subheader-text">You can help to look after the animals you love with your gift today
+            </div>
+            <div class="care-pets-container">
+                <img src="./src/assets/icons/koala-care.svg" alt="Koala image">
+                <div class="care-pet-card" data-id="1">
+                    <img src="./src/assets/icons/panda-care.svg" alt="Panda image">
+                    <div class="care-pet-info">
+                        <div class="care-pet-info-text text">Your $30 could give Lucas a slice of panda cake, made with our secret recipe.</div>
+                        <button class="btn-text">
+                            Feed
+                            <span class="arrow-container">
+                                <span class="arrow-line"></span>
+                                <span class="arrow-right"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="care-pet-card" data-id="1">
+                    <img src="./src/assets/icons/tiger-care.svg" alt="Tiger image">
+                    <div class="care-pet-info">
+                        <div class="care-pet-info-text text"> Your $150 will help to care for Senja, a Sumatran tiger, for three weeks.</div>
+                        <button class="btn-text">
+                            Feed
+                            <span class="arrow-container">
+                                <span class="arrow-line"></span>
+                                <span class="arrow-right"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="care-pet-card" data-id="2">
+                    <img src="./src/assets/icons/lemur-care.svg" alt="Lemur image">
+                    <div class="care-pet-info">
+                        <div class="care-pet-info-text text"> With your support, we can give Andy his favorite fruits. Especially when it's not fruit season in its natural habitat.</div>
+                        <button class="btn-text">
+                            Feed
+                            <span class="arrow-container">
+                                <span class="arrow-line"></span>
+                                <span class="arrow-right"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="care-pet-card" data-id="5">
+                    <img src="./src/assets/icons/eagles-care.svg" alt="Eagles image">
+                    <div class="care-pet-info">
+                        <div class="care-pet-info-text text"> Sam & Lora have hatched and raised numerous young and will be happy with your help.</div>
+                        <button class="btn-text">
+                            Feed
+                            <span class="arrow-container">
+                                <span class="arrow-line"></span>
+                                <span class="arrow-right"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+            <div class="progress-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button class="care-button btn-text">
+                Choose your favorite
+                <span class="arrow-container">
+                    <span class="arrow-line"></span>
+                    <span class="arrow-right"></span>
+                </span>
+            </button>
+            <img 
+                src="./src/assets/icons/touch-the-animal.svg" alt="Image of touching an animal on screen"
+                class="touch-the-animal"
+            >
+        </section> 
+        <div class="donation-popup" id="donationPopup"></div>
+    </main>
+    <div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<svg width="400" height="800" viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="800" fill="#FFFFFF"/>
+<defs>
+<g id="icon">
+
+<ellipse cx="-28" cy="-36" rx="12" ry="12" fill="#20113D"/>
+<ellipse cx="28" cy="-36" rx="12" ry="12" fill="#20113D"/>
+<path d="M-10,-32 Q-8,-18 -9,-6" stroke="#20113D" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M0,-34 Q0,-18 0,-6" stroke="#20113D" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M10,-32 Q8,-18 9,-6" stroke="#20113D" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M-40,-4 Q-26,-2 -18,4" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M-42,8 Q-28,8 -18,12" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M40,-4 Q26,-2 18,4" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M42,8 Q28,8 18,12" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="-18" cy="-2" rx="11" ry="10" fill="#20113D"/>
+<ellipse cx="18" cy="-2" rx="11" ry="10" fill="#20113D"/>
+<circle cx="-18" cy="-2" r="5.5" fill="white" opacity="0.28"/>
+<circle cx="18" cy="-2" r="5.5" fill="white" opacity="0.28"/>
+<circle cx="-18" cy="-2" r="3.2" fill="#20113D"/>
+<circle cx="18" cy="-2" r="3.2" fill="#20113D"/>
+<circle cx="-16" cy="-4" r="1.2" fill="white"/>
+<circle cx="20" cy="-4" r="1.2" fill="white"/>
+<path d="M-8,14 Q0,10 8,14 Q8,22 0,24 Q-8,22 -8,14 Z" fill="#20113D"/>
+<path d="M0,24 L0,28 M0,28 C-4,32 -8,31 -9,30 M0,28 C4,32 8,31 9,30" stroke="#20113D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</g>
+</defs>
+<use href="#icon" transform="translate(65,80) rotate(-8) scale(1.0)" opacity="0.05"/>
+<use href="#icon" transform="translate(195,70) rotate(5) scale(1.1)" opacity="0.04"/>
+<use href="#icon" transform="translate(325,82) rotate(-3) scale(0.9)" opacity="0.05"/>
+<use href="#icon" transform="translate(130,180) rotate(6) scale(1.0)" opacity="0.04"/>
+<use href="#icon" transform="translate(260,172) rotate(-10) scale(0.95)" opacity="0.05"/>
+<use href="#icon" transform="translate(390,182) rotate(4) scale(1.05)" opacity="0.04"/>
+<use href="#icon" transform="translate(55,280) rotate(10) scale(0.95)" opacity="0.05"/>
+<use href="#icon" transform="translate(185,272) rotate(-6) scale(1.1)" opacity="0.04"/>
+<use href="#icon" transform="translate(315,282) rotate(3) scale(0.9)" opacity="0.05"/>
+<use href="#icon" transform="translate(120,382) rotate(-4) scale(1.05)" opacity="0.04"/>
+<use href="#icon" transform="translate(250,374) rotate(8) scale(0.9)" opacity="0.05"/>
+<use href="#icon" transform="translate(380,384) rotate(-7) scale(1.0)" opacity="0.04"/>
+<use href="#icon" transform="translate(60,480) rotate(-11) scale(1.0)" opacity="0.05"/>
+<use href="#icon" transform="translate(190,472) rotate(4) scale(0.95)" opacity="0.04"/>
+<use href="#icon" transform="translate(320,482) rotate(-5) scale(1.08)" opacity="0.05"/>
+<use href="#icon" transform="translate(130,582) rotate(7) scale(0.95)" opacity="0.04"/>
+<use href="#icon" transform="translate(258,574) rotate(-8) scale(1.1)" opacity="0.05"/>
+<use href="#icon" transform="translate(385,583) rotate(3) scale(0.9)" opacity="0.04"/>
+<use href="#icon" transform="translate(70,682) rotate(10) scale(1.0)" opacity="0.05"/>
+<use href="#icon" transform="translate(200,674) rotate(-5) scale(0.95)" opacity="0.04"/>
+<use href="#icon" transform="translate(330,684) rotate(6) scale(1.05)" opacity="0.05"/>
+<use href="#icon" transform="translate(140,762) rotate(-7) scale(1.0)" opacity="0.04"/>
+<use href="#icon" transform="translate(270,755) rotate(5) scale(1.05)" opacity="0.05"/>
+<use href="#icon" transform="translate(20,770) rotate(-4) scale(0.9)" opacity="0.04"/>
+</svg>

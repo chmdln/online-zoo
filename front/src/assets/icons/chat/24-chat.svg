@@ -1,0 +1,36 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="60" r="58.5" stroke="white" stroke-width="3"/>
+<g filter="url(#ds)"><circle cx="60" cy="60" r="52" fill="white"/></g>
+<!-- longer broader snout than alligator top-down -->
+<path d="M12 50 Q60 32 108 50 L108 66 Q60 76 12 66 Z" fill="#20113D" opacity="0.9"/>
+<!-- heavy scale ridges spine -->
+<ellipse cx="60" cy="42" rx="12" ry="5" fill="#20113D" opacity="0.45"/>
+<ellipse cx="40" cy="46" rx="8" ry="3.5" fill="#20113D" opacity="0.4"/>
+<ellipse cx="80" cy="46" rx="8" ry="3.5" fill="#20113D" opacity="0.4"/>
+<ellipse cx="60" cy="50" rx="13" ry="5" fill="#20113D" opacity="0.38"/>
+<ellipse cx="60" cy="62" rx="13" ry="5" fill="#20113D" opacity="0.38"/>
+<!-- jaw line -->
+<path d="M12 58 Q60 55 108 58" stroke="white" stroke-width="1" fill="none" opacity="0.4"/>
+<!-- many teeth -->
+<path d="M20 58 L22 67 M30 55 L31 64 M40 53 L41 62 M50 52 L51 61 M60 52 L60 61 M70 52 L69 61 M80 53 L79 62 M90 55 L89 64 M100 58 L98 67" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+<!-- raised eye bulges -->
+<ellipse cx="36" cy="44" rx="10" ry="9" fill="#20113D"/>
+<ellipse cx="84" cy="44" rx="10" ry="9" fill="#20113D"/>
+<ellipse cx="36" cy="44" rx="6" ry="5" fill="white" opacity="0.24"/>
+<ellipse cx="84" cy="44" rx="6" ry="5" fill="white" opacity="0.24"/>
+<ellipse cx="36" cy="44" rx="2.5" ry="3.5" fill="#20113D"/>
+<ellipse cx="84" cy="44" rx="2.5" ry="3.5" fill="#20113D"/>
+<!-- nostrils at tip -->
+<ellipse cx="48" cy="36" rx="4" ry="3" fill="#20113D" opacity="0.55"/>
+<ellipse cx="72" cy="36" rx="4" ry="3" fill="#20113D" opacity="0.55"/>
+<defs>
+<filter id="ds" x="4" y="8" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/><feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>
