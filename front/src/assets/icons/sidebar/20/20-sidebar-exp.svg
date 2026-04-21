@@ -1,0 +1,38 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- head base -->
+<ellipse cx="60" cy="62" rx="34" ry="30" fill="#F58021"/>
+<!-- ears -->
+<ellipse cx="35" cy="27" rx="11" ry="11" fill="#F58021" opacity="0.88"/>
+<ellipse cx="85" cy="27" rx="11" ry="11" fill="#F58021" opacity="0.88"/>
+<ellipse cx="35" cy="27" rx="5.5" ry="5.5" fill="#20113D" opacity="0.22"/>
+<ellipse cx="85" cy="27" rx="5.5" ry="5.5" fill="#20113D" opacity="0.22"/>
+<!-- rosette spots -->
+<ellipse cx="44" cy="36" rx="6" ry="5" fill="#20113D" opacity="0.32"/>
+<ellipse cx="60" cy="32" rx="6" ry="5" fill="#20113D" opacity="0.32"/>
+<ellipse cx="76" cy="36" rx="6" ry="5" fill="#20113D" opacity="0.32"/>
+<ellipse cx="34" cy="54" rx="5" ry="4" fill="#20113D" opacity="0.28"/>
+<ellipse cx="86" cy="54" rx="5" ry="4" fill="#20113D" opacity="0.28"/>
+<ellipse cx="38" cy="70" rx="5" ry="4" fill="#20113D" opacity="0.26"/>
+<ellipse cx="82" cy="70" rx="5" ry="4" fill="#20113D" opacity="0.26"/>
+<!-- eyes bold -->
+<ellipse cx="45" cy="54" rx="10" ry="9" fill="#F58021" opacity="0.88"/>
+<ellipse cx="75" cy="54" rx="10" ry="9" fill="#F58021" opacity="0.88"/>
+<circle cx="45" cy="54" r="5.5" fill="#20113D" opacity="0.3"/>
+<circle cx="75" cy="54" r="5.5" fill="#20113D" opacity="0.3"/>
+<circle cx="45" cy="54" r="3.2" fill="#20113D"/>
+<circle cx="75" cy="54" r="3.2" fill="#20113D"/>
+<circle cx="46" cy="53" r="1.1" fill="#F58021"/>
+<circle cx="76" cy="53" r="1.1" fill="#F58021"/>
+<!-- wide square muzzle -->
+<ellipse cx="60" cy="74" rx="18" ry="13" fill="#20113D" opacity="0.88"/>
+<ellipse cx="60" cy="72" rx="12" ry="7" fill="#F58021" opacity="0.15"/>
+<!-- nose -->
+<path d="M53 70 Q60 66 67 70 Q67 76 60 77 Q53 76 53 70Z" fill="#20113D"/>
+<!-- mouth -->
+<path d="M60 77 L60 79.5 M60 79.5 C57.5 82 54 81.5 52.5 80 M60 79.5 C62.5 82 66 81.5 67.5 80" stroke="#20113D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<!-- whisker dots -->
+<circle cx="47" cy="73" r="1.3" fill="#20113D" opacity="0.5"/>
+<circle cx="47" cy="77" r="1.3" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="73" r="1.3" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="77" r="1.3" fill="#20113D" opacity="0.5"/>
+</svg>

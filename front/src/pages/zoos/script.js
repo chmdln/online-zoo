@@ -16,28 +16,6 @@ let currPetId = '1';
 socket.emit('join_view', currPetId);
 
 
-function setupRotatingSidebar(sidebarSelector) {
-    const sidebar = document.querySelector(sidebarSelector);
-    const track = sidebar.querySelector('.sidebar-track');
-    const arrowDown = sidebar.querySelector('.sidebar-bottom');
-
-    if (!track || !arrowDown) return;
-
-    arrowDown.addEventListener('click', () => {
-        const firstItem = track.firstElementChild;
-        const itemHeight = firstItem.offsetHeight;
-
-        track.style.transition = 'transform 0.3s ease';
-        track.style.transform = `translateY(-${itemHeight}px)`;
-
-        setTimeout(() => {
-            track.style.transition = 'none';
-            track.appendChild(firstItem);
-            track.style.transform = 'translateY(0)';
-        }, 300);
-    });
-}
-
 document.getElementById('header').innerHTML = renderHeader();
 document.getElementById('footer').innerHTML = renderFooter();
 const sidebar = document.getElementById('sidebar');
@@ -79,6 +57,28 @@ function setActiveCam(clickedCam) {
 
 
 // sidebar 
+function setupRotatingSidebar(sidebarSelector) {
+    const sidebar = document.querySelector(sidebarSelector);
+    const track = sidebar.querySelector('.sidebar-track');
+    const arrowDown = sidebar.querySelector('.sidebar-bottom');
+
+    if (!track || !arrowDown) return;
+
+    arrowDown.addEventListener('click', () => {
+        const firstItem = track.firstElementChild;
+        const itemHeight = firstItem.offsetHeight;
+
+        track.style.transition = 'transform 0.3s ease';
+        track.style.transform = `translateY(-${itemHeight}px)`;
+
+        setTimeout(() => {
+            track.style.transition = 'none';
+            track.appendChild(firstItem);
+            track.style.transform = 'translateY(0)';
+        }, 300);
+    });
+}
+
 async function fetchSidebarPetData() {
   try {
     const response = await fetch('https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/cameras');
@@ -100,21 +100,28 @@ function renderSidebarItem(pet) {
     const imgSrc = `../../assets/icons/sidebar/${id}/${id}-sidebar.svg`;
     const imgSrcActive = `../../assets/icons/sidebar/${id}/${id}-sidebar-active.svg`;
     
-    if (id >= 9) {
-        return `
-            <div class="sidebar-item" data-pet="${id}">
-                <img src="${fallback}" alt="Pet white icon" class="default">
-                <img src="${fallbackActive}" alt="Pet white icon" class="default-active">
+    return `
+        <div 
+            class="sidebar-item" 
+            data-pet="${id}" 
+            data-pet-name="${camData[id]?.name ?? 'pet'}"
+        >
+            <img 
+                src="${imgSrc}" 
+                onerror="this.src='${fallback}'"
+                alt="Pet white icon" class="default"
+            >
+            <img 
+                src="${imgSrcActive}" 
+                onerror="this.src='${fallbackActive}'"
+                alt="Pet white icon" 
+                class="default-active" 
+            >
+            <div class="sidebar-item-tooltip">
+                ${camData[id]?.name ?? 'pet'}
             </div>
-        `
-    } else {
-        return `
-            <div class="sidebar-item" data-pet="${id}">
-                <img src="${imgSrc}" alt="Pet white icon" class="default">
-                <img src="${imgSrcActive}" alt="Pet white icon" class="default-active">
-            </div>
-        `
-    }
+        </div>
+    `
 }
 
 function renderExpandedSidebarItem(pet) {
@@ -124,21 +131,25 @@ function renderExpandedSidebarItem(pet) {
     const imgSrc = `../../assets/icons/sidebar/${id}/${id}-sidebar-exp.svg`;
     const imgSrcActive = `../../assets/icons/sidebar/${id}/${id}-sidebar-exp-active.svg`;
 
-    if (id >= 9) {
-        return `
-        <div class="sidebar-item" data-pet="${id}">
-            <img src="${fallback}" alt="Pet white icon" class="default">
-            <img src="${fallbackActive}" alt="Pet white icon" class="active">
-            <div class="sidebar-item-text text">
-                ${pet.text} 
-            </div>
-        </div>
-    `
-    }
     return `
-        <div class="sidebar-item" data-pet="${id}">
-            <img src="${imgSrc}" alt="Pet white icon" class="default">
-            <img src="${imgSrcActive}" alt="Pet white icon" class="active">
+        <div 
+            class="sidebar-item" 
+            data-pet="${id}"
+            data-pet-name="${camData[id]?.name ?? 'pet'}"
+        >
+            <img 
+                src="${imgSrc}" 
+                onerror="this.src='${fallback}'"
+                alt="Pet white icon" class="default"
+            >
+            <img 
+                src="${imgSrcActive}" 
+                onerror="this.src='${fallbackActive}'"
+                alt="Pet white icon" class="active"
+            >
+            <div class="sidebar-item-tooltip">
+                ${camData[id]?.name ?? 'pet'}
+            </div>
             <div class="sidebar-item-text text">
                 ${pet.text} 
             </div>

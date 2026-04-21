@@ -1,0 +1,45 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <circle cx="60" cy="60" r="58.5" stroke="white" stroke-width="3"/> -->
+<g filter="url(#ds)"><circle cx="60" cy="60" r="52" fill="#F58021"/></g>
+<!-- rounded smaller ears than fennec -->
+<path d="M30 44 L26 22 L48 38Z" fill="#20113D" opacity="0.88"/>
+<path d="M90 44 L94 22 L72 38Z" fill="#20113D" opacity="0.88"/>
+<path d="M31 43 L28 25 L46 38Z" fill="white" opacity="0.2"/>
+<path d="M89 43 L92 25 L74 38Z" fill="white" opacity="0.2"/>
+<!-- fluffy round head -->
+<ellipse cx="60" cy="64" rx="30" ry="28" fill="#20113D" opacity="0.08"/>
+<!-- thick fur ruff -->
+<ellipse cx="60" cy="68" rx="34" ry="28" fill="#20113D" opacity="0.1"/>
+<!-- eye mask -->
+<ellipse cx="46" cy="57" rx="10" ry="9" fill="#20113D" opacity="0.85"/>
+<ellipse cx="74" cy="57" rx="10" ry="9" fill="#20113D" opacity="0.85"/>
+<circle cx="46" cy="57" r="5.5" fill="white" opacity="0.28"/>
+<circle cx="74" cy="57" r="5.5" fill="white" opacity="0.28"/>
+<circle cx="46" cy="57" r="3.2" fill="#20113D"/>
+<circle cx="74" cy="57" r="3.2" fill="#20113D"/>
+<circle cx="47" cy="56" r="1.1" fill="white"/>
+<circle cx="75" cy="56" r="1.1" fill="white"/>
+<!-- pointed snout shorter than fennec -->
+<path d="M49 66 Q60 78 71 66 Q66 62 60 61 Q54 62 49 66Z" fill="#20113D"/>
+<!-- nose -->
+<ellipse cx="60" cy="65" rx="4.5" ry="3.5" fill="#20113D"/>
+<!-- mouth -->
+<path d="M60 68.5 L60 70.5 M60 70.5 C58 72.5 55.5 72 54.5 71 M60 70.5 C62 72.5 64.5 72 65.5 71" stroke="#20113D" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+<!-- whisker dots -->
+<circle cx="47" cy="69" r="1.2" fill="#20113D" opacity="0.5"/>
+<circle cx="47" cy="73" r="1.2" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="69" r="1.2" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="73" r="1.2" fill="#20113D" opacity="0.5"/>
+<!-- fluffy tail hint bottom -->
+<ellipse cx="60" cy="90" rx="18" ry="8" fill="#20113D" opacity="0.12"/>
+<defs>
+<filter id="ds" x="4" y="8" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/><feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>

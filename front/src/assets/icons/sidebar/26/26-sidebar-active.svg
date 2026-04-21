@@ -1,0 +1,39 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="60" r="58.5" stroke="white" stroke-width="3"/>
+<g filter="url(#ds)"><circle cx="60" cy="60" r="52" fill="white"/></g>
+<!-- flat wide lizard head top-down -->
+<path d="M22 52 Q60 36 98 52 L96 70 Q60 80 24 70 Z" fill="#20113D" opacity="0.9"/>
+<!-- scale texture rows -->
+<ellipse cx="60" cy="44" rx="10" ry="4" fill="#20113D" opacity="0.4"/>
+<ellipse cx="44" cy="49" rx="7" ry="3" fill="#20113D" opacity="0.38"/>
+<ellipse cx="76" cy="49" rx="7" ry="3" fill="#20113D" opacity="0.38"/>
+<ellipse cx="60" cy="54" rx="12" ry="4" fill="#20113D" opacity="0.35"/>
+<ellipse cx="60" cy="64" rx="12" ry="4" fill="#20113D" opacity="0.35"/>
+<ellipse cx="38" cy="60" rx="6" ry="3" fill="#20113D" opacity="0.32"/>
+<ellipse cx="82" cy="60" rx="6" ry="3" fill="#20113D" opacity="0.32"/>
+<!-- jaw line -->
+<path d="M22 61 Q60 58 98 61" stroke="white" stroke-width="0.8" fill="none" opacity="0.38"/>
+<!-- forked tongue -->
+<path d="M58 38 Q60 30 62 38" stroke="#20113D" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<path d="M60 38 L56 34 M60 38 L64 34" stroke="#20113D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<!-- eyes side of head -->
+<ellipse cx="36" cy="50" rx="8" ry="7" fill="#20113D"/>
+<ellipse cx="84" cy="50" rx="8" ry="7" fill="#20113D"/>
+<ellipse cx="36" cy="50" rx="4.5" ry="4" fill="white" opacity="0.24"/>
+<ellipse cx="84" cy="50" rx="4.5" ry="4" fill="white" opacity="0.24"/>
+<ellipse cx="36" cy="50" rx="2" ry="2.8" fill="#20113D"/>
+<ellipse cx="84" cy="50" rx="2" ry="2.8" fill="#20113D"/>
+<!-- nostrils -->
+<ellipse cx="50" cy="40" rx="3.5" ry="2.5" fill="#20113D" opacity="0.55"/>
+<ellipse cx="70" cy="40" rx="3.5" ry="2.5" fill="#20113D" opacity="0.55"/>
+<defs>
+<filter id="ds" x="4" y="8" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/><feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>

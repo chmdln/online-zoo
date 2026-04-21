@@ -1,0 +1,44 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="60" r="58.5" stroke="white" stroke-width="3"/>
+<g filter="url(#ds)"><circle cx="60" cy="60" r="52" fill="white"/></g>
+<!-- pointed ears -->
+<path d="M28 46 L22 20 L46 38Z" fill="#20113D"/>
+<path d="M92 46 L98 20 L74 38Z" fill="#20113D"/>
+<path d="M30 44 L26 24 L44 37Z" fill="white" opacity="0.2"/>
+<path d="M90 44 L94 24 L76 37Z" fill="white" opacity="0.2"/>
+<!-- head -->
+<ellipse cx="60" cy="60" rx="32" ry="29" fill="#20113D" opacity="0.09"/>
+<!-- fur ruff around face -->
+<ellipse cx="60" cy="64" rx="34" ry="30" fill="#20113D" opacity="0.12"/>
+<!-- eye surrounds -->
+<ellipse cx="45" cy="54" rx="10" ry="9" fill="#20113D" opacity="0.85"/>
+<ellipse cx="75" cy="54" rx="10" ry="9" fill="#20113D" opacity="0.85"/>
+<circle cx="45" cy="54" r="5.5" fill="white" opacity="0.28"/>
+<circle cx="75" cy="54" r="5.5" fill="white" opacity="0.28"/>
+<circle cx="45" cy="54" r="3.2" fill="#20113D"/>
+<circle cx="75" cy="54" r="3.2" fill="#20113D"/>
+<circle cx="46" cy="53" r="1.1" fill="white"/>
+<circle cx="76" cy="53" r="1.1" fill="white"/>
+<!-- long snout -->
+<path d="M42 66 Q60 60 78 66 L76 80 Q60 86 44 80 Z" fill="#20113D" opacity="0.88"/>
+<ellipse cx="60" cy="68" rx="14" ry="8" fill="white" opacity="0.15"/>
+<!-- nose -->
+<path d="M53 70 Q60 66 67 70 Q67 76 60 77 Q53 76 53 70Z" fill="#20113D"/>
+<!-- mouth -->
+<path d="M60 77 L60 80 M60 80 C57.5 82.5 54 82 52.5 80.5 M60 80 C62.5 82.5 66 82 67.5 80.5" stroke="#20113D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+<!-- whisker dots -->
+<circle cx="47" cy="73" r="1.3" fill="#20113D" opacity="0.5"/>
+<circle cx="47" cy="77" r="1.3" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="73" r="1.3" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="77" r="1.3" fill="#20113D" opacity="0.5"/>
+<defs>
+<filter id="ds" x="4" y="8" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/><feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>

@@ -1,0 +1,34 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- small ears outer -->
+<path d="M28 42 L22 28 L38 36Z" fill="white" opacity="0.88"/>
+<path d="M92 42 L98 28 L82 36Z" fill="white" opacity="0.88"/>
+<!-- ear inner contour -->
+<path d="M29 41 L24 30 L37 37Z" fill="#20113D" opacity="0.2"/>
+<path d="M91 41 L96 30 L83 37Z" fill="#20113D" opacity="0.2"/>
+<!-- massive wide head -->
+<ellipse cx="60" cy="62" rx="38" ry="32" fill="white" opacity="0.88"/>
+<!-- face skin fold contours -->
+<ellipse cx="60" cy="66" rx="28" ry="22" fill="#20113D" opacity="0.12"/>
+<path d="M30 54 Q60 50 90 54" stroke="#20113D" stroke-width="1.5" fill="none" opacity="0.35"/>
+<path d="M26 64 Q60 60 94 64" stroke="#20113D" stroke-width="1.5" fill="none" opacity="0.35"/>
+<!-- eyes tiny -->
+<ellipse cx="40" cy="54" rx="6" ry="5.5" fill="white"/>
+<ellipse cx="80" cy="54" rx="6" ry="5.5" fill="white"/>
+<circle cx="40" cy="54" r="3" fill="#20113D" opacity="0.26"/>
+<circle cx="80" cy="54" r="3" fill="#20113D" opacity="0.26"/>
+<circle cx="40" cy="54" r="1.8" fill="#20113D"/>
+<circle cx="80" cy="54" r="1.8" fill="#20113D"/>
+<circle cx="40.7" cy="53.3" r="0.7" fill="white"/>
+<circle cx="80.7" cy="53.3" r="0.7" fill="white"/>
+<!-- wide muzzle - white outer -->
+<path d="M36 72 Q60 66 84 72 L84 86 Q60 92 36 86 Z" fill="white" opacity="0.88"/>
+<!-- muzzle inner contour -->
+<ellipse cx="60" cy="76" rx="18" ry="10" fill="#20113D" opacity="0.13"/>
+<!-- nostrils -->
+<ellipse cx="51" cy="76" rx="4.5" ry="3.5" fill="#20113D"/>
+<ellipse cx="69" cy="76" rx="4.5" ry="3.5" fill="#20113D"/>
+<!-- front horn -->
+<path d="M52 48 Q60 22 68 48 Q64 44 60 43 Q56 44 52 48Z" fill="#20113D"/>
+<!-- rear horn -->
+<path d="M55 52 Q60 40 65 52 Q62 50 60 49.5 Q58 50 55 52Z" fill="#20113D" opacity="0.6"/>
+</svg>

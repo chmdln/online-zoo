@@ -1,0 +1,29 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- dorsal fin -->
+<path d="M60 18 Q68 28 66 40 Q62 36 60 38 Q58 36 54 40 Q52 28 60 18Z" fill="white"/>
+<!-- body mass -->
+<ellipse cx="60" cy="68" rx="34" ry="24" fill="white" opacity="0.88"/>
+<!-- belly contour -->
+<ellipse cx="60" cy="72" rx="22" ry="14" fill="#20113D" opacity="0.18"/>
+<!-- pectoral fins -->
+<path d="M28 70 Q20 82 30 86 Q36 80 40 72Z" fill="white" opacity="0.85"/>
+<path d="M92 70 Q100 82 90 86 Q84 80 80 72Z" fill="white" opacity="0.85"/>
+<!-- head/melon -->
+<ellipse cx="60" cy="52" rx="24" ry="20" fill="white" opacity="0.88"/>
+<!-- melon forehead -->
+<ellipse cx="60" cy="44" rx="16" ry="12" fill="white" opacity="0.5"/>
+<!-- eyes -->
+<ellipse cx="46" cy="52" rx="7" ry="6.5" fill="white"/>
+<ellipse cx="74" cy="52" rx="7" ry="6.5" fill="white"/>
+<circle cx="46" cy="52" r="3.5" fill="#20113D" opacity="0.28"/>
+<circle cx="74" cy="52" r="3.5" fill="#20113D" opacity="0.28"/>
+<circle cx="46" cy="52" r="2" fill="#20113D"/>
+<circle cx="74" cy="52" r="2" fill="#20113D"/>
+<circle cx="46.8" cy="51.2" r="0.8" fill="white"/>
+<circle cx="74.8" cy="51.2" r="0.8" fill="white"/>
+<!-- beak/rostrum -->
+<path d="M40 62 Q60 58 80 62 Q76 68 60 70 Q44 68 40 62Z" fill="#20113D"/>
+<path d="M40 62 Q60 65 80 62" stroke="white" stroke-width="0.8" opacity="0.35" fill="none"/>
+<!-- blowhole -->
+<ellipse cx="60" cy="40" rx="4" ry="2.5" fill="#20113D" opacity="0.55"/>
+</svg>

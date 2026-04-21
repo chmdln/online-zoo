@@ -1,0 +1,44 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="60" r="58.5" stroke="white" stroke-width="3"/>
+<g filter="url(#ds)"><circle cx="60" cy="60" r="52" fill="white"/></g>
+<!-- body/wing mass -->
+<ellipse cx="60" cy="76" rx="30" ry="22" fill="#20113D" opacity="0.88"/>
+<!-- tail feathers long -->
+<path d="M48 82 Q44 96 42 104" stroke="#20113D" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path d="M56 86 Q54 100 53 108" stroke="#20113D" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path d="M64 86 Q66 100 67 108" stroke="#20113D" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+<path d="M72 82 Q76 96 78 104" stroke="#20113D" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+<!-- wing feather layers -->
+<path d="M28 72 Q20 62 22 52 Q30 60 36 68Z" fill="#20113D" opacity="0.82"/>
+<path d="M92 72 Q100 62 98 52 Q90 60 84 68Z" fill="#20113D" opacity="0.82"/>
+<!-- round head -->
+<ellipse cx="60" cy="48" rx="22" ry="20" fill="#20113D" opacity="0.88"/>
+<!-- bare face patch -->
+<ellipse cx="60" cy="52" rx="14" ry="11" fill="white" opacity="0.2"/>
+<!-- face lines on patch -->
+<path d="M50 48 Q60 46 70 48" stroke="#20113D" stroke-width="0.8" fill="none" opacity="0.4"/>
+<path d="M48 52 Q60 50 72 52" stroke="#20113D" stroke-width="0.8" fill="none" opacity="0.4"/>
+<path d="M50 56 Q60 54 70 56" stroke="#20113D" stroke-width="0.8" fill="none" opacity="0.4"/>
+<!-- eye -->
+<ellipse cx="46" cy="46" rx="7" ry="7" fill="#20113D"/>
+<ellipse cx="74" cy="46" rx="7" ry="7" fill="#20113D"/>
+<circle cx="46" cy="46" r="4" fill="white" opacity="0.3"/>
+<circle cx="74" cy="46" r="4" fill="white" opacity="0.3"/>
+<circle cx="46" cy="46" r="2.4" fill="#20113D"/>
+<circle cx="74" cy="46" r="2.4" fill="#20113D"/>
+<circle cx="46.9" cy="45.1" r="0.9" fill="white"/>
+<circle cx="74.9" cy="45.1" r="0.9" fill="white"/>
+<!-- hooked beak -->
+<path d="M46 56 Q60 53 74 56 Q70 64 63 68 Q60 70 57 68 Q50 64 46 56Z" fill="#20113D"/>
+<path d="M46 56 Q60 60 74 56" stroke="white" stroke-width="0.9" opacity="0.35" fill="none"/>
+<defs>
+<filter id="ds" x="4" y="8" width="112" height="112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/><feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+</defs>
+</svg>

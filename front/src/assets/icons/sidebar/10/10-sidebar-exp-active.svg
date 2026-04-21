@@ -1,0 +1,31 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- sagittal crest -->
+<path d="M50 22 Q60 14 70 22 Q66 18 60 17 Q54 18 50 22Z" fill="white"/>
+<!-- ears -->
+<ellipse cx="22" cy="64" rx="9" ry="11" fill="white" opacity="0.85"/>
+<ellipse cx="98" cy="64" rx="9" ry="11" fill="white" opacity="0.85"/>
+<ellipse cx="22" cy="64" rx="4.5" ry="5.5" fill="#20113D" opacity="0.2"/>
+<ellipse cx="98" cy="64" rx="4.5" ry="5.5" fill="#20113D" opacity="0.2"/>
+<!-- wide head with crest -->
+<ellipse cx="60" cy="60" rx="40" ry="36" fill="white" opacity="0.9"/>
+<!-- heavy brow -->
+<rect x="22" y="38" width="76" height="18" rx="9" fill="white"/>
+<!-- face contour -->
+<ellipse cx="60" cy="72" rx="28" ry="22" fill="#20113D" opacity="0.14"/>
+<!-- nostrils wide -->
+<ellipse cx="52" cy="72" rx="7" ry="5.5" fill="#20113D"/>
+<ellipse cx="68" cy="72" rx="7" ry="5.5" fill="#20113D"/>
+<!-- muzzle protrusion -->
+<path d="M40 70 Q60 90 80 70 Q72 85 60 87 Q48 85 40 70Z" fill="#20113D" opacity="0.42"/>
+<!-- lip line -->
+<path d="M46 83 Q60 90 74 83" stroke="#20113D" stroke-width="2" fill="none" stroke-linecap="round"/>
+<!-- eyes -->
+<ellipse cx="43" cy="56" rx="8" ry="7.5" fill="white"/>
+<ellipse cx="77" cy="56" rx="8" ry="7.5" fill="white"/>
+<circle cx="43" cy="56" r="4" fill="#20113D" opacity="0.28"/>
+<circle cx="77" cy="56" r="4" fill="#20113D" opacity="0.28"/>
+<circle cx="43" cy="56" r="2.4" fill="#20113D"/>
+<circle cx="77" cy="56" r="2.4" fill="#20113D"/>
+<circle cx="44" cy="55" r="0.9" fill="white"/>
+<circle cx="78" cy="55" r="0.9" fill="white"/>
+</svg>

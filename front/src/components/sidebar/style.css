@@ -26,11 +26,13 @@
 .sidebar-viewport {
     flex: 1; 
     height: 100%; 
-    overflow: hidden; 
+    overflow-y: hidden;
+    overflow-x: visible;
 }
 
 .sidebar-track {
     transition: transform 0.3s ease;
+    overflow: visible; 
 }
 
 .sidebar-expanded.active {
@@ -70,27 +72,33 @@
     height: 20px; 
 }
 
-.sidebar-top .double-arrow-container {
-    display: flex; 
-    gap: 5px; 
+.sidebar-top .double-chevron {
+    display: block;
+    width: 30px;
+    height: 30px;
+    
+}
+
+.double-arrow-container {
+    display: flex;
+    gap: 5px;
+    width: 50px; 
+    height: 50px;
+    cursor: pointer;
+    align-items: center; 
+    justify-content: center;
+    font-size: 0;
+    line-height: 0; 
+    position: absolute;
+    right: 5%; 
+}
+
+.double-arrow-container:hover {
+    border-radius: 50%; 
+    background-color: rgba(164, 162, 162, 0.1);
     cursor: pointer; 
 }
 
-.sidebar-top .arrow-right {
-    border-right: 1px solid var(--white); 
-    border-bottom: 1px solid var(--white); 
-}
-
-.sidebar-top .double-arrow-container {
-    display: flex;
-    gap: 5px;
-    cursor: pointer;
-    height: 40px; 
-    align-items: center; 
-    justify-content: center;
-}
-
-.sidebar-bottom,
 .sidebar-item {
     display: flex;
     align-items: center;
@@ -104,6 +112,25 @@
     border-top: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
     cursor: pointer; 
+    position: relative;
+}
+
+.sidebar-item-tooltip {
+    display: none; 
+}
+
+.sidebar-item:hover .sidebar-item-tooltip {
+    display: block;
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    width: 120px;
+    text-align: center;
+    padding: 5px 10px;
+    background: var(--white);
+    color:var(--navy);
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
 }
 
 .sidebar-expanded .sidebar-top .arrow-right {
@@ -116,20 +143,41 @@
 
 .sidebar-expanded .sidebar-item .sidebar-item-text.text {
     text-align: left; 
+    color: var(--white); 
 }  
 
 .sidebar-bottom {
+    height: 60px; 
     display: flex; 
     flex-direction: column;
-    padding: 30px; 
+    align-items: center;
     border-bottom: none; 
 }
+
+.down-chevron {
+    width: 30px; 
+    height: 30px;
+}
+
+.single-arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; 
+    height: 50px;
+    cursor: pointer;
+}
+
+.single-arrow-container:hover {
+    border-radius: 50%; 
+    background-color: rgba(164, 162, 162, 0.1); 
+    cursor: pointer; 
+} 
 
 .sidebar-bottom .arrow-right {
     border-right: 1px solid var(--white); 
     border-bottom: 1px solid var(--white); 
     transform: rotate(45deg);
-    cursor: pointer;
 }
 
 /* Collapsed sidebar, large screens (> 1420px) */
@@ -167,30 +215,29 @@
         display: none; 
     }
 
-    @media screen and (max-width: 1420px) {
-        .sidebar-collapsed .sidebar-item .default { 
-            display: none; 
-        }
-        .sidebar-collapsed .sidebar-item .default-active { 
-            display: none; 
-        }
-        .sidebar-collapsed .sidebar-item .default-small { 
-            display: block; 
-        }
-        .sidebar-collapsed .sidebar-item .default-small-active { 
-            display: none; 
-        }
-        .sidebar-collapsed .sidebar-item.active .default { 
-            display: none; 
-        }
-        .sidebar-collapsed .sidebar-item.active .default-active { 
-            display: none; 
-        }
-        .sidebar-collapsed .sidebar-item.active .default-small { 
-            display: none; 
-        }
-        .sidebar-collapsed .sidebar-item.active .default-small-active {     
-            display: block; 
-        }
+    .sidebar-collapsed .sidebar-item .default { 
+        display: none; 
+    }
+    .sidebar-collapsed .sidebar-item .default-active { 
+        display: none; 
+    }
+    .sidebar-collapsed .sidebar-item .default-small { 
+        display: block; 
+    }
+    .sidebar-collapsed .sidebar-item .default-small-active { 
+        display: none; 
+    }
+    .sidebar-collapsed .sidebar-item.active .default { 
+        display: none; 
+    }
+    .sidebar-collapsed .sidebar-item.active .default-active { 
+        display: none; 
+    }
+    .sidebar-collapsed .sidebar-item.active .default-small { 
+        display: none; 
+    }
+    .sidebar-collapsed .sidebar-item.active .default-small-active {     
+        display: block; 
     }
 }
+

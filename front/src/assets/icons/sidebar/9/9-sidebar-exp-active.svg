@@ -1,0 +1,33 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- head base -->
+<ellipse cx="60" cy="62" rx="30" ry="28" fill="white"/>
+<!-- ears pointed -->
+<path d="M30 38 L24 18 L44 32Z" fill="white"/>
+<path d="M90 38 L96 18 L76 32Z" fill="white"/>
+<!-- ear inner contour -->
+<ellipse cx="34" cy="30" rx="5" ry="7" fill="#20113D" opacity="0.22"/>
+<ellipse cx="86" cy="30" rx="5" ry="7" fill="#20113D" opacity="0.22"/>
+<!-- cheek patches -->
+<ellipse cx="38" cy="66" rx="12" ry="10" fill="white" opacity="0.85"/>
+<ellipse cx="82" cy="66" rx="12" ry="10" fill="white" opacity="0.85"/>
+<!-- eye mask -->
+<ellipse cx="45" cy="53" rx="10" ry="9" fill="white" opacity="0.9"/>
+<ellipse cx="75" cy="53" rx="10" ry="9" fill="white" opacity="0.9"/>
+<circle cx="45" cy="53" r="5.5" fill="#20113D" opacity="0.28"/>
+<circle cx="75" cy="53" r="5.5" fill="#20113D" opacity="0.28"/>
+<circle cx="45" cy="53" r="3.3" fill="#20113D"/>
+<circle cx="75" cy="53" r="3.3" fill="#20113D"/>
+<circle cx="46" cy="52" r="1.1" fill="white"/>
+<circle cx="76" cy="52" r="1.1" fill="white"/>
+<!-- forehead stripe -->
+<path d="M56 34 Q60 28 64 34 Q62 40 60 44 Q58 40 56 34Z" fill="#20113D"/>
+<!-- nose -->
+<ellipse cx="60" cy="67" rx="4.5" ry="3.5" fill="#20113D"/>
+<!-- mouth -->
+<path d="M60 70.5 L60 72.5 M60 72.5 C58 74.5 55.5 74 54.5 73 M60 72.5 C62 74.5 64.5 74 65.5 73" stroke="#20113D" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+<!-- whisker dots -->
+<circle cx="47" cy="69" r="1.2" fill="#20113D" opacity="0.5"/>
+<circle cx="47" cy="73" r="1.2" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="69" r="1.2" fill="#20113D" opacity="0.5"/>
+<circle cx="73" cy="73" r="1.2" fill="#20113D" opacity="0.5"/>
+</svg>

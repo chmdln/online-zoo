@@ -1,0 +1,34 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- head base -->
+<ellipse cx="60" cy="60" rx="30" ry="28" fill="white"/>
+<!-- small round ears -->
+<ellipse cx="36" cy="30" rx="10" ry="10" fill="white" opacity="0.82"/>
+<ellipse cx="84" cy="30" rx="10" ry="10" fill="white" opacity="0.82"/>
+<ellipse cx="36" cy="30" rx="5" ry="5" fill="#20113D" opacity="0.2"/>
+<ellipse cx="84" cy="30" rx="5" ry="5" fill="#20113D" opacity="0.2"/>
+<!-- dark eye mask band -->
+<path d="M28 52 Q60 46 92 52 Q92 62 60 64 Q28 62 28 52Z" fill="#20113D" opacity="0.88"/>
+<!-- eyes large sleepy -->
+<ellipse cx="45" cy="55" rx="10" ry="9" fill="white"/>
+<ellipse cx="75" cy="55" rx="10" ry="9" fill="white"/>
+<circle cx="45" cy="55" r="5.5" fill="#20113D" opacity="0.28"/>
+<circle cx="75" cy="55" r="5.5" fill="#20113D" opacity="0.28"/>
+<!-- sleepy half-closed lids -->
+<path d="M35 52 Q45 49 55 52" stroke="#20113D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<path d="M65 52 Q75 49 85 52" stroke="#20113D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<circle cx="45" cy="56" r="3.2" fill="#20113D"/>
+<circle cx="75" cy="56" r="3.2" fill="#20113D"/>
+<circle cx="46" cy="55" r="1.1" fill="white"/>
+<circle cx="76" cy="55" r="1.1" fill="white"/>
+<!-- nose -->
+<ellipse cx="60" cy="70" rx="6" ry="4.5" fill="#20113D" opacity="0.85"/>
+<ellipse cx="57" cy="69.5" rx="2.5" ry="2" fill="white" opacity="0.25"/>
+<ellipse cx="63" cy="69.5" rx="2.5" ry="2" fill="white" opacity="0.25"/>
+<!-- gentle smile -->
+<path d="M52 76 Q60 82 68 76" stroke="#20113D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<!-- claws -->
+<path d="M38 88 Q36 96 34 100" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+<path d="M44 90 Q43 98 42 102" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+<path d="M76 90 Q77 98 78 102" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+<path d="M82 88 Q84 96 86 100" stroke="#20113D" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+</svg>
