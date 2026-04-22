@@ -846,5 +846,7 @@ document.addEventListener('click', (e) => {
     const chat = document.getElementById('chat-root');
     if (!chat.classList.contains('active')) {
         chat.classList.add('active');
+    } else {
+        chat.classList.remove('active');
     }
 });     
