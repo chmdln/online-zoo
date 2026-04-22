@@ -345,57 +345,6 @@ emoji-mart-picker {
   border-radius: 10px;
 }
 
-/* chat overlay */
-/* overlay covers chat */
-.chat-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-/* center card */
-.chat-join-box {
-  width: 90%; 
-  background: white;
-  padding: 20px 24px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.chat-join-box h2 {
-  color: #464747; 
-  margin-bottom: 6px;
-}
-
-.chat-join-box p {
-  font-size: 16px;
-  color: #585a5f;
-  margin-bottom: 14px;
-}
-
-.chat-join-box button {
-  background: var(--turq);
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* locked state effect */
-.chat.locked {
-  filter: blur(1px);
-  pointer-events: none;
-  user-select: none;
-}
-
-
 .yt-preview {
   margin-top: 6px;
   width: 100%; 
