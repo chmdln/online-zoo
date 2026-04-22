@@ -57,14 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }); 
 });
 
-function setActiveCam(clickedCam) {
-    const cams = document.querySelectorAll('.live-cams-track img');
-    cams.forEach((cam) => {
-        cam.src = cam.dataset.default;
-    });
-    clickedCam.src = clickedCam.dataset.active;
-}
-
 // sidebar 
 function setupRotatingSidebar(sidebarSelector) {
     const sidebar = document.querySelector(sidebarSelector);
@@ -535,19 +527,17 @@ function renderLiveCamsHeader(petId) {
         <div class="live-cams-top">
             <div class="h2-heading">Live ${cam.name} cams</div>
             <div class="live-cams-top-buttons">
-                <button class="donate-now-btn btn-text">
-                    Donate now
-                    <div class="arrow-container">
-                        <div class="arrow-line"></div>
-                        <div class="arrow-right"></div>
+                <div class="donate-btn-container">
+                    <button class="donate-now-btn btn-text">
+                        Donate now
+                        <div class="arrow-container">
+                            <div class="arrow-line"></div>
+                            <div class="arrow-right"></div>
+                        </div>
+                    </button>
+                    <div class="live-cams-tooltip">
+                        Donate to your fave pet
                     </div>
-                </button>
-                <div class="bookmark-container">
-                    <img 
-                        src="../../assets/icons/live-cams/bookmark-chat.svg" 
-                        alt="Bookmark icon" class="bookmark-icon"
-                    >
-                    <div class="bookmark-icon-tooltip">Save to favorites</div>
                 </div>
                 <div class="chat-toggle-container">
                     <div class="chat-toggle">
@@ -596,7 +586,7 @@ function renderPet(petId, isActive = false) {
 
     return `
         <div class="live-cams-mid">
-            ${renderIFrame(videoId, '100%', '710px')}
+            ${renderIFrame(videoId, '100%', '768px')}
         </div>
         <div class="live-cams-bott">
             <div class="live-cams-bott-txt">More live views</div>
@@ -774,31 +764,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         loaderHook.innerHTML = '';
         console.error(error);
     }
-    
-
-//     // listener for live cams 
-//     const cams = document.querySelectorAll('.live-cams-track img');
-//     cams.forEach((cam) => {
-//         cam.addEventListener('click', () => {
-//             setActiveCam(cam);
-//         });
-//     });
-
-
-//     const burger = document.querySelector('.hamburger-icon');
-//     const burgerMenu = document.querySelector('.burger-menu');
-//     const burgerCloseBtn = document.querySelector('.burger-close-btn');
-
-//     burger.addEventListener('click', () => {
-//     burgerMenu.classList.add('burger');
-//     burgerCloseBtn.classList.add('active');
-//     });
-
-//     burgerCloseBtn.addEventListener('click', () => {
-//     burgerMenu.classList.remove('burger');
-//     burgerCloseBtn.classList.remove('active');
-//     });
-
 });
 
 
