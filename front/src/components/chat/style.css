@@ -68,27 +68,30 @@ body {
   height: 50px; 
 }
 
-/* .chat-close-container { */
-    /* position: absolute; 
-    top: 30%; 
-    right: 5%; 
-    cursor: pointer; */
-/* } */
-
-.chat-close-container-hover {
-    position: absolute; 
-    top: 10%; 
-    right: 3%; 
-    cursor: pointer;
-    background-color: transparent; 
+.chat-close-container {
+    width: 45px; 
+    height: 45px;
     display: flex; 
     align-items: center;
     justify-content: center;
-    width: 60px; 
-    height: 60px; 
+}
+
+#close-chat-btn {
+    width: 24px; 
+    height: 24px;
+    font-weight: 700;
+    color: var(--grey);
+}
+
+.chat-close-container-hover {
+    position: absolute; 
+    top: 8%; 
+    right: 1%;  
     border: none; 
     border-radius: 50%;
+    background-color: transparent;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .chat-close-container-hover:hover  {

@@ -5,9 +5,8 @@ import { Picker } from 'emoji-mart';
 
 
 // get DOM elements
-const overlay = document.getElementById('chat-overlay');
-const joinBtn = document.getElementById('join-btn');
-const closeMenu = document.querySelector('.chat-close-menu-btn');
+const closeMenu = document.querySelector('.chat-close-container');
+const chatRoot = document.getElementById('chat-root');
 const chatEl = document.querySelector('.chat');
 const input = document.querySelector('.chat-text-input');
 const sendBtn = document.querySelector('.chat-send');
@@ -17,7 +16,6 @@ const fileInput = document.getElementById('file-input');
 const previewBar = document.getElementById('file-preview-bar');
 
 // chat is initially locked
-chatEl.classList.add('locked');
 let currentRoom = '1';
 // let hasJoined = false;
 const chat = new Chat('chat-messages');
@@ -120,25 +118,24 @@ async function handleSend() {
 
 }
 
-joinBtn.addEventListener('click', () => {
-  // auth check
-  const user = JSON.parse(localStorage.getItem('user'));
-  if (!user) {
-      window.location.href = `../../pages/signin/index.html`;
-  }
-  // unlock chat
-  socket.emit('join_room', currentRoom);
-  chatEl.classList.remove('locked');
-  overlay.style.display = 'none';
-});
+// joinBtn.addEventListener('click', () => {
+//   // auth check
+//   const user = JSON.parse(localStorage.getItem('user'));
+//   if (!user) {
+//       window.location.href = `../../pages/signin/index.html`;
+//   }
+//   // unlock chat
+//   socket.emit('join_room', currentRoom);
+//   chatEl.classList.remove('locked');
+//   overlay.style.display = 'none';
+// });
 
 closeMenu.addEventListener('click', () => {
-  
-
+  if (chatRoot.classList.contains('active')) {
+    chatRoot.classList.remove('active');
+  }
 });
 
-// chatEl.classList.add('locked');
-//   overlay.style.display = 'flex';
 
 sendBtn.addEventListener('click', handleSend);
 
