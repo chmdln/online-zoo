@@ -11,15 +11,25 @@ import { renderDonationPopup, setupDonationPopup } from '../../components/donati
 
 const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 
-// init viewer count
-let currPetId = '1';
-socket.emit('join_view', currPetId);
-
-
-document.getElementById('header').innerHTML = renderHeader();
-document.getElementById('footer').innerHTML = renderFooter();
+const header = document.getElementById('header');
+header.innerHTML = renderHeader();
+const footer = document.getElementById('footer');
+footer.innerHTML = renderFooter();
 const sidebar = document.getElementById('sidebar');
 sidebar.innerHTML = renderSidebar();
+
+window.addEventListener('scroll', () => {
+  const headerBottom = header.getBoundingClientRect().bottom;
+
+  if (headerBottom <= 0) {
+    sidebar.style.top = '0px';
+    sidebar.style.height = '100vh';
+  } else {
+    sidebar.style.top = `${headerBottom}px`;
+    sidebar.style.height = `calc(100vh - ${headerBottom}px)`;
+  }
+});
+
 // re-initialize both sidebars
 setupRotatingSidebar('.sidebar-collapsed');
 setupRotatingSidebar('.sidebar-expanded');
@@ -54,7 +64,6 @@ function setActiveCam(clickedCam) {
     });
     clickedCam.src = clickedCam.dataset.active;
 }
-
 
 // sidebar 
 function setupRotatingSidebar(sidebarSelector) {
@@ -525,13 +534,34 @@ function renderLiveCamsHeader(petId) {
     return `
         <div class="live-cams-top">
             <div class="h2-heading">Live ${cam.name} cams</div>
-            <button class="donate-now-btn btn-text">
-                Donate now
-                <div class="arrow-container">
-                    <div class="arrow-line"></div>
-                    <div class="arrow-right"></div>
+            <div class="live-cams-top-buttons">
+                <button class="donate-now-btn btn-text">
+                    Donate now
+                    <div class="arrow-container">
+                        <div class="arrow-line"></div>
+                        <div class="arrow-right"></div>
+                    </div>
+                </button>
+                <div class="bookmark-container">
+                    <img 
+                        src="../../assets/icons/live-cams/bookmark-chat.svg" 
+                        alt="Bookmark icon" class="bookmark-icon"
+                    >
+                    <div class="bookmark-icon-tooltip">Save to favorites</div>
                 </div>
-            </button>
+                <div class="chat-toggle-container">
+                    <div class="chat-toggle">
+                        Live chat
+                        <div class="arrow-container">
+                            <div class="arrow-line"></div>
+                            <div class="arrow-right"></div>
+                        </div>
+                    </div>
+                    <div class="chat-toggle-tooltip">
+                        Open live chat
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="loader-hook"></div>
     `
@@ -606,16 +636,15 @@ function renderZoosPage(data, petId, isActive = false) {
     try {
         data.forEach(pet => {
             if (String(pet.petId) === String(petId)) {  
-            // render header 
-            liveCams.innerHTML = renderLiveCamsHeader(pet.petId);   
-            // render main live cam
-            liveCams.insertAdjacentHTML('beforeend', renderPet(pet.petId, isActive));
+                // render header 
+                liveCams.innerHTML = renderLiveCamsHeader(pet.petId);   
+                // render main live cam
+                liveCams.insertAdjacentHTML('beforeend', renderPet(pet.petId, isActive));
             }
         });
     } catch (error) {
         console.error(error);
     }
-    
 }
 
 function setupLiveCamsCarousel() {
@@ -785,7 +814,6 @@ function parseCoordinate(coordStr) {
 }
 
 let leafletMap = null;
-
 function openMapModal(lat, lng, petName) {
     const overlay = document.getElementById('mapModalOverlay');
     overlay.classList.add('active');
@@ -842,3 +870,16 @@ document.addEventListener('click', (e) => {
     }
 });
    
+// chat 
+// init chat viewer count
+let currPetId = '1';
+socket.emit('join_view', currPetId);
+
+document.addEventListener('click', (e) => {
+    const toggle = e.target.closest('.chat-toggle');
+    if (!toggle) return; 
+    const chat = document.getElementById('chat-root');
+    if (!chat.classList.contains('active')) {
+        chat.classList.add('active');
+    }
+});     

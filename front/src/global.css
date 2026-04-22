@@ -12,6 +12,7 @@
     --turq-opaque: #00A09280;
     --grey: #969696;
     --grey-dark: #4F4F4F;
+    --header-height: 110px;
 }
 
 *, *::before, *::after {

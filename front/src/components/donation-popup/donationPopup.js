@@ -206,6 +206,14 @@ export function setupDonationPopup() {
         document.body.classList.add('no-scroll');
     });
 
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.donate-now-btn, .donate-right .btn-primary');
+        if (!btn) return;
+        const popup = document.getElementById('donationPopup');
+        popup.style.display = 'block';
+        document.body.classList.add('no-scroll');
+    });
+
     // step 1 
     const nextBtnStep1 = document.querySelector('.step-1 .next-btn');
     const amountBtns = document.querySelectorAll('.amount-btn');

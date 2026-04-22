@@ -7,7 +7,7 @@ import { Picker } from 'emoji-mart';
 // get DOM elements
 const overlay = document.getElementById('chat-overlay');
 const joinBtn = document.getElementById('join-btn');
-const closeBtn = document.querySelector('.chat-close-btn');
+const closeMenu = document.querySelector('.chat-close-menu-btn');
 const chatEl = document.querySelector('.chat');
 const input = document.querySelector('.chat-text-input');
 const sendBtn = document.querySelector('.chat-send');
@@ -132,11 +132,13 @@ joinBtn.addEventListener('click', () => {
   overlay.style.display = 'none';
 });
 
-closeBtn.addEventListener('click', () => {
-  chatEl.classList.add('locked');
-  overlay.style.display = 'flex';
-  // hasJoined = false;
+closeMenu.addEventListener('click', () => {
+  
+
 });
+
+// chatEl.classList.add('locked');
+//   overlay.style.display = 'flex';
 
 sendBtn.addEventListener('click', handleSend);
 

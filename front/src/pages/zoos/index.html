@@ -28,11 +28,14 @@
 <body>
     <div id="header"></div>
     <main>
-        <div class="live-cams-layout">
-            <div id="sidebar"></div>
-            <div id="live-cams-container">
-                <div class="live-cams-content">
-                    <section class="live-cams"></section>
+        <div id="sidebar"></div>
+        <div class="cams-and-chat-container">
+            <div class="live-cams-layout">
+                <div id="live-cams-container">
+                    <div class="live-cams-content">
+                        <section class="live-cams">
+                        </section>
+                    </div>
                 </div>
             </div>
             <!-- live chat -->
@@ -59,8 +62,20 @@
                                 <span class="chat-count">0 watching</span>
                             </div>
                         </div>
-                        
-                        <div class="chat-close-btn">&times;</div>
+                        <div class="chat-close-container-hover">
+                            <div class="chat-close-container">
+                                <img 
+                                    src="../../assets/icons/chat/dots-chat.svg" 
+                                    alt="Dots icon" 
+                                    class="chat-close-menu-btn" 
+                                    id="chat-close-menu-btn"
+                                >
+                                <!-- <div class="chat-close-menu">
+                                    <div>Lock chat</div>
+                                    <div>Close chat</div>
+                                </div> -->
+                            </div>
+                        </div>
                     </div>
 
                 <!-- Messages -->
@@ -94,11 +109,11 @@
                     />
                     <button class="chat-send">Send</button>
                 </div>
-
+            </div>
             </div>
         </div>
         <div id="quick-donate"></div>
-        <div id="did-you-know"></div>
+        <div id="did-you-know" style="display: none;"></div>
         <div class="donation-popup" id="donationPopup"></div>
     </main>
     <div id="footer"></div>
