@@ -34,6 +34,7 @@
 .live-cams-top {
     text-align: center; 
     position: relative;  
+    margin-bottom: 30px;
 }
 
 .live-cams-top > div {
@@ -77,8 +78,14 @@
 }
 
 
-.live-cams-mid img {
+/* .live-cams-mid img {
     margin-top: 46px; 
+    cursor: pointer;
+} */
+
+.live-cams-mid iframe {
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -91,42 +98,64 @@
 }
 
 .live-cams-bott-txt {
-    font-weight: 500;
-    font-size: 42px;
+    font-weight: 600;
+    font-size: 36px;
     line-height: 100%;
     letter-spacing: 0;
     text-transform: uppercase;
-    margin-top: 100px; 
+    margin-top: 40px; 
 }
 
 .live-cams-carousel {
     display: flex; 
     justify-content: center;
+    align-items: center;
     column-gap: 20px; 
-    margin-top: 50px;
+    margin-top: 20px;
+}
+
+.live-cams-carousel .live-cams-arrow {
+    cursor: pointer; 
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; 
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.live-cams-carousel .live-cams-arrow:hover {
+     background-color: rgba(0, 0, 0, 0.2);
+     transition: background-color 0.3s ease;
 }
 
 .live-cams-viewport {
-    width: 1040px; 
+    width: 960px; 
     display: flex; 
+    align-items: center;
     overflow: hidden; 
+    
 }
 
 .live-cams-track {
     display: flex; 
     align-items: center;
     justify-content: flex-start;
-    gap: 40px; 
+    gap: 20px; 
+    scroll-behavior: smooth;
+}
+
+.live-cams-track .preview-video {
+    width: 307px; 
+    height: 207px;
+    object-fit: cover; 
+    cursor: pointer;
+}
+
+.live-cams-track iframe {
+    pointer-events: none;
+    border-radius: 10px;
 }
 
 .live-cams-track > * {
-    cursor: pointer; 
-}
-
-.live-cams-track a img:nth-child(2) {
-    display: none; 
-}
-
-.live-cams-arrow {
-    cursor: pointer; 
+    cursor: pointer;
 }

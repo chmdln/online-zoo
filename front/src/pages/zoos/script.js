@@ -180,6 +180,7 @@ function setupSidebarListener(sidebar, data) {
                     item.classList.remove('active');
                 }
             });
+            setupLiveCamsCarousel();
 
             // render quick-donate 
             const quickDonate = document.getElementById('quick-donate');
@@ -267,115 +268,255 @@ function handleScreenChange(e) {
 const camData = {
   "1": {
     name: 'panda',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s'
+    links: [
+      'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+      'https://www.youtube.com/watch?v=YdP2fFyjBWQ',
+      'https://www.youtube.com/watch?v=V1EhowMXAn8',
+      'https://www.youtube.com/watch?v=k-7_sWrR1rk'
+    ]
   },
   "5": {
     name: 'eagle',
-    link: 'https://www.youtube.com/watch?v=dUE_AMCliSU'
+    links: [
+        'https://www.youtube.com/watch?v=dUE_AMCliSU',
+        'https://www.youtube.com/watch?v=eN4Qy5RRpsc',
+        'https://www.youtube.com/watch?v=uTDcLtvAyoA',
+        'https://www.youtube.com/watch?v=Mft1_T87ytk',
+    ]
   },
   "3": {
     name: 'gorilla',
-    link: 'https://www.youtube.com/watch?v=SOVaFcSATEc&pp=ygUcZ29yaWxsYXMgbmF0aW9uYWwgZ2VvZ3JhcGhpYw%3D%3D'
+    links: [
+        'https://www.youtube.com/watch?v=SOVaFcSATEc',
+        'https://www.youtube.com/watch?v=T2EJNAph7q8',
+        'https://www.youtube.com/watch?v=_X57lHbQP6k',
+        'https://www.youtube.com/watch?v=ODyB9i6bGwQ',
+    ]
   },
   "2": {
     name: 'lemur',
-    link: 'https://www.youtube.com/watch?v=fW1ZQF1N6JE&pp=ygUZbGVtdXIgbmF0aW9uYWwgZ2VvZ3JhcGhpYw%3D%3D'
+    links: [
+        'https://www.youtube.com/watch?v=fW1ZQF1N6JE',
+        'https://www.youtube.com/watch?v=jcjDrE1ye-E&t=12s', 
+        'https://www.youtube.com/watch?v=UjSiq53nJBo', 
+        'https://www.youtube.com/watch?v=fHCQ5-1n07M'
+    ]
   },
   "4": {
     name: 'alligator', 
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=HPrPtCns5Lc',
+        'https://www.youtube.com/watch?v=boQgZGj9Umg', 
+        'https://www.youtube.com/watch?v=rxHABWblJ-U', 
+        'https://www.youtube.com/watch?v=npi99Y-MkN0'
+    ]
   },
   "6": {
     name: 'australian koala',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=Th21rWOrERg',
+        'https://www.youtube.com/watch?v=jQH50vKSv2o', 
+        'https://www.youtube.com/watch?v=8D0fTIngsXg', 
+        'https://www.youtube.com/watch?v=CMwAgft_kZ8'
+    ]
   },
   "7": {
     name: 'african lion', 
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=iXMg1Da2-Yw',
+        'https://www.youtube.com/watch?v=tlZwYsJpqjo',
+        'https://www.youtube.com/watch?v=C72eOjRzkoM',
+        'https://www.youtube.com/watch?v=8-6YqxYAkd0'
+    ]
   }, 
   "8": {
     name: 'sumatran tiger', 
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=FK3dav4bA4s',
+        'https://www.youtube.com/watch?v=Rt-5fQWvyDw',
+        'https://www.youtube.com/watch?v=qhrT0v7QSvc',
+        'https://www.youtube.com/watch?v=hVOHKWnflTY'
+    ]
   }, 
   "9": {
     name: 'red panda',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=ZipGq3So7PY',
+        'https://www.youtube.com/watch?v=AhA0q98CXIw',
+        'https://www.youtube.com/watch?v=8wGOyIS9BX8',
+        'https://www.youtube.com/watch?v=L2_d5aCZN3w'
+    ]
   },
   "10": {
     name: 'mountain gorilla',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=CWnk6PTsZNo',
+        'https://www.youtube.com/watch?v=ODyB9i6bGwQ&t=7s',
+        'https://www.youtube.com/watch?v=zut9g6z7KIc',
+        'https://www.youtube.com/watch?v=CWnk6PTsZNo&t=8s'
+    ]
   },
   "11": {
     name: 'african elephant',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=xV_O_d6wN_8',
+        'https://www.youtube.com/watch?v=qOXeIip16No',
+        'https://www.youtube.com/watch?v=FwOoC0QdeG4',
+        'https://www.youtube.com/watch?v=Fk3VdpuFx0Q'
+    ]
   },
   "12": {
     name: 'sea otter',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=YL1xobrY1I8',
+        'https://www.youtube.com/watch?v=YL1xobrY1I8&t=8s',
+        'https://www.youtube.com/watch?v=FukcZF9ARy8',
+        'https://www.youtube.com/watch?v=SIWbjgPYcJY'
+    ]
   },
   "13": {
     name: 'bengal tiger',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=AGmiksi01BA',
+        'https://www.youtube.com/watch?v=ja4GNdU2vYc',
+        'https://www.youtube.com/watch?v=t0FN7P_tWZ8',
+        'https://www.youtube.com/watch?v=KIm2NK9_sQk'
+    ]
   },
   "14": {
     name: 'gray wolf',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=cATlsFzHigI',
+        'https://www.youtube.com/watch?v=YXMo5w9aMNs',
+        'https://www.youtube.com/watch?v=pgUIm6NVwh4',
+        'https://www.youtube.com/watch?v=FoFbY9vkg4Q'
+    ]
   },
   "15": {
     name: 'fennec fox',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=7yu2gvILYyA',
+        'https://www.youtube.com/watch?v=S9atRW1DgbQ',
+        'https://www.youtube.com/watch?v=9-PaIwxjnr8',
+        'https://www.youtube.com/watch?v=1IGw4UZcFkM'
+    ],
   },
   "16": {
     name: 'grizzly bear',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=GeF25GJleA8',
+        'https://www.youtube.com/watch?v=DGLU6Rz1TDA',
+        'https://www.youtube.com/watch?v=MTcbqzYIqpk',
+        'https://www.youtube.com/watch?v=TSSPDwAQLXs'
+    ],
   },
   "17": {
     name: 'bottlenose dolphin', 
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=7d5nLGzG8YU',
+        'https://www.youtube.com/watch?v=_bnur3gHJ0s&t=170s',
+        'https://www.youtube.com/watch?v=g7PaWeHCPHg',
+        'https://www.youtube.com/watch?v=CF3VzOw6hFs'
+    ],
   },
   "18": {
     name: 'snow leopard',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=JTlveCrymV8',
+        'https://www.youtube.com/watch?v=JTlveCrymV8&t=28s',
+        'https://www.youtube.com/watch?v=2i4ruVTyMU4',
+        'https://www.youtube.com/watch?v=O4VQG82Gvp8'
+    ]
   },
   "19": {
     name: 'polar bear',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=1zRGzlWqce4',
+        'https://www.youtube.com/watch?v=64ZaC04ppLQ',
+        'https://www.youtube.com/watch?v=D6_e6yKH26Q',
+        'https://www.youtube.com/watch?v=COk0Sbbc_co'
+    ]
   },
   "20": {
     name: 'jaguar',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=fQ8ug4QJw74',
+        'https://www.youtube.com/watch?v=fQ8ug4QJw74&t=18s',
+        'https://www.youtube.com/watch?v=DfskHraT2g0',
+        'https://www.youtube.com/watch?v=rb9Bby_H9Sg'
+    ]
   },
   "21": {
     name: 'ring-tailed lemur',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=jcjDrE1ye-E',
+        'https://www.youtube.com/watch?v=UjSiq53nJBo&t=15s',
+        'https://www.youtube.com/watch?v=rjPBMXGkhnA',
+        'https://www.youtube.com/watch?v=We5EHfpl7gk'
+    ]
   },
   "22": {
     name: 'white Rhinoceros',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=uul3KOb0g0o',
+        'https://www.youtube.com/watch?v=yA6gHs6KkwU',
+        'https://www.youtube.com/watch?v=uul3KOb0g0o&t=13s',
+        'https://www.youtube.com/watch?v=NOgl1nW0NtA'
+    ]
   },
   "23": {
     name: 'arctic fox',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=OdTvYMlRO9g',
+        'https://www.youtube.com/watch?v=k2kiyWu_XNc',
+        'https://www.youtube.com/watch?v=aSQiLm54gUs',
+        'https://www.youtube.com/watch?v=C7mxTEskjQg'
+    ]
   },
   "24": {
     name: 'saltwater crocodile',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=_bVZeOt7bCw',
+        'https://www.youtube.com/watch?v=npi99Y-MkN0',
+        'https://www.youtube.com/watch?v=5WIdIs3A9Ok',
+        'https://www.youtube.com/watch?v=y9Lb49JOVWY'
+    ]
   },
   "25": {
     name: 'scarlet macaw',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=kAD07bEsil8',
+        'https://www.youtube.com/watch?v=GN9AHGOyQ1g&pp=ygUNc2NhcmxldCBtYWNhdw%3D%3D',
+        'https://www.youtube.com/watch?v=CjxWflbweJM',
+        'https://www.youtube.com/watch?v=OvU_Vj3UmCQ&t=43s'
+    ]
   },
   "26": {
     name: 'komodo dragon',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=28FzV5OHqMU',
+        'https://www.youtube.com/watch?v=xZdMERr_L7I',
+        'https://www.youtube.com/watch?v=1OSGNzrNXr8',
+        'https://www.youtube.com/watch?v=bSvQ4ZYwJH8'
+    ]
   },
   "27": {
     name: 'sloth',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=DpV4k3Edr-I',
+        'https://www.youtube.com/watch?v=BTRUqdH8IqQ',
+        'https://www.youtube.com/watch?v=tMtMTwBIaeM',
+        'https://www.youtube.com/watch?v=OTp8W251aiQ'
+    ]
   },
   "28": {
     name: 'cheetah',
-    link: 'https://www.youtube.com/watch?v=dqT-UlYlg1s&t=79s',
+    links: [
+        'https://www.youtube.com/watch?v=N7e_lDDojas',
+        'https://www.youtube.com/watch?v=feg3tYeOOME',
+        'https://www.youtube.com/watch?v=J20eXhZTHEo',
+        'https://www.youtube.com/watch?v=rb9Bby_H9Sg&t=11s'
+    ]
   }
 };
 
@@ -396,44 +537,36 @@ function renderLiveCamsHeader(petId) {
     `
 }
 
-function renderPet(petId, isActive = false) {
-    const imgs = {
-        'main': `../../assets/icons/live-cams/${petId}/${petId}-youtube-main.svg`,
-        'default': [
-            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-1.svg`,
-            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-2.svg`,
-            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-3.svg`,
-        ],
-        'active': [
-            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-1-active.svg`,
-            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-2-active.svg`,
-            `../../assets/icons/live-cams/${petId}/${petId}-youtube-cam-3-active.svg`
-        ],
-        'fallback': {
-            'main': `../../assets/icons/live-cams/1/1-youtube-main.svg`,
-            'default': [
-                `../../assets/icons/live-cams/1/1-youtube-cam-1.svg`,
-                `../../assets/icons/live-cams/1/1-youtube-cam-2.svg`,
-                `../../assets/icons/live-cams/1/1-youtube-cam-3.svg`,
-            ],
-            'active': [
-                `../../assets/icons/live-cams/1/1-youtube-cam-1-active.svg`,
-                `../../assets/icons/live-cams/1/1-youtube-cam-2-active.svg`,
-                `../../assets/icons/live-cams/1/1-youtube-cam-3-active.svg`
-            ],
-        }
-    };
+function renderIFrame(videoId, width, height, isPreview = false, isActive = false) {
+    const preview = `
+        <div 
+            class="preview-video" 
+            data-src="https://www.youtube.com/embed/${videoId}?autoplay=0&mute=1"
+            ${isActive ? `style="border: 4px solid #F58021; border-radius: 13px;"` : ''}
+        >
+    `;
+    return  `
+        ${isPreview ? preview : ''}
+            <iframe
+                width="${width}"
+                height="${height}"
+                src="https://www.youtube.com/embed/${videoId}?autoplay=0&mute=1&rel=0&playsinline=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        ${isPreview ? '</div>' : ''}
+    `
+}
 
+function renderPet(petId, isActive = false) {
     const cam = camData[petId];
+    const videoId = new URL(cam.links[0]).searchParams.get('v');
+
     return `
         <div class="live-cams-mid">
-            <a href=${cam.link} target="_blank" rel="noopener noreferrer">
-                <img 
-                    src=${imgs.main} 
-                    alt="Youtube ${cam.name} image"
-                    onerror="this.src='${imgs.fallback.main}'"
-                >
-            </a>
+            ${renderIFrame(videoId, '100%', '710px')}
         </div>
         <div class="live-cams-bott">
             <div class="live-cams-bott-txt">More live views</div>
@@ -445,36 +578,12 @@ function renderPet(petId, isActive = false) {
                 >
                 <div class="live-cams-viewport">
                     <div class="live-cams-track">
-                        <a href=${cam.link} target="_blank" rel="noopener noreferrer">
-                            <img 
-                                src="${imgs.default[0]}"
-                                data-default="${imgs.default[0]}"
-                                data-active="${imgs.active[0]}"
-                                data-id="${petId}"
-                                alt="Youtube preview of ${cam.name}"
-                                onerror="this.src='${isActive ? imgs.fallback.active[0] : imgs.fallback.default[0]}'"
-                            >
-                        </a>
-                        <a href=${cam.link} target="_blank" rel="noopener noreferrer">
-                            <img 
-                                src="${imgs.default[1]}"
-                                data-default="${imgs.default[1]}"
-                                data-active="${imgs.active[1]}"
-                                data-id="${petId}"
-                                alt="Youtube preview of ${cam.name}"
-                                onerror="this.src='${isActive ? imgs.fallback.active[1] : imgs.fallback.default[1]}'"
-                            >
-                        </a>
-                        <a href=${cam.link} target="_blank" rel="noopener noreferrer">
-                            <img 
-                                src="${imgs.default[2]}"
-                                data-default="${imgs.default[2]}"
-                                data-active="${imgs.active[2]}"
-                                data-id="${petId}"
-                                alt="Youtube preview of ${cam.name}"
-                                onerror="this.src='${isActive ? imgs.fallback.active[2] : imgs.fallback.default[2]}'"
-                            >
-                        </a>
+                        ${cam.links.map((link, index) => {
+                            const vidId = new URL(link).searchParams.get('v');
+                            return (index === 0 
+                                ? renderIFrame(vidId, '300px', '200px', true, true)
+                                : renderIFrame(vidId, '300px', '200px', true, false)
+                        )}).join('')}
                     </div>
                 </div>
                 <img 
@@ -515,41 +624,59 @@ function setupLiveCamsCarousel() {
 
     const leftBtn = document.querySelector('.live-cams-arrow.left');
     const rightBtn = document.querySelector('.live-cams-arrow.right');
+    const mainVideo = document.querySelector('.live-cams-mid iframe');
 
-    // wait for images to load
-    const firstImg = track.querySelector('img');
-    firstImg.onload = () => {
-        const style = getComputedStyle(track);
-        const gap = parseFloat(style.gap) || 0;
-        const itemWidth = firstImg.offsetWidth + gap; // full width per image
+    let carouselIndex = 0;
 
-        let carouselIndex = 0;
-        const maxIndex = track.childElementCount - 3; // adjust to viewport
+    function initCarousel() {
+        const firstVid = track.querySelector('.preview-video');
+        if (!firstVid) return;
+
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        const itemWidth = firstVid.getBoundingClientRect().width + gap;
+
+        const visibleItems = 3;
+        const maxIndex = Math.max(0, track.children.length - visibleItems);
+
+        function updatePosition() {
+            track.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
+        }
 
         function showNext() {
             if (carouselIndex < maxIndex) {
                 carouselIndex++;
-                track.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
+                updatePosition();
             }
         }
 
         function showPrev() {
             if (carouselIndex > 0) {
                 carouselIndex--;
-                track.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
+                updatePosition();
             }
         }
 
-        // replace buttons to remove previous listeners
-        leftBtn.replaceWith(leftBtn.cloneNode(true));
-        rightBtn.replaceWith(rightBtn.cloneNode(true));
+        leftBtn.onclick = showPrev;
+        rightBtn.onclick = showNext;
 
-        document.querySelector('.live-cams-arrow.left').addEventListener('click', showPrev);
-        document.querySelector('.live-cams-arrow.right').addEventListener('click', showNext);
-    };
+        track.addEventListener('click', (e) => {
+            const preview = e.target.closest('.preview-video');
+            if (!preview) return;
+             // highlight selected preview
+            const previews = track.querySelectorAll('.preview-video');
+            previews.forEach(p => {
+                p.style.border = 'none';
+                p.style.borderRadius = '0';
+            });
+            preview.style.border = '4px solid #F58021';
+            preview.style.borderRadius = '13px';
+            mainVideo.src = preview.dataset.src;
+        });
+    }
+
+    requestAnimationFrame(initCarousel);
 }
 
-// did-you-know
 async function fetchPetById(petId) {
   try {
     const response = await fetch(`https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets/${petId}`);
@@ -602,6 +729,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // render zoo page
         renderZoosPage(data.data, storedPetId);
+        setupLiveCamsCarousel();
         // render did-you-know
         didYouKnow.innerHTML = renderDidYouKnowSection(pet);
         setupActiveSidebarIcon(storedPetId);
