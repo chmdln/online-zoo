@@ -11,28 +11,20 @@ import { renderDonationPopup, setupDonationPopup } from '../../components/donati
 
 const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 
+// init 
 const header = document.getElementById('header');
 header.innerHTML = renderHeader();
 const footer = document.getElementById('footer');
 footer.innerHTML = renderFooter();
 const sidebar = document.getElementById('sidebar');
 sidebar.innerHTML = renderSidebar();
-
-window.addEventListener('scroll', () => {
-  const headerBottom = header.getBoundingClientRect().bottom;
-
-  if (headerBottom <= 0) {
-    sidebar.style.top = '0px';
-    sidebar.style.height = '100vh';
-  } else {
-    sidebar.style.top = `${headerBottom}px`;
-    sidebar.style.height = `calc(100vh - ${headerBottom}px)`;
-  }
-});
-
 // re-initialize both sidebars
 setupRotatingSidebar('.sidebar-collapsed');
 setupRotatingSidebar('.sidebar-expanded');
+
+// general 
+document.addEventListener('DOMContentLoaded', () => {
+}); 
 
 // auth
 document.addEventListener('DOMContentLoaded', () => {
@@ -58,6 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // sidebar 
+window.addEventListener('scroll', () => {
+  const headerBottom = header.getBoundingClientRect().bottom;
+
+  if (headerBottom <= 0) {
+    sidebar.style.top = '0px';
+    sidebar.style.height = '100vh';
+  } else {
+    sidebar.style.top = `${headerBottom}px`;
+    sidebar.style.height = `calc(100vh - ${headerBottom}px)`;
+  }
+});
+
 function setupRotatingSidebar(sidebarSelector) {
     const sidebar = document.querySelector(sidebarSelector);
     const track = sidebar.querySelector('.sidebar-track');
@@ -842,11 +846,15 @@ socket.emit('join_view', currPetId);
 
 document.addEventListener('click', (e) => {
     const toggle = e.target.closest('.chat-toggle');
-    if (!toggle) return; 
     const chat = document.getElementById('chat-root');
+    const main = document.querySelector('main');
+    
+    if (!toggle) return; 
     if (!chat.classList.contains('active')) {
         chat.classList.add('active');
+        main.style.paddingRight = '500px'; 
     } else {
         chat.classList.remove('active');
+        main.style.paddingRight = '0px';
     }
 });     

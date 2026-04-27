@@ -13,6 +13,7 @@
     --grey: #969696;
     --grey-dark: #4F4F4F;
     --header-height: 110px;
+    --footer-height: 329px;
 }
 
 *, *::before, *::after {

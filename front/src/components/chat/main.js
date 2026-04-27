@@ -14,6 +14,7 @@ const emojiBtn = document.querySelector('.emoji-btn');
 const emojiPickerContainer = document.getElementById('emoji-picker');
 const fileInput = document.getElementById('file-input');
 const previewBar = document.getElementById('file-preview-bar');
+const main = document.querySelector('main');
 
 // chat is initially locked
 let currentRoom = '1';
@@ -118,24 +119,33 @@ async function handleSend() {
 
 }
 
-// joinBtn.addEventListener('click', () => {
-//   // auth check
-//   const user = JSON.parse(localStorage.getItem('user'));
-//   if (!user) {
-//       window.location.href = `../../pages/signin/index.html`;
-//   }
-//   // unlock chat
-//   socket.emit('join_room', currentRoom);
-//   chatEl.classList.remove('locked');
-//   overlay.style.display = 'none';
-// });
+window.addEventListener('scroll', () => {
+    const headerBottom = header.getBoundingClientRect().bottom;
+    const footerTop = footer.getBoundingClientRect().top;
+    const viewportHeight = window.innerHeight;
+    const footerHeight = footer.offsetHeight;
+
+    // how much visible space exists above footer
+    const availableHeight = Math.min(
+        viewportHeight,
+        footerTop
+    );
+
+    if (headerBottom <= 0) {
+        chatRoot.style.top = '0px';
+        chatRoot.style.height = `${availableHeight}px`;
+    } else {
+        chatRoot.style.top = `${headerBottom}px`;
+        chatRoot.style.height = `${availableHeight - headerBottom}px`;
+    }
+});
 
 closeMenu.addEventListener('click', () => {
   if (chatRoot.classList.contains('active')) {
     chatRoot.classList.remove('active');
+    main.style.paddingRight = '0px';
   }
 });
-
 
 sendBtn.addEventListener('click', handleSend);
 
