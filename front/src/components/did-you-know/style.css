@@ -1,7 +1,7 @@
 .did-you-know {
     display: flex; 
     flex-direction: column; 
-    padding: 0 260px; 
+    align-items: center;
 }
 
 .did-you-know-top {
@@ -105,4 +105,8 @@
     margin-bottom: 150px;  
 }
 
+.did-you-know-bot img {
+    width: 440px; 
+    height: 440px;
+}
 

@@ -1,9 +1,4 @@
 export function renderDidYouKnowSection(pet) {
-    const availableImages = ['1', '2', '3', '5']; 
-    let imgSrc = '../../assets/icons/did-you-know/1-did-you-know.svg';
-    if (availableImages.includes(String(pet.id))) { 
-        imgSrc = `../../assets/icons/did-you-know/${pet.id}-did-you-know.svg`;
-    }
 
     return `
         <section class="did-you-know">
@@ -60,7 +55,11 @@ export function renderDidYouKnowSection(pet) {
                         </div>
                     </div>
                     <div class="facts-right">
-                        <img src="${imgSrc}" alt="Image of ${pet.commonName}">
+                        <img 
+                            src="../../assets/icons/did-you-know/${pet.id}-did-you-know.svg"
+                            alt="Image of ${pet.commonName}"
+                            onerror="this.onerror=null; this.src='../../assets/icons/did-you-know/${pet.id}-did-you-know.jpg';"
+                        />
                     </div>
                 </div>
                 <div class="info text">
