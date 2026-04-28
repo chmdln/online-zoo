@@ -16,19 +16,27 @@ export class UserObj {
 
   _load() {
     const stored = localStorage.getItem('user');
-    if (!stored) return; 
-    const user = JSON.parse(stored);
 
-    const generated = {
-      username: `@${user.username}`,
-      avatarName: this._generateAvatarName(user),
-      avatarColor: this._randomColor(),
-      isDonor: user.isDonor || false,
-    };
-    return generated;
-  }
+    if (!stored) {
+      return {
+        username: '@Guest',
+        avatarName: 'GU',
+        avatarColor: this._randomColor(),
+        isDonor: false,
+      }
+    } else {
+      const user = JSON.parse(stored);
+      const generated = {
+        username: `@${user.username}`,
+        avatarName: this._generateAvatarName(user),
+        avatarColor: this._randomColor(),
+        isDonor: user.isDonor || false,
+      };
+      return generated;
+    }
+ }
 
- _generateAvatarName(user) {
+  _generateAvatarName(user) {
     return user.name.slice(0, 2).toUpperCase();
   }
 

@@ -9,7 +9,6 @@ import { renderQuickDonateSection } from '../../components/quick-donate/quick-do
 import { renderMapModal } from '../../components/map-modal/mapModal.js';
 import { renderDonationPopup, setupDonationPopup } from '../../components/donation-popup/donationPopup.js';
 
-const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 
 // init 
 const header = document.getElementById('header');

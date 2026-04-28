@@ -2,10 +2,11 @@ import { socket } from '../../socket.js';
 import { User } from '../chat/user.js';
 
 export function renderDonationPopup() {
-    const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo'; 
+    const ICONS = {
+        arrow: new URL('../../assets/icons/arrow.svg', import.meta.url).href,
+    };
 
     return `
-        
             <div class="popup-overlay" id="popupOverlay"></div>
             <div class="popup-content">
                 <div class="popup-header">
@@ -75,7 +76,7 @@ export function renderDonationPopup() {
                             <button class="next-btn" disabled>
                                 Next
                                 <img 
-                                    src="${BASE_PATH}/assets/icons/arrow.svg" 
+                                    src=${ICONS.arrow} 
                                     alt="Arrow icon"
                                 >
                             </button>
@@ -119,7 +120,7 @@ export function renderDonationPopup() {
                             </div>
                             <button class="next-btn" disabled>
                                 Next
-                                <img src="${BASE_PATH}/assets/icons/arrow.svg" alt="Arrow icon">
+                                <img src=${ICONS.arrow} alt="Arrow icon">
                             </button>
                         </div>
                     </div>
@@ -183,7 +184,7 @@ export function renderDonationPopup() {
                             </div>
                             <button class="btn-primary complete-donation-btn" disabled>
                                 Complete donation
-                                <img src="${BASE_PATH}/assets/icons/arrow.svg" alt="Arrow icon">
+                                <img src=${ICONS.arrow} alt="Arrow icon">
                             </button>
                         </div>
                     </div>
@@ -798,6 +799,7 @@ export function setupDonationPopup() {
 
     async function updateDonorInfo() {
         const username = User.username;
+        if (username === '@Guest') return;
 
         try {
             const resp = await fetch(`http://localhost:3000/user/donate/${username}`, {
