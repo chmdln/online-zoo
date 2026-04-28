@@ -2,16 +2,15 @@ import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
-import { createClient } from 'redis';
 import multer from 'multer';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { userRepository } from './db/user.repository.js';
+import { redisClient } from './redis/client.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
 
 const SERVER_PORT = process.env.SERVER_PORT || 3000;
-const REDIS_PORT = process.env.REDIS_PORT || 6379;
 const AWS_BUCKET = process.env.AWS_BUCKET; 
 const AWS_REGION = process.env.AWS_REGION || 'eu-north-1'; 
 const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
@@ -37,29 +36,6 @@ const io = new Server(server, {
   },
 });
 
-async function setupRedis() {
-  const client = createClient({
-    url: `redis://localhost:${REDIS_PORT}`,
-  });
-
-  client.on('connect', () => {
-    console.log('Connected to Redis');
-  });
-
-  client.on('error', (err) => {
-    console.error('Redis error:', err);
-  });
-
-  try {
-    await client.connect();
-    return client;
-  } catch (err) {
-    console.error('Failed to connect to Redis:', err);
-    throw err;
-  }
-}
-
-const redisClient = await setupRedis();
 
 // S3 client setup
 const s3 = new S3Client({
@@ -186,8 +162,8 @@ io.on('connection', (socket) => {
     socket.join(roomId);
     console.log(`User ${socket.id} joined room ${roomId}`);
 
-    // fetch last 10 messages
-    const messages = await redisClient.lRange(`room:${roomId}`, 0, 9);
+    // fetch last 50 messages
+    const messages = await redisClient.lRange(`room:${roomId}`, 0, 49);
     const parsed = messages
       .map(m => JSON.parse(m))
       .reverse(); // LPUSH stores newest first
@@ -207,7 +183,7 @@ io.on('connection', (socket) => {
     });
     // save to redis
     await redisClient.lPush(`room:${roomId}`, JSON.stringify(messageData));
-    await redisClient.lTrim(`room:${roomId}`, 0, 9); 
+    await redisClient.lTrim(`room:${roomId}`, 0, 49); 
   });
 
   socket.on('donation_submit', (data) => {

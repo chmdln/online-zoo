@@ -771,7 +771,7 @@ export function setupDonationPopup() {
     }
 
     function showCompleteMessage(mess, isOk) {
-        // create a toast-style message outside the popup
+        // a toast-style message outside the popup
         const toast = document.createElement('div');
         toast.className = 'complete-message';
         toast.textContent = mess;

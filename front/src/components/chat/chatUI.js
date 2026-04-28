@@ -3,7 +3,7 @@ import { createMessage } from './messageItem.js';
 export class ChatUI {
   constructor(containerId) {
     this.containerId = containerId;
-    this.MAX_MESSAGES = 10; 
+    this.MAX_MESSAGES = 50; 
   }
 
   get container() {
@@ -18,6 +18,10 @@ export class ChatUI {
   }
 
   addMessage(messageData) {
+    const msgText = messageData.text || '';
+    const msgFile = messageData.fileName || '';
+    if (!msgText && !msgFile) return;
+    
     const msgEl = createMessage(messageData);
     this._appendAndTrim(msgEl);
   }
@@ -28,7 +32,7 @@ export class ChatUI {
     this.container.appendChild(msgEl);
     this.scrollToBottom();
 
-    // leave last 10 messages 
+    // leave last 50 messages 
     const messages = this.container.querySelectorAll('.chat-message, .donation-message');
     if (messages.length > this.MAX_MESSAGES) {
       const excess = messages.length - this.MAX_MESSAGES;
