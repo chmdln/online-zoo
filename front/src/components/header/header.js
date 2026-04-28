@@ -11,7 +11,7 @@ export function renderHeader() {
         ? JSON.parse(localStorage.getItem("user")) 
         : "";
     
-    const userName = user ? user.name : "";
+    const userName = user ? user.name : "Guest";
     const userEmail = user ? user.email : "";
     const userPopupContent = user
         ? `
@@ -83,12 +83,13 @@ export function renderHeader() {
 
 
 // auth 
-const header = document.getElementById('header');
-
 document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header');
     header.addEventListener('click', (e) => {   
-        if (e.target.closest('.user-icon')) {
+        if (e.target.closest('.user-container')) {
+            console.log('User icon clicked');
             const popup = document.querySelector('.user-popup');
+            console.log('Popup element:', popup);
             popup.classList.toggle('active');
         }
 
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (e.target.closest('.sign-out-btn')) {
             localStorage.removeItem('user');
-            header.innerHTML = renderHeader();
+            location.reload();
         }
     }); 
 });

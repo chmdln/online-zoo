@@ -5,7 +5,8 @@ const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 
 const header = document.getElementById('header');
 header.innerHTML = renderHeader();
-document.getElementById('footer').innerHTML = renderFooter();
+const footer = document.getElementById('footer');
+footer.innerHTML = renderFooter();
 const burger = document.querySelector('.hamburger-icon');
 const burgerMenu = document.querySelector('.burger-menu');
 const burgerCloseBtn = document.querySelector('.burger-close-btn');
@@ -82,25 +83,4 @@ document.querySelectorAll('.location-icon').forEach(icon => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    header.addEventListener('click', (e) => {
-        if (e.target.closest('.user-icon')) {
-            const popup = document.querySelector('.user-popup');
-            popup.classList.toggle('active');
-        }
-
-        if (e.target.closest('.sign-in-btn')) {
-            window.location.href = `${BASE_PATH}/pages/signin/`;
-        } 
-
-        if (e.target.closest('.sign-up-btn')) {
-            window.location.href = `${BASE_PATH}/pages/signup/`;
-        }
-
-        if (e.target.closest('.sign-out-btn')) {
-            localStorage.removeItem('user');
-            header.innerHTML = renderHeader();
-        }
-    }); 
-});
 

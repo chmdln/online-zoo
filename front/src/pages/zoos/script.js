@@ -22,32 +22,6 @@ sidebar.innerHTML = renderSidebar();
 setupRotatingSidebar('.sidebar-collapsed');
 setupRotatingSidebar('.sidebar-expanded');
 
-// general 
-document.addEventListener('DOMContentLoaded', () => {
-}); 
-
-// auth
-document.addEventListener('DOMContentLoaded', () => {
-    header.addEventListener('click', (e) => {
-        if (e.target.closest('.user-icon')) {
-            const popup = document.querySelector('.user-popup');
-            popup.classList.toggle('active');
-        }
-
-        if (e.target.closest('.sign-in-btn')) {
-            window.location.href = `${BASE_PATH}/pages/signin/`;
-        } 
-
-        if (e.target.closest('.sign-up-btn')) {
-            window.location.href = `${BASE_PATH}/pages/signup/`;
-        }
-
-        if (e.target.closest('.sign-out-btn')) {
-            localStorage.removeItem('user');
-            header.innerHTML = renderHeader();
-        }
-    }); 
-});
 
 // sidebar 
 window.addEventListener('scroll', () => {
