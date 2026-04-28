@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-const PORT = process.env.PORT || 3000;
+const SERVER_PORT = process.env.SERVER_PORT || 3000;
 const REDIS_PORT = process.env.REDIS_PORT || 6379;
 const AWS_BUCKET = process.env.AWS_BUCKET; 
 const AWS_REGION = process.env.AWS_REGION || 'eu-north-1'; 
@@ -22,8 +22,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const server = http.createServer(app);
-server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+server.listen(SERVER_PORT, () => {
+  console.log(`Server running on http://localhost:${SERVER_PORT}`);
 });
 
 // redis setup
