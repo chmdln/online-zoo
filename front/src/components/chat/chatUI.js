@@ -19,7 +19,7 @@ export class ChatUI {
 
   addMessage(messageData) {
     const msgText = messageData.text || '';
-    const msgFile = messageData.fileName || '';
+    const msgFile = messageData.file || '';
     if (!msgText && !msgFile) return;
     
     const msgEl = createMessage(messageData);
@@ -83,7 +83,7 @@ export class ChatUI {
     }, 100);
   }
 
-  addFilePreview(file, selectedFiles, previewBar) {
+  addFilePreview(file, selectedFiles, previewBar, input) {
     selectedFiles.push(file);
     const index = selectedFiles.length - 1;
 

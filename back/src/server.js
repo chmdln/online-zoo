@@ -1,50 +1,23 @@
-import express from 'express';
 import http from 'http';
-import { Server } from 'socket.io';
-import cors from 'cors';
+import app from './app.js';
 import multer from 'multer';
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { s3, AWS_BUCKET, AWS_REGION } from './services/s3/client.js'; 
+import { PutObjectCommand } from '@aws-sdk/client-s3';
 import { userRepository } from './db/user.repository.js';
-import { redisClient } from './redis/client.js';
+import { setupSocketIoClient } from './services/socket/socket.js';
+
 import dotenv from 'dotenv';
 dotenv.config();
 
-
 const SERVER_PORT = process.env.SERVER_PORT || 3000;
-const AWS_BUCKET = process.env.AWS_BUCKET; 
-const AWS_REGION = process.env.AWS_REGION || 'eu-north-1'; 
-const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
-const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
 
-// server setup
-const app = express();
-app.use(cors());
-app.use(express.json());
 const server = http.createServer(app);
 server.listen(SERVER_PORT, () => {
   console.log(`Server running on http://localhost:${SERVER_PORT}`);
 });
 
-// redis setup
-const io = new Server(server, {
-  cors: {
-    origin: ['http://127.0.0.1:5173', 
-             'http://localhost:5173', 
-             'http://127.0.0.1:5500', 
-             'http://localhost:5500', 
-             '*'], 
-  },
-});
+export const io = setupSocketIoClient(server);
 
-
-// S3 client setup
-const s3 = new S3Client({
-  region: AWS_REGION,
-  credentials: {
-    accessKeyId: AWS_ACCESS_KEY_ID,
-    secretAccessKey: AWS_SECRET_ACCESS_KEY,
-  },
-});
 
 const upload = multer({
   limits: {
@@ -136,73 +109,3 @@ app.put("/user/donate/:username", async (req, res) => {
   }
 });
 
-
-io.on('connection', (socket) => {
-  console.log('User connected:', socket.id);
-
-  socket.on('join_view', (roomId) => {
-    const viewRoom = `view:${roomId}`;
-    socket.join(viewRoom);
-    // store for disconnect cleanup
-    socket.data.viewRoom = viewRoom;
-    socket.data.roomId = roomId;
-    const count = io.sockets.adapter.rooms.get(viewRoom)?.size || 0;
-    io.to(viewRoom).emit('viewer_count_update', { count, roomId });
-  });
-
-  socket.on('leave_view', (roomId) => {
-    const viewRoom = `view:${roomId}`;
-    socket.leave(viewRoom);
-    const count = io.sockets.adapter.rooms.get(viewRoom)?.size || 0;
-    io.to(viewRoom).emit('viewer_count_update', { count, roomId });
-  });
-
-
-  socket.on('join_room', async (roomId) => {
-    socket.join(roomId);
-    console.log(`User ${socket.id} joined room ${roomId}`);
-
-    // fetch last 50 messages
-    const messages = await redisClient.lRange(`room:${roomId}`, 0, 49);
-    const parsed = messages
-      .map(m => JSON.parse(m))
-      .reverse(); // LPUSH stores newest first
-    socket.emit("chat_history", parsed, roomId);
-  });
-    
-
-  socket.on('leave_room', (roomId) => {
-    socket.leave(roomId);
-  });
-
-  socket.on('send_message', async (data) => {
-    const { roomId, messageData } = data;
-    io.to(roomId).emit('receive_message', {
-        ...messageData,
-        roomId
-    });
-    // save to redis
-    await redisClient.lPush(`room:${roomId}`, JSON.stringify(messageData));
-    await redisClient.lTrim(`room:${roomId}`, 0, 49); 
-  });
-
-  socket.on('donation_submit', (data) => {
-    io.emit('donation_receive', data);
-  });
-
-  socket.on('disconnect', () => {
-    const viewRoom = socket.data.viewRoom;
-    const roomId = socket.data.roomId;
-
-    if (!viewRoom || !roomId) return;
-      // wait a tick so socket is removed from room
-      setImmediate(() => {
-        const count = io.sockets.adapter.rooms.get(viewRoom)?.size || 0;
-        io.to(viewRoom).emit('viewer_count_update', {
-          count,
-          roomId,
-        });
-      });
-      console.log('User disconnected:', socket.id);
-    });
-});

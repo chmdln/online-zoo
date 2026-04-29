@@ -66,7 +66,7 @@ fileInput.setAttribute('multiple', true);
 fileInput.addEventListener("change", (e) => {
   const newFiles = Array.from(e.target.files);
   newFiles.forEach((file) => {
-    chat.ui.addFilePreview(file, selectedFiles, previewBar);
+    chat.ui.addFilePreview(file, selectedFiles, previewBar, fileInput);
   })
   fileInput.value = ''; // same file can't be re-added
 });
@@ -75,7 +75,7 @@ fileInput.addEventListener("change", (e) => {
 async function handleSend() {
   const text = input.value.trim();
   const activeFiles = selectedFiles.filter(Boolean); 
-  if (!text && !activeFiles.length === 0) return;
+  if (!text && activeFiles.length === 0) return;
 
   const uploadedFiles = await Promise.all(
     activeFiles.map(async (file) => {
