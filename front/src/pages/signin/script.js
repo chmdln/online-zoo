@@ -103,9 +103,7 @@ async function signin(userData) {
         }))
 
         // fetch isDonor and merge before redirect
-        console.log("resp.data.user.login", resp.data.user.login);
         const chatUser = await getChatUser(resp.data.user.login);
-        console.log("chatUser", chatUser);
         if (chatUser) {
             const savedUser = JSON.parse(localStorage.getItem('user'));
             savedUser.isDonor = chatUser.isDonor;

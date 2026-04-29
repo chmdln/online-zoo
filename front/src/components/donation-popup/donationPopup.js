@@ -798,8 +798,9 @@ export function setupDonationPopup() {
     }
 
     async function updateDonorInfo() {
-        const username = User.username;
+        let username = User.username;
         if (username === '@Guest') return;
+        username = username.includes('@') ? username.slice(1) : username; 
 
         try {
             const resp = await fetch(`http://localhost:3000/user/donate/${username}`, {
