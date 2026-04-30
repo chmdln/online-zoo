@@ -4,11 +4,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-const REDIS_PORT = process.env.REDIS_URL || 6379;
+const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
 
 async function setupRedis() {
   const client = createClient({
-    url: `redis://localhost:${REDIS_PORT}`,
+    url: `${redisUrl}`,
   });
 
   client.on('connect', () => {
