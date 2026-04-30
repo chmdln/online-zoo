@@ -26,7 +26,7 @@ const upload = multer({
 });
 
 
-app.get('/health/db', async (req, res) => {
+app.get("/health/db", async (req, res) => {
   try {
     await prisma.$queryRaw`SELECT 1`;
     res.json({ db: 'connected' });
