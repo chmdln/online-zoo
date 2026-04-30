@@ -1,8 +1,4 @@
-const isLocalhost = (
-    (window.location.hostname === '127.0.0.1') 
-    || (window.location.hostname === 'localhost') 
-);
-const BASE_PATH = isLocalhost ? '/src' : '/online-zoo/front/src';
+const BASE_PATH = new URL('../../assets/images', import.meta.url).href
 
 export function renderHeader() {
     const user = (
@@ -38,10 +34,10 @@ export function renderHeader() {
             ></h1>
             <div class="container-right">
                 <div class="nav-menu">
-                    <a href="${BASE_PATH}/" id="about">About</a>
-                    <a href="${BASE_PATH}/pages/map/" id="map">Map</a>
-                    <a href="${BASE_PATH}/pages/zoos/" id="zoos">Zoos</a>
-                    <a href="${BASE_PATH}/pages/contact/" id="contact-us">Contact Us</a>
+                    <a href="/" id="about">About</a>
+                    <a href="/pages/map/" id="map">Map</a>
+                    <a href="/pages/zoos/" id="zoos">Zoos</a>
+                    <a href="/pages/contact/" id="contact-us">Contact Us</a>
                     <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=44-9749&t=I2rApDlHU6JUq024-0" id="design">Design</a>
                 </div>
                 <div class="social-media">
@@ -67,10 +63,10 @@ export function renderHeader() {
             </div>
             <div class="burger-menu">
                 <div class="burger-close-btn">&times</div>
-                <a href="${BASE_PATH}/" id="about">About</a>
-                <a href="${BASE_PATH}/pages/map/" id="map">Map</a>
-                <a href="${BASE_PATH}/pages/zoos/" id="zoos">Zoos</a>
-                <a href="${BASE_PATH}/pages/contact/" id="contact-us">Contact Us</a>
+                <a href="/" id="about">About</a>
+                <a href="/pages/map/" id="map">Map</a>
+                <a href="/pages/zoos/" id="zoos">Zoos</a>
+                <a href="/pages/contact/" id="contact-us">Contact Us</a>
                 <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=44-9749&t=I2rApDlHU6JUq024-0" id="design">Design</a>
             </div>
             <img 
@@ -94,11 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (e.target.closest('.sign-in-btn')) {
-            window.location.href = `${BASE_PATH}/pages/signin/`;
+            window.location.href = `/pages/signin/`;
         } 
 
         if (e.target.closest('.sign-up-btn')) {
-            window.location.href = `${BASE_PATH}/pages/signup/`;
+            window.location.href = `/pages/signup/`;
         }
 
         if (e.target.closest('.sign-out-btn')) {
