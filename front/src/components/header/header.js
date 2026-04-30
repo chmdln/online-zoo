@@ -35,9 +35,9 @@ export function renderHeader() {
             <div class="container-right">
                 <div class="nav-menu">
                     <a href="/" id="about">About</a>
-                    <a href="/pages/map/" id="map">Map</a>
-                    <a href="/pages/zoos/" id="zoos">Zoos</a>
-                    <a href="/pages/contact/" id="contact-us">Contact Us</a>
+                    <a href="src/pages/map/" id="map">Map</a>
+                    <a href="src/pages/zoos/" id="zoos">Zoos</a>
+                    <a href="src/pages/contact/" id="contact-us">Contact Us</a>
                     <a href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=44-9749&t=I2rApDlHU6JUq024-0" id="design">Design</a>
                 </div>
                 <div class="social-media">
