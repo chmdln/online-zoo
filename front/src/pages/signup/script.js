@@ -1,6 +1,7 @@
 import { saveToken } from "../../auth/auth.js";
 import { renderHeader } from "../../components/header/header.js";
 import { renderFooter } from "../../components/footer/footer.js";
+import { API_URL } from "../../config.js";
 
 const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
 const header = document.getElementById('header');
@@ -148,7 +149,7 @@ async function signup(userData) {
 
 async function createChatUser() {
     try {
-        const response = await fetch("http://localhost:3000/user/signup",
+        const response = await fetch(`${API_URL}/user/signup`,
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

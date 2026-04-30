@@ -2,6 +2,7 @@ import { Chat } from './chat.js';
 import { User } from './user.js';
 import { socket } from '../../socket.js';
 import { Picker } from 'emoji-mart'; 
+import { API_URL } from '../../config.js';
 
 
 // get DOM elements
@@ -81,7 +82,7 @@ async function handleSend() {
     activeFiles.map(async (file) => {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await fetch("http://localhost:3000/upload", {
+      const res = await fetch(`${API_URL}/upload`, {
         method: "POST",
         body: formData,
       });

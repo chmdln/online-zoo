@@ -1,5 +1,6 @@
 import { renderHeader } from "../../components/header/header.js";
 import { renderFooter } from "../../components/footer/footer.js";
+import { API_URL } from "../../config.js";
 
 
 const BASE_PATH = window.location.hostname === '127.0.0.1' ? '' : '/online-zoo';
@@ -122,7 +123,7 @@ async function signin(userData) {
 
 async function getChatUser(username) {
     try { 
-        const response = await fetch(`http://localhost:3000/user/${username}`,
+        const response = await fetch(`${API_URL}/user/${username}`,
             {
                 method: "GET",
                 headers: { "Content-Type": "application/json" }

@@ -9,7 +9,7 @@ import { setupSocketIoClient } from './services/socket/socket.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const SERVER_PORT = process.env.SERVER_PORT || 3000;
+const SERVER_PORT = process.env.PORT || 3000;
 
 const server = http.createServer(app);
 server.listen(SERVER_PORT, () => {

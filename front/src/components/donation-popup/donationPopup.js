@@ -1,5 +1,6 @@
 import { socket } from '../../socket.js';
 import { User } from '../chat/user.js';
+import { API_URL } from '../../config.js';
 
 export function renderDonationPopup() {
     const ICONS = {
@@ -803,7 +804,7 @@ export function setupDonationPopup() {
         username = username.includes('@') ? username.slice(1) : username; 
 
         try {
-            const resp = await fetch(`http://localhost:3000/user/donate/${username}`, {
+            const resp = await fetch(`${API_URL}/user/donate/${username}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
