@@ -5,6 +5,7 @@ import { s3, AWS_BUCKET, AWS_REGION } from './services/s3/client.js';
 import { PutObjectCommand } from '@aws-sdk/client-s3';
 import { userRepository } from './db/user.repository.js';
 import { setupSocketIoClient } from './services/socket/socket.js';
+import { prisma } from './db/client.js';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -13,7 +14,7 @@ const SERVER_PORT = process.env.PORT || 3000;
 
 const server = http.createServer(app);
 server.listen(SERVER_PORT, () => {
-  console.log(`Server running on http://localhost:${SERVER_PORT}`);
+  console.log(`Server running on port ${SERVER_PORT}`);
 });
 
 export const io = setupSocketIoClient(server);
