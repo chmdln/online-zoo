@@ -56,9 +56,9 @@ export function renderDidYouKnowSection(pet) {
                     </div>
                     <div class="facts-right">
                         <img 
-                            src="../../assets/icons/did-you-know/${pet.id}-did-you-know.svg"
+                            src="/assets/icons/did-you-know/${pet.id}-did-you-know.svg"
                             alt="Image of ${pet.commonName}"
-                            onerror="this.onerror=null; this.src='../../assets/icons/did-you-know/${pet.id}-did-you-know.jpg';"
+                            onerror="this.onerror=null; this.src='/assets/icons/did-you-know/${pet.id}-did-you-know.jpg';"
                         />
                     </div>
                 </div>
