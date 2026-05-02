@@ -6,9 +6,9 @@ export function renderFooter() {
         <footer>
             <div class="footer-top">
                 <div class="footer-logos">
-                    <img src="/images/zoo-logo-white.png" alt="Online Zoo logo icon">
-                    <img src="/images/yem-digital-logo.png" alt="Yem Digital logo icon">
-                    <img src="/images/rs-school-js-logo-white.png" alt="RS School logo icon">
+                    <img src="${BASE_PATH}/images/zoo-logo-white.png" alt="Online Zoo logo icon">
+                    <img src="${BASE_PATH}/images/yem-digital-logo.png" alt="Yem Digital logo icon">
+                    <img src="${BASE_PATH}/images/rs-school-js-logo-white.png" alt="RS School logo icon">
                 </div>
                 <div class="footer-nav-links btn-text nav-menu">
                     <a href="/" id="about">

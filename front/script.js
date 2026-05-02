@@ -4,11 +4,6 @@ import { renderFooter } from './src/components/footer/footer.js';
 import { renderQuickDonateSection } from './src/components/quick-donate/quick-donate.js';
 import { renderDonationPopup, setupDonationPopup } from './src/components/donation-popup/donationPopup.js';
 
-
-const isLocalhost = (
-    (window.location.hostname === '127.0.0.1') 
-    || (window.location.hostname === 'localhost') 
-);
 const BASE_PATH = '/src'
 
 const header = document.getElementById('header');
@@ -54,7 +49,7 @@ function buildPetDataWithImages(data) {
       .replace(/[^a-z0-9]+/g, "-");
       return {
         ...pet,
-        img: `${BASE_PATH}/assets/images/pets/${pet.id}-${fileName}.png`
+        img: `/assets/images/pets/${pet.id}-${fileName}.png`
       };
     });
   return petsWithImages;
