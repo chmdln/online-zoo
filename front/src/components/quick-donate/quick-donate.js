@@ -36,7 +36,7 @@ export function renderQuickDonateSection(petId) {
                         $ Donation amount 
                     </div>
                     <div class="donate-right-btn-img">
-                        <img src="./src/assets/icons/arrow.svg" alt="Arrow icon">
+                        <img src="/assets/icons/arrow.svg" alt="Arrow icon">
                     </div>
                 </div>
             </div>
