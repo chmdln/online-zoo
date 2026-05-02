@@ -22,7 +22,7 @@ export function createMessage(message) {
     username.style.color = 'white';
     const badge = document.createElement('img');
     badge.className = 'donor-badge';
-    badge.src = '../../assets/icons/chat/1-panda-crown.svg';
+    badge.src = '/assets/icons/chat/1-panda-crown.svg';
     usernameContainer.appendChild(badge);
     content.appendChild(usernameContainer);
   } else {

@@ -28,7 +28,7 @@ export function switchChatRoom(petId, petName) {
     currentRoom = petId;
     const iconEl = document.querySelector('.chat-icon img');
     if (iconEl) {
-        iconEl.src = `../../assets/icons/chat/${petId}-chat.svg`;
+        iconEl.src = `/assets/icons/chat/${petId}-chat.svg`;
     }
     const titleEl = document.querySelector('.chat-title');
     if (titleEl) {
@@ -36,7 +36,7 @@ export function switchChatRoom(petId, petName) {
     }
     const chatEl = document.querySelector('.chat'); 
     chatEl.style.background = `
-      url(../../assets/icons/chat/${petId}-bg-chat.svg) 
+      url(/assets/icons/chat/${petId}-bg-chat.svg) 
       center / cover 
       no-repeat
     `;
