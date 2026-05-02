@@ -4,11 +4,11 @@ export function renderSidebar() {
             <div class="sidebar-top">
                 <div class="live-badge-container">
                     <div>Live</div>
-                    <img src="../../assets/icons/live-badge.svg" alt="Live badge icon">
+                    <img src="/assets/icons/live-badge.svg" alt="Live badge icon">
                 </div>
                 <div class="double-arrow-container">
                     <img 
-                        src="../../assets/icons/chevron-double.svg" alt="Double arrow chevron icon"
+                        src="/assets/icons/chevron-double.svg" alt="Double arrow chevron icon"
                         class="double-chevron"
                     >
                 </div>
@@ -19,7 +19,7 @@ export function renderSidebar() {
             <div class="sidebar-bottom">
                 <div class="single-arrow-container">
                     <img 
-                        src="../../assets/icons/chevron-down.svg" alt="Chevron icon"
+                        src="/assets/icons/chevron-down.svg" alt="Chevron icon"
                         class="down-chevron"
                     >
                 </div>
@@ -29,11 +29,11 @@ export function renderSidebar() {
             <div class="sidebar-top">
                 <div class="live-badge-container">
                     <div>Live</div>
-                    <img src="../../assets/icons/live-badge.svg" alt="Live badge icon">
+                    <img src="/assets/icons/live-badge.svg" alt="Live badge icon">
                 </div>
                 <div class="double-arrow-container">
                     <img 
-                        src="../../assets/icons/chevron-double.svg" alt="Double arrow chevron icon"
+                        src="/assets/icons/chevron-double.svg" alt="Double arrow chevron icon"
                         class="double-chevron"
                     >
                 </div>
@@ -44,7 +44,7 @@ export function renderSidebar() {
             <div class="sidebar-bottom">
                 <div class="single-arrow-container">
                     <img 
-                        src="../../assets/icons/chevron-down.svg" alt="Chevron icon"
+                        src="/assets/icons/chevron-down.svg" alt="Chevron icon"
                         class="down-chevron"
                     >
                 </div>
