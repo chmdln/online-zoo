@@ -27,7 +27,7 @@ map.classList.add('active');
 function renderIconOnMap(config) {
     return `
         <img 
-            src="../../assets/icons/${config.fileName}" 
+            src="./assets/icons/${config.fileName}" 
             alt="${config.animalName} location icon"
             class="location-icon ${config.animalName.toLowerCase()}-icon"
         >   
