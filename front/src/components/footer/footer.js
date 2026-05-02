@@ -1,24 +1,21 @@
 export function renderFooter() {
-    const isLocalhost = (
-        (window.location.hostname === '127.0.0.1') 
-        || (window.location.hostname === 'localhost') 
-    );
-    const BASE_PATH = isLocalhost ? '/src' : '/online-zoo/front/src';
+
+    const BASE_PATH = '/assets';
 
     return `
         <footer>
             <div class="footer-top">
                 <div class="footer-logos">
-                    <img src="${BASE_PATH}/assets/images/zoo-logo-white.png" alt="Online Zoo logo icon">
-                    <img src="${BASE_PATH}/assets/images/yem-digital-logo.png" alt="Yem Digital logo icon">
-                    <img src="${BASE_PATH}/assets/images/rs-school-js-logo-white.png" alt="RS School logo icon">
+                    <img src="/images/zoo-logo-white.png" alt="Online Zoo logo icon">
+                    <img src="/images/yem-digital-logo.png" alt="Yem Digital logo icon">
+                    <img src="/images/rs-school-js-logo-white.png" alt="RS School logo icon">
                 </div>
                 <div class="footer-nav-links btn-text nav-menu">
-                    <a href="${BASE_PATH}/" id="about">
+                    <a href="/" id="about">
                     About</a>
-                    <a href="${BASE_PATH}/pages/map/" id="map">Map</a>
-                    <a href="${BASE_PATH}/pages/zoos/" id="zoos">Zoos</a>
-                    <a href="${BASE_PATH}/pages/contact/" id="contact-us">Contact Us</a>
+                    <a href="/src/pages/map/" id="map">Map</a>
+                    <a href="/src/pages/zoos/" id="zoos">Zoos</a>
+                    <a href="/src/pages/contact/" id="contact-us">Contact Us</a>
                 </div>
                 <button class="footer-btn btn-text">
                     Donate for volunteers
@@ -31,7 +28,7 @@ export function renderFooter() {
                     <div class="we-care-popup-overlay"></div>
                     <div class="we-care-popup-content">
                         <div class="close-btn">×</div>
-                        <img src="${BASE_PATH}/assets/icons/hand-and-paw.svg" alt="Hand and paw image">
+                        <img src="${BASE_PATH}/icons/hand-and-paw.svg" alt="Hand and paw image">
                         <div class="we-care-popup-body">
                             <div class="h2-heading">Together we care, save and protect!</div>
                             <div class="we-care-subheader text">
@@ -59,13 +56,13 @@ export function renderFooter() {
                 </div>
                 <div class="footer-bottom-right">
                     <a href="https://www.youtube.com/@RSSchool" target="_blank">
-                        <img src="${BASE_PATH}/assets/images/youtube.png" alt="Youtube logo icon">
+                        <img src="${BASE_PATH}/images/youtube.png" alt="Youtube logo icon">
                     </a>
                     <a href="https://www.instagram.com/rsschool_en/" target="_blank">
-                        <img src="${BASE_PATH}/assets/images/instagram.png" alt="Instagram logo icon">
+                        <img src="${BASE_PATH}/images/instagram.png" alt="Instagram logo icon">
                     </a>
                     <a href="https://www.facebook.com/rsschoolEN/" target="_blank">
-                        <img src="${BASE_PATH}/assets/images/facebook.png" alt="Facebook logo icon">
+                        <img src="${BASE_PATH}/images/facebook.png" alt="Facebook logo icon">
                     </a>
                 </div>
                 <div class="footer-separator screen-320"></div>
