@@ -73,10 +73,10 @@ async function fetchSidebarPetData() {
 
 function renderSidebarItem(pet) {
     const id = pet.petId;
-    const fallback = "../../assets/icons/sidebar/1/1-sidebar.svg"
-    const fallbackActive = "../../assets/icons/sidebar/1/1-sidebar-active.svg"
-    const imgSrc = `../../assets/icons/sidebar/${id}/${id}-sidebar.svg`;
-    const imgSrcActive = `../../assets/icons/sidebar/${id}/${id}-sidebar-active.svg`;
+    const fallback = "/assets/icons/sidebar/1/1-sidebar.svg"
+    const fallbackActive = "/assets/icons/sidebar/1/1-sidebar-active.svg"
+    const imgSrc = `/assets/icons/sidebar/${id}/${id}-sidebar.svg`;
+    const imgSrcActive = `/assets/icons/sidebar/${id}/${id}-sidebar-active.svg`;
     
     return `
         <div 
@@ -104,10 +104,10 @@ function renderSidebarItem(pet) {
 
 function renderExpandedSidebarItem(pet) {
     const id = pet.petId;
-    const fallback = "../../assets/icons/sidebar/1/1-sidebar-exp.svg"
-    const fallbackActive = "../../assets/icons/sidebar/1/1-sidebar-exp-active.svg"
-    const imgSrc = `../../assets/icons/sidebar/${id}/${id}-sidebar-exp.svg`;
-    const imgSrcActive = `../../assets/icons/sidebar/${id}/${id}-sidebar-exp-active.svg`;
+    const fallback = "/assets/icons/sidebar/1/1-sidebar-exp.svg"
+    const fallbackActive = "/assets/icons/sidebar/1/1-sidebar-exp-active.svg"
+    const imgSrc = `/assets/icons/sidebar/${id}/${id}-sidebar-exp.svg`;
+    const imgSrcActive = `/assets/icons/sidebar/${id}/${id}-sidebar-exp-active.svg`;
 
     return `
         <div 
@@ -569,7 +569,7 @@ function renderPet(petId, isActive = false) {
             <div class="live-cams-bott-txt">More live views</div>
             <div class="live-cams-carousel">
                 <img 
-                    src="../../assets/icons/live-cams-left-arrow.svg" 
+                    src="/assets/icons/live-cams-left-arrow.svg" 
                     alt="Left arrow icon"
                     class="live-cams-arrow left"
                 >
@@ -584,7 +584,7 @@ function renderPet(petId, isActive = false) {
                     </div>
                 </div>
                 <img 
-                    src="../../assets/icons/live-cams-right-arrow.svg" 
+                    src="/assets/icons/live-cams-right-arrow.svg" 
                     alt="Right arrow icon"
                     class="live-cams-arrow right"
                 >
