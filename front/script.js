@@ -9,7 +9,7 @@ const isLocalhost = (
     (window.location.hostname === '127.0.0.1') 
     || (window.location.hostname === 'localhost') 
 );
-const BASE_PATH = isLocalhost ? '/src' : '/online-zoo/front/src';
+const BASE_PATH = '/src'
 
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');

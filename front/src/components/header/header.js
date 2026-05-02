@@ -1,4 +1,4 @@
-const BASE_PATH = '/src/assets'
+const BASE_PATH = '/assets'
 
 export function renderHeader() {
     const user = (

@@ -1,7 +1,4 @@
 export function renderQuickDonateSection(petId) {
-    const BASE_PATH = window.location.hostname === '127.0.0.1' 
-        ? '/front/src' 
-        : '/front/src';
 
     const quickDonateData = {
         "1": {
@@ -39,7 +36,7 @@ export function renderQuickDonateSection(petId) {
                         $ Donation amount 
                     </div>
                     <div class="donate-right-btn-img">
-                        <img src="../../../src/assets/icons/arrow.svg" alt="Arrow icon">
+                        <img src="./src/assets/icons/arrow.svg" alt="Arrow icon">
                     </div>
                 </div>
             </div>
